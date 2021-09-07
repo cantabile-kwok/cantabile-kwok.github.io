@@ -1,176 +1,283 @@
-<!doctype html>
-<html>
-<!--
-(C) Copyright AudioLabs 2017
-
-This source code is protected by copyright law and international treaties.
-This source code is made available to You subject to the terms and conditions
-of the Software License for the webMUSHRA.js Software. Said terms and conditions
-have been made available to You prior to Your download of this source code.
-By downloading this source code You agree to be bound by the above mentionend
-terms and conditions, which can also be found here:
-https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use
-of this source code may result in severe civil and criminal penalties, and
-will be prosecuted to the maximum extent possible under law.
--->
-  <head>
-
-
+<html><head>
     <meta charset="utf-8">
-    <title>webMUSHRA</title>
-    <meta name="description" content="webMUSHRA by International Audio Laboratories Erlangen">
-    <meta name="author" content="International Audio Laboratories Erlangen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Audio Samples from "Tree-based Word-level Prosody Clustering and Direct Control for Neural Text-to-speech"</title>
 
-    <!-- jQuery / jQuery Mobile -->
-    <link type="text/css" href="design/jquery.mobile-theme/themes/default/jquery.mobile.icons.min.css" rel="stylesheet" />
-    <link type="text/css" href="lib/external/jquery.mobile/jquery.mobile-1.4.4.css" rel="stylesheet" />
-    <link type="text/css" href="design/jquery.mobile-theme/themes/default/alabs_0_3.css" rel="stylesheet" />
-    <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/css/tolito-1.0.1.css" rel="stylesheet" />
-    <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Icon-Pack/original/jqm-icon-pack-2.0-original.css" rel="stylesheet" />
-    <link type="text/css" href="lib/external/wmSlider/slider.min.css" rel="stylesheet" />
-    <link type="text/css" href="lib/external/wmSlider/slider.pips.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="lib/external/jquery/jquery-2.1.1.min.js"></script>
-    <script src="lib/external/jquery.mobile/jquery.mobile-1.4.4.js"></script>
-    <script src="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/js/tolito-1.0.1.js"></script>
-    <script src="lib/external/jquery.mobile/patches/vertical-slider.js"></script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-    <!-- Three js -->
-    <script src ="lib/external/three.js/three.js"></script>
-    <script src ="lib/external/three.js/three-tube/threejs-tube.js"></script>
-    <script src ="lib/external/three.js/loaders/ColladaLoader.js"></script>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
 
-
-    <!--noUiSlider -->
-    <script src="lib/external/wmSlider/slider.min.js"></script>
-
-    <!-- keyboard support -->
-    <script src ="lib/external/mousetrap/mousetrap.min.js"></script>
-
-    <!-- nls -->
-    <script>
-      var nls = new Object();
-    </script>
-
-    <!-- webMUSHRA -->
-    <!-- build:js:generic lib/webMUSHRA.js -->
-    <!-- audio -->
-    <script src="lib/webmushra/audio/AudioFileLoader.js"></script>
-    <script src="lib/webmushra/audio/MushraAudioControl.js"></script>
-    <script src="lib/webmushra/audio/GenericAudioControl.js"></script>
-
-    <!-- business -->
-    <script src="lib/webmushra/business/DataSender.js"></script>
-    <script src="lib/webmushra/business/ErrorHandler.js"></script>
-    <script src="lib/webmushra/business/PageManager.js"></script>
-    <script src="lib/webmushra/business/PageTemplateRenderer.js"></script>
-
-    <!-- control -->
-    <script src="lib/webmushra/control/MushraAudioControlInputController.js"></script>
-    <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>
-    <script src="lib/webmushra/control/FilePlayerController.js"></script>
-    <script src="lib/webmushra/control/InputController.js"></script>
-
-    <!-- datamodel -->
-    <script src="lib/webmushra/datamodel/BS1116Rating.js"></script>
-    <script src="lib/webmushra/datamodel/MUSHRARating.js"></script>
-    <script src="lib/webmushra/datamodel/LikertMultiStimulusRating.js"></script>
-    <script src="lib/webmushra/datamodel/LikertSingleStimulusRating.js"></script>
-    <script src="lib/webmushra/datamodel/PairedComparisonChoice.js"></script>
-    <script src="lib/webmushra/datamodel/Participant.js"></script>
-    <script src="lib/webmushra/datamodel/Session.js"></script>
-    <script src="lib/webmushra/datamodel/Stimulus.js"></script>
-    <script src="lib/webmushra/datamodel/Trial.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialLocalizationRating.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialASWRating.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialHWDRating.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialLEVRating.js"></script>
-    
-    <!-- spatial -->
-    <script src="lib/webmushra/spatial/Camera.js"></script>
-    <script src="lib/webmushra/spatial/Scene.js"></script>
-    <script src="lib/webmushra/spatial/objects/LocalizationObject.js"></script>
-    <script src="lib/webmushra/spatial/objects/LEVObject.js"></script>
-    <script src="lib/webmushra/spatial/objects/ASWObject.js"></script>
-  
-    <!-- misc -->
-    <script src="lib/webmushra/misc/MushraValidator.js"></script>
-    <script src="lib/webmushra/misc/WaveformVisualizer.js"></script>
-    <script src="lib/webmushra/misc/LikertScale.js"></script>
-    <script src="lib/webmushra/misc/FilePlayer.js"></script>
-    <script src="lib/webmushra/misc/Localizer.js"></script>
-    <script src="lib/webmushra/misc/Shuffle.js"></script>
-
-    <!-- pages -->
-    <script src="lib/webmushra/pages/BS1116Page.js"></script>
-    <script src="lib/webmushra/pages/BS1116PageManager.js"></script>
-    <script src="lib/webmushra/pages/FinishPage.js"></script>
-    <script src="lib/webmushra/pages/GenericPage.js"></script>
-    <script src="lib/webmushra/pages/MushraPage.js"></script>
-    <script src="lib/webmushra/pages/PairedComparisonPage.js"></script>
-    <script src="lib/webmushra/pages/PairedComparisonPageManager.js"></script>
-    <script src="lib/webmushra/pages/VolumePage.js"></script>
-    <script src="lib/webmushra/pages/LikertSingleStimulusPage.js"></script>
-    <script src="lib/webmushra/pages/LikertSingleStimulusPageManager.js"></script>
-    <script src="lib/webmushra/pages/LikertMultiStimulusPage.js"></script>
-    <script src="lib/webmushra/pages/SpatialPage.js"></script>
-
-    <script src="lib/webmushra/nls/nls.js"></script>
-    <!-- /build -->
-
-    <!-- import config -->
-    <script src="lib/external/yaml/yaml.min.js"></script>
-
-    <link rel="stylesheet" href="design/style.css">
-  </head>
-
-  <body data-theme="a">
-
-    <div class="header" id="header"></div>
-
-    <div id="container">
-
-      <div id = "page_progressbar"></div>
-      <h3 class="ui-bar ui-bar-a ui-corner-all" id="page_header"></h3>
-      <div class="ui-body ui-body-a ui-corner-all" id="page_content">
-      </div>
+<!--<link href="./dist/css/bootstrap.min.css" rel="stylesheet">-->
+<body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
+  <div class="container">
+      <center>
+    <div style="background:#EAEAEA;color:#000;width:1000">
+        <br />
+      <b><font size=6><center>Audio Samples from</center></font></b> <br />
+          <center><font size=4.2>"Tree-Based Word-Level Prosody Clustering and Direct Control for Neural Text-To-Speech"</font></center></h1>
+      <p class="lead"><center><i>Yiwei Guo, Chenpeng Du, Kai Yu</i></center></p>
       <br/>
-      <div class="ui-body ui-body-a ui-corner-all" id="page_navigation">
-      </div>
-
-      <table align="right" class="logo">
+<!--      <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs »</a>-->
+    </div>
+    </center>
+    <br />
+    <b><center><font size=5>1. Naturalness</font></center></b><br/>
+    <center>
+    <table class="table">
+        <tbody>
+            <!-- <tr><td scope="col" colspan="4">The FBI has indicated, that it is willing to continue to make such assistance available.</td></tr> -->
         <tr>
-          <td class="logo" style="vertical-align:top; padding-right:0px;"><small><strong>webMUSHRA
-              <!-- build:template:dev
-              Dev
-              /build -->
-              <!-- build:template
-              <%= version %>
-              /build -->
-              by</strong></small>
-          </td>
-          <td class="logo"><a href="https://www.audiolabs-erlangen.de/"><img src="design/images/alabs_new.png" class="logo"/></a></td>
-          <td class="logo"><a href="http://www.iis.fraunhofer.de/"><img src="design/images/iis.svg" class="logo" /></a></td>
-          <td class="logo"><a href="https://www.fau.eu/"><img src="design/images/techfak.svg" class="logo" /></a></td>
+            <td></td>
+            <!-- <td colspan="3"><audio src="./audio/gt/LJ050-0241.wav" controls=""></audio></td> -->
+            <th>GT</th>
+            <th>RAW_FSP</th>
+            <th>WL_CLST</th>
         </tr>
-      </table>
+        <tr>
+            <td>LJ050-0179</td>
+            <td><audio src="./audio/naturalness/GT/LJ050-0179_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0179_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0179_gen.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>LJ050-0185</td>
+            <td><audio src="./audio/naturalness/GT/LJ050-0185_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0185_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0185_gen.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>LJ050-0187</td>
+            <td><audio src="./audio/naturalness/GT/LJ050-0187_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0187_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0187_gen.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>LJ050-0191</td>
+            <td><audio src="./audio/naturalness/GT/LJ050-0191_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0191_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0191_gen.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>LJ050-0206</td>
+            <td><audio src="./audio/naturalness/GT/LJ050-0206_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0206_gen.wav" controls=""></audio></td>
+            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0206_gen.wav" controls=""></audio></td>
+        </tr>
+    </tbody></table></center>
 
-    </div>
-    <div data-role="popup" data-dismissible="false" data-history="false" data-transition="flip" positionTo="window" id="popupErrors">
-      <div id="popupErrorsContent">Errors:<br/></div>
-    </div>
+<br />
+<HR align=center width=1000>
+<b><center><font size=5>2. Controllability</font></center></b><br />
 
-    <div data-role="popup" data-history="false" data-position-to="#page_content" data-transition="slidedown" id="popupDialog" data-overlay-theme="a" data-theme="c" data-dismissible="false" class="ui-corner-all">
-      <div data-role="header" class="ui-corner-top"  style="width : 57.5em; background-color: #FFb500;">
-        <h1 id="popHeader"></h1>
-      </div>
-      <div id="popupResultsContent" style="background-color: white;" class="ui-corner-bottom ui-content">
-      </div>
-    </div>
-    <!-- build:js:generic startup.min.js -->
-    <script src="startup.js"></script>
-    <!-- /build -->
-  </body>
-</html>
+<center>
+    <table class="table">
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</td></tr>
+        <tr>
+            <td></td>
+            <th>Reference Words</th>
+            <th>Synthesized Speech</th>
+        </tr>
+<!--        <tr>-->
+<!--            <td>FastSpeech2</td>-->
+<!--            <td colspan="3"><audio src="./audio/single_speaker/fastspeech2/LJ050-0248.wav" controls=""></audio></td>-->
+<!--        </tr>-->
+        <tr>
+            <td>0</td>
+            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)0.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)2.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)3.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)4.wav" controls=""></audio></td>
+        </tr>
+    </tbody></table></center>
+
+<br/>
+<HR align=center width=750>
+
+<center>
+    <table class="table">
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should <br/>be worked out between the secret service and both of these agencies.</td></tr>
+        <tr>
+            <td></td>
+            <th>Reference Words</th>
+            <th>Synthesized Speech</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0121-arrangements(4)0.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0121-arrangements(4)1.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0121-arrangements(4)2.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0121-arrangements(4)3.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0121-arrangements(4)4.wav" controls=""></audio></td>
+        </tr>
+    </tbody></table></center>
+    <HR align=center width=750>
+
+<br/>
+<center>
+    <table class="table">
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Since these <font color='#FF0000'>agencies</font> are already obliged constantly to evaluate the activities of such groups.</tr>
+        <tr>
+            <td></td>
+            <th>Reference Words</th>
+            <th>Synthesized Speech</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0118-agencies(4)0.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0118-agencies(4)1.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0118-agencies(4)2.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0118-agencies(4)3.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0118-agencies(4)4.wav" controls=""></audio></td>
+        </tr>
+    </tbody></table></center>
+<HR align=center width=750>
+       
+<br />
+<center>
+    <table class="table">
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Since the <font color='#FF0000'>assassination</font>, both the secret service and the FBI have recognized.</tr>
+        <tr>
+            <td></td>
+            <th>Reference Words</th>
+            <th>Synthesized Speech</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td><audio src="./audio/control/d(0).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination(3)0.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><audio src="./audio/control/d(1).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination(3)1.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><audio src="./audio/control/d(2).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination(3)2.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><audio src="./audio/control/d(3).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination(3)3.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><audio src="./audio/control/d(4).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination(3)4.wav" controls=""></audio></td>
+        </tr>
+    </tbody></table></center>
+
+    <HR align=center width=750>
+
+    <br />
+<center>
+    <table class="table">
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and CIA</font></tr>
+        <tr>
+            <td></td>
+            <th>Reference Words</th>
+            <th>Synthesized Speech</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td><audio src="./audio/control/a(0).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0115-necessary(0)0.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><audio src="./audio/control/a(1).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0115-necessary(0)1.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><audio src="./audio/control/a(2).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0115-necessary(0)2.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><audio src="./audio/control/a(3).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0115-necessary(0)3.wav" controls=""></audio></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><audio src="./audio/control/a(4).m4a" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0115-necessary(0)4.wav" controls=""></audio></td>
+        </tr>
+    </tbody></table></center>
+  </div>
+<!--  <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+
+</body><style id="stylish-2" class="stylish" type="text/css">#notebook-container * {
+
+font-family: Consolas, "微软雅黑"
+
+}</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
