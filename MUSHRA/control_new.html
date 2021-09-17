@@ -111,7 +111,7 @@
         <!-- show some informations before submitting the results -->
         <div id="SubmitBox">
             <div id="SubmitError" class="error">
-                We are sorry, but the following error occured during your submission:
+                We are sorry, but the following error occurred during your submission:
                 <p id="ErrorCode"></p>
             </div>
             <p class="submitOnline">
@@ -134,6 +134,9 @@
             <br />
             <button id="BtnSubmitData" class="submitOnline" onclick="testHandle.SubmitTestResults();">Submit</button>
             <button id="BtnDownloadData" class="submitDownload" onclick="testHandle.DownloadTestResults();">Download</button>
+            <button id="EmailSubmitData" class="submitDownload" onclick="email_results('cantabile_kwok@sjtu.edu.cn','control')">Submit Results</button>
+            <button onclick="window.location.href='./index.html'" type="button" id="Jump">Back to main page</button>
+
             <p class="submitEmail error">
                 <!-- edit here if you want to change the information about email submission, e.g. add privacy policy information -->
                 Results should be send to <span class="supervisorEmail"></span>

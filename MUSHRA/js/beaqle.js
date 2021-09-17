@@ -486,6 +486,7 @@ $.extend({ alert: function (message, title) {
         $('#BtnSubmitData').button({ icons: { primary: 'ui-icon-signal-diag' }});     
         $('#BtnDownloadData').button({ icons: { primary: 'ui-icon-arrowthickstop-1-s' }});
         $('#EmailSubmitData').button({icons: {primary: 'ui-icon-signal-diag'}});
+        $('#Jump').button();
 
         // install handler to warn user when test is running and he tries to leave the page
         var testHandle = this.TestState
