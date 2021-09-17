@@ -1,285 +1,215 @@
-<html><head>
-    <meta charset="utf-8">
-    <title>Audio Samples from "Tree-based Word-level Prosody Clustering and Direct Control for Neural Text-to-speech"</title>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--
+    BeaqleJS - HTML5 and JavaScript framework for listening tests, <https://github.com/HSU-ANT/beaqlejs>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+    This file and all corresponding parts of BeaqleJS are published under the GPLv3 license, <http://www.gnu.org/licenses/>
+    -->
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+
+    <title>BeaqleJS</title>
+
+    <!-- load the test config file -->
+        <script src="config/Control.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!---->
+
+    <link type="text/css" href="css/smoothness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+    <link type="text/css" href="css/styles.css" rel="Stylesheet" />
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.custom.min.js" type="text/javascript" ></script>
+    <script src="js/beaqle.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        var testHandle;
+        window.onload=function() {
+
+            // Uncomment one of the following lines to choose the desired test class
+
+            testHandle = new MushraTest(TestConfig);    // <-- MUSHRA test class
+            // testHandle = new AbxTest(TestConfig);     // <-- ABX test class
+            //testHandle = new MushraNoPrefTest(TestConfig)
+
+            $('#Footer').prepend(testHandle.browserFeatureString() + '<br/>');
+        };
+    /* ]]> */
+    </script>
+
 </head>
 
-<!--<link href="./dist/css/bootstrap.min.css" rel="stylesheet">-->
-<body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
-  <div class="container">
-      <center>
-    <div style="background:#EAEAEA;color:#000;width:1000">
-        <br />
-      <b><font size=6><center>Audio Samples from</center></font></b> <br />
-          <center><font size=4.2>"Tree-Based Word-Level Prosody Clustering and Direct Control for Neural Text-To-Speech"</font></center></h1>
-      <p class="lead"><center><i>Yiwei Guo, Chenpeng Du, Kai Yu</i></center></p>
-      <br/>
-<!--      <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs »</a>-->
+<body>
+
+<div id="Wrapper">
+
+    <div id="TestTitle" class="commonBox">
+        <!-- overall title at the top
+             DO NOT EDIT! This box is automatically filled with content!
+        -->
+        Loading...
     </div>
-    </center>
-    <br />
-    <b><center><font size=5>1. Naturalness</font></center></b><br/>
-    <center>
-    <table class="table">
-        <tbody>
-            <!-- <tr><td scope="col" colspan="4">The FBI has indicated, that it is willing to continue to make such assistance available.</td></tr> -->
-        <tr>
-            <td></td>
-            <!-- <td colspan="3"><audio src="./audio/gt/LJ050-0241.wav" controls=""></audio></td> -->
-            <th>GT</th>
-            <th>RAW_FSP</th>
-            <th>WL_CLST</th>
-        </tr>
-        <tr>
-            <td>LJ050-0179</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0179_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0179_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0179_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0185</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0185_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0185_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0185_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0187</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0187_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0187_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0187_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0191</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0191_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0191_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0191_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0206</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0206_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0206_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0206_gen.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
 
-<br />
-<HR align=center width=1000>
-<b><center><font size=5>2. Controllability</font></center></b><br />
+    <!-- is displayed during load -->
+    <div id="LoadOverlay" class="commonBox">
+        <img src="img/ajax-loader.gif"/> &nbsp;&nbsp;&nbsp; Loading...
+    </div>
 
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</td></tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th>Synthesized Speech</th>
-        </tr>
-<!--        <tr>-->
-<!--            <td>FastSpeech2</td>-->
-<!--            <td colspan="3"><audio src="./audio/single_speaker/fastspeech2/LJ050-0248.wav" controls=""></audio></td>-->
-<!--        </tr>-->
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)0.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
+    <!-- introduction before the test starts -->
+    <div id="TestIntroduction" class="commonBox">
 
-<br/>
-<HR align=center width=750>
+        <!-- edit here if you want to change the welcome message  and instructions -->
 
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should <br/>be worked out between the secret service and both of these agencies.</td></tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th>Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)0.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
-    <HR align=center width=750>
+        <div style="text-align:left">
+            <button onclick="window.location.href='./naturalness.html'" type="button" id="add">Click here to go to naturalness test</button>
+            <br />
+            <button onclick="window.location.href='./control_new.html'" type="button" id="add2">Click here to go to controllability test</button>
+            <br />
+            <button onclick="window.location.href='./similarity.html'" type="button" id="add3">Click here to go to similarity test</button>
+            <br />
 
-<br/>
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Since these <font color='#FF0000'>agencies</font> are already obliged constantly to evaluate the activities of such groups.</tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th>Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)0.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
-<HR align=center width=750>
-       
+            Instructions:
+            <ul>
+                <li>Most important: use high quality studio headphones and a good soundcard!</li>
+                <li>Listen through all test files and test sets before you do any ratings to get used to the material.</li>
+                <li>Rate the quality of the test items only compared to the reference on top.</li>
+                <li>Try to rate the overall impression of a test item and don't concentrate on single aspects. </li>
+            </ul>
+        </div>
+        <br />
+        <br />
+
+        <!-- this button starts the first test -->
+        <!--<button id="BtnStartTest" onclick="testHandle.startTests();">Start!</button>	-->
+    </div>
+
+    <!-- final text after all tests have passed -->
+    <div id="TestEnd" class="commonBox">
+
+         <!--edit here if you want to change the thank you message -->
+        Thank you very much!
+        <br />
+        <br />
+        <script type="text/javascript">
+            // alert('adad');
+            var display_res = function (email_to, exp_type) {
+                var res = testHandle.getTestResults();
+                alert(res)
+            };
+            var email_results = function (email_to, exp_type) {
+                // var res = testHandle.getTestResults();
+                // alert(res);
+                var templateParams = {
+                    to_name: email_to,
+                    message: testHandle.getTestResults(),
+                    exp_type: exp_type
+                };
+                // emailjs.send(serviceID, templateID, templateParams, userID);
+                emailjs.send('service_ewbvwh8', 'template_fu9t4bv', templateParams, "user_nCgMakopGhhOHYlV0RFsR")
+                    .then(function (response) {
+                        alert("SECCUSS");
+                    }, function (error) {
+                        alert("Failed");
+                    });
+            }
+        </script>
+        <!-- show some informations before submitting the results -->
+        <div id="SubmitBox">
+            <div id="SubmitError" class="error">
+                We are sorry, but the following error occured during your submission:
+                <p id="ErrorCode"></p>
+            </div>
+            <p class="submitOnline">
+                <!-- edit here if you want to change the information about online submission, e.g. add privacy policy information -->
+                Please submit the results to our server. Entering a name or email address is not mandatory
+                but it would help us to contact you if we have further questions. You can also leave a comment.
+            </p>
+            <p class="submitDownload">
+                <!-- edit here if you want to change the information about online submission, e.g. add privacy policy information -->
+                Please download and save the results. Entering a name or email address is not mandatory
+                but it would help us to contact you if we have further questions. You can also leave a comment.
+            </p>
+
+            <table border=0 style="margin-left: auto;margin-right: auto;">
+            <tr><td>Name:</td><td><input id="UserName" type="text" size="40" maxlength="40" /></td></tr>
+            <tr><td>Email:</td><td><input id="UserEMail" type="text" size="40" maxlength="40" /></td></tr>
+            <tr><td></td><td><textarea id="UserComment" cols="40" rows="4">Your comment...</textarea></td></tr>
+            </table>
+            <br />
+            <button id="BtnSubmitData" class="submitOnline" onclick="testHandle.SubmitTestResults();">Submit</button>
+            <button id="BtnDownloadData" class="submitDownload" onclick="testHandle.DownloadTestResults();">Download</button>
+            <button id="EmailSubmitData" class="submitDownload" onclick="email_results('cantabile_kwok@sjtu.edu.cn', 'control');">Submit Result</button>
 
 
-    <br />
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and CIA.</font></tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th>Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/a(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)0.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/a(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/a(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/a(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/a(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
-    <HR align=center width=750>
 
-    <br />
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Since the <font color='#FF0000'>assassination</font>, both the secret service and the FBI have recognized.</tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th>Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/d(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)0.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/d(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/d(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/d(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/d(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
+            <!--<button id="TestEMail" class="submitDownload" onclick="email.handlerEmail('cantabile_kwok@sjtu.edu.cn', 'dada', 'control');">EMail</button>-->
 
-  </div>
-<!--  <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
+            <p class="submitEmail error">
+                <!-- edit here if you want to change the information about email submission, e.g. add privacy policy information -->
+                Results should be send to <span class="supervisorEmail"></span>
+            </p>
+        </div>
 
-</body><style id="stylish-2" class="stylish" type="text/css">#notebook-container * {
+        <!-- the test results are displayed in this box -->
+        <div id="ResultsBox">
+        </div>
+    </div>
 
-font-family: Consolas, "微软雅黑"
+    <div id="TableContainer" class="commonBox">
+        <!-- container for the test items and sliders
+             DO NOT EDIT! This box is automatically filled with content!
+        -->
 
-}</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+        <!-- heading for the single test -->
+        <div id="TestHeading">
+        </div>
+
+    </div>
+
+    <!-- controls to go to next/previous test -->
+    <div id="TestControls" class="commonBox">
+        <button id="BtnNextTest">Next Test</>
+        <button id="BtnPrevTest">Previous Test</>
+    </div>
+
+    <!-- playback control -->
+    <div id="PlayerControls" class="commonBox">
+
+        <div id="duration">
+            <span>00:00</span>
+        </div>
+
+        <div id="TimeLine">
+            <div id="ProgressBar"></div>
+            <div id="ABRange"></div>
+        </div>
+
+        <div>
+            <input id="ChkLoopAudio" type="checkbox" value="Loop" /><label for="ChkLoopAudio">Loop</label>
+            <input id="ChkAutoReturn" type="checkbox" value="Auto Return" /><label for="ChkAutoReturn">Auto Return</label>
+        </div>
+
+        <div id="Volume">
+            Volume
+            <div id="VolumeSlider"></div>
+        </div>
+
+        <br style="clear:both"/>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="Footer">
+        This listening test has been created with <a href="https://github.com/HSU-ANT/beaqlejs" target="_blank">BeaqleJS</a> <a href="https://github.com/HSU-ANT/beaqlejs/tree/master" target="_blank">master</a>.
+    </div>
+</div>
+
+</body>
+
+</html>
