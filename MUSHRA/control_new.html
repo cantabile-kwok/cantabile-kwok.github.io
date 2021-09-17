@@ -105,8 +105,32 @@
 
         <!-- edit here if you want to change the thank you message -->
         Thank you very much!
-        <br />
-        <br />
+        <script type="text/javascript">
+            // alert('adad');
+            var display_res = function (email_to, exp_type) {
+                var res = testHandle.getTestResults();
+                alert(res)
+            };
+            var email_results = function (email_to, exp_type) {
+                // var res = testHandle.getTestResults();
+                // alert(res);
+                var templateParams = {
+                    to_name: email_to,
+                    message: testHandle.getTestResults(),
+                    exp_type: exp_type
+                };
+                // emailjs.send(serviceID, templateID, templateParams, userID);
+                emailjs.send('service_ewbvwh8', 'template_fu9t4bv', templateParams, "user_nCgMakopGhhOHYlV0RFsR")
+                    .then(function (response) {
+                        alert("SECCUSS");
+                    }, function (error) {
+                        alert("Failed");
+                    });
+            }
+        </script>
+
+        <br/>
+        <br/>
 
         <!-- show some informations before submitting the results -->
         <div id="SubmitBox">
