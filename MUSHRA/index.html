@@ -67,9 +67,14 @@
         <!-- edit here if you want to change the welcome message  and instructions -->
 
         <div style="text-align:left">
-            Thanks for your interest in participating in the listening test. The overall test will roughly take 15 minutes. Please take the time and carefully rate every item. AAAAAAAAAAAAAAA!
+            <button onclick="window.location.href='./naturalness.html'" type="button" id="add">Click here to go to naturalness test</button>
             <br />
+            <button onclick="window.location.href='./control_new.html'" type="button" id="add2">Click here to go to controllability test</button>
             <br />
+            <button onclick="window.location.href='./similarity.html'" type="button" id="add3">Click here to go to similarity test</button>
+
+            <br />
+
             Instructions:
             <ul>
                 <li>Most important: use high quality studio headphones and a good soundcard!</li>
@@ -80,9 +85,9 @@
         </div>
         <br />
         <br />
-                        
+
         <!-- this button starts the first test -->
-        <button id="BtnStartTest" onclick="testHandle.startTests();">Start!</button>	
+        <!--<button id="BtnStartTest" onclick="testHandle.startTests();">Start!</button>	-->
     </div>
 
     <!-- final text after all tests have passed -->
