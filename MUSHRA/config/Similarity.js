@@ -1,6 +1,6 @@
 // configure the test here
 var TestConfig = {
-  "TestName": "Mushra Naturalness Test",
+  "TestName": "Mushra Similarity Test",
   "RateScalePng": "img/similar_scale.png",
   "RateScaleBgPng": "img/scale_abs_background.png",
   "RateMinValue": 0,
