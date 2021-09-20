@@ -967,18 +967,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "The secret service has embarked <font color='#FF0000'>upon</font> a complete overhaul of its research activities. the staff of the protective research section prs ",
-            "TestID": "control_80",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0043_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0043-upon-d3-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0043-upon-d3-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0043-upon-d3-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0043-upon-d3-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0043-upon-d3-4_gen.wav"
-            }
-        },
-        {
             "Name": "The secret service has embarked upon a <font color='#FF0000'>complete</font> overhaul of its research activities. the staff of the protective research section prs ",
             "TestID": "control_81",
             "Files": {
@@ -988,18 +976,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0043-complete-d3-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0043-complete-d3-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0043-complete-d3-4_gen.wav"
-            }
-        },
-        {
-            "Name": "The secret service has embarked upon a complete overhaul of its <font color='#FF0000'>research</font> activities. the staff of the protective <font color='#FF0000'>research</font> section prs ",
-            "TestID": "control_82",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0043_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0043-research-d2-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0043-research-d2-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0043-research-d2-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0043-research-d2-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0043-research-d2-4_gen.wav"
             }
         },
         {
@@ -1687,18 +1663,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "B who have made threats of bodily harm against officials or employees of federal, state or local <font color='#FF0000'>government</font> or officials of a foreign <font color='#FF0000'>government</font>, ",
-            "TestID": "control_140",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0061_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0061-government-d2-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0061-government-d2-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0061-government-d2-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0061-government-d2-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0061-government-d2-4_gen.wav"
-            }
-        },
-        {
             "Name": "B who have made threats of bodily harm against officials or employees of federal, state or local government or officials of a <font color='#FF0000'>foreign</font> government, ",
             "TestID": "control_141",
             "Files": {
@@ -1708,18 +1672,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0061-foreign-d2-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0061-foreign-d2-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0061-foreign-d2-4_gen.wav"
-            }
-        },
-        {
-            "Name": "B who have made threats of bodily harm against officials or employees of federal, state or local <font color='#FF0000'>government</font> or officials of a foreign <font color='#FF0000'>government</font>, ",
-            "TestID": "control_142",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0061_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0061-government-d0-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0061-government-d0-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0061-government-d0-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0061-government-d0-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0061-government-d0-4_gen.wav"
             }
         },
         {
@@ -4231,18 +4183,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "Secretary dillon testified that the use of such <font color='#FF0000'>liaison</font> officers is the only effective way to insure that adequate <font color='#FF0000'>liaison</font> is maintained. ",
-            "TestID": "control_352",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0140_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d2-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d2-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d2-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d2-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d2-4_gen.wav"
-            }
-        },
-        {
             "Name": "Secretary dillon testified that the use of such liaison officers is the only <font color='#FF0000'>effective</font> way to insure that adequate liaison is maintained. ",
             "TestID": "control_353",
             "Files": {
@@ -4264,18 +4204,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0140-adequate-d4-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0140-adequate-d4-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0140-adequate-d4-4_gen.wav"
-            }
-        },
-        {
-            "Name": "Secretary dillon testified that the use of such <font color='#FF0000'>liaison</font> officers is the only effective way to insure that adequate <font color='#FF0000'>liaison</font> is maintained. ",
-            "TestID": "control_355",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0140_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d1-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d1-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d1-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d1-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0140-liaison-d1-4_gen.wav"
             }
         },
         {
@@ -4483,18 +4411,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "And the <font color='#FF0000'>commission</font> recommends that these and the other measures suggested by the <font color='#FF0000'>commission</font> be pursued vigorously by secret service. ",
-            "TestID": "control_373",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0145_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0145-commission-d3-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0145-commission-d3-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0145-commission-d3-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0145-commission-d3-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0145-commission-d3-4_gen.wav"
-            }
-        },
-        {
             "Name": "And the commission recommends that these and the other measures <font color='#FF0000'>suggested</font> by the commission be pursued vigorously by secret service. ",
             "TestID": "control_374",
             "Files": {
@@ -4504,18 +4420,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0145-suggested-d1-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0145-suggested-d1-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0145-suggested-d1-4_gen.wav"
-            }
-        },
-        {
-            "Name": "And the <font color='#FF0000'>commission</font> recommends that these and the other measures suggested by the <font color='#FF0000'>commission</font> be pursued vigorously by secret service. ",
-            "TestID": "control_375",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0145_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0145-commission-d4-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0145-commission-d4-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0145-commission-d4-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0145-commission-d4-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0145-commission-d4-4_gen.wav"
             }
         },
         {
@@ -5047,18 +4951,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "This money would be used to compensate consultants, to lease standard <font color='#FF0000'>equipment</font> or to purchase specially designed pilot <font color='#FF0000'>equipment</font>. ",
-            "TestID": "control_420",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0156_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d0-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d0-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d0-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d0-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d0-4_gen.wav"
-            }
-        },
-        {
             "Name": "This money would be used to compensate consultants, to lease standard equipment or to purchase specially <font color='#FF0000'>designed</font> pilot equipment. ",
             "TestID": "control_421",
             "Files": {
@@ -5080,18 +4972,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0156-pilot-d4-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0156-pilot-d4-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0156-pilot-d4-4_gen.wav"
-            }
-        },
-        {
-            "Name": "This money would be used to compensate consultants, to lease standard <font color='#FF0000'>equipment</font> or to purchase specially designed pilot <font color='#FF0000'>equipment</font>. ",
-            "TestID": "control_423",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0156_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d1-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d1-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d1-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d1-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0156-equipment-d1-4_gen.wav"
             }
         },
         {
@@ -7363,30 +7243,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "However, the <font color='#FF0000'>nineteen</font> sixty four to sixty five budget request was submitted in november <font color='#FF0000'>nineteen</font> sixty three ",
-            "TestID": "control_613",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0219_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d3-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d3-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d3-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d3-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d3-4_gen.wav"
-            }
-        },
-        {
-            "Name": "However, the nineteen sixty four to sixty five <font color='#FF0000'>budget</font> request was submitted in november nineteen sixty three ",
-            "TestID": "control_614",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0219_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0219-budget-d2-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0219-budget-d2-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0219-budget-d2-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0219-budget-d2-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0219-budget-d2-4_gen.wav"
-            }
-        },
-        {
             "Name": "However, the nineteen sixty four to sixty five budget <font color='#FF0000'>request</font> was submitted in november nineteen sixty three ",
             "TestID": "control_615",
             "Files": {
@@ -7408,18 +7264,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0219-submitted-d3-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0219-submitted-d3-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0219-submitted-d3-4_gen.wav"
-            }
-        },
-        {
-            "Name": "However, the <font color='#FF0000'>nineteen</font> sixty four to sixty five budget request was submitted in november <font color='#FF0000'>nineteen</font> sixty three ",
-            "TestID": "control_617",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0219_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d1-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d1-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d1-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d1-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0219-nineteen-d1-4_gen.wav"
             }
         },
         {
@@ -7696,30 +7540,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0225-protect-d3-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0225-protect-d3-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0225-protect-d3-4_gen.wav"
-            }
-        },
-        {
-            "Name": "And be available to protect the <font color='#FF0000'>president</font> or vice <font color='#FF0000'>president</font> when they travel, ",
-            "TestID": "control_641",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0225_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0225-president-d2-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0225-president-d2-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0225-president-d2-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0225-president-d2-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0225-president-d2-4_gen.wav"
-            }
-        },
-        {
-            "Name": "And be available to protect the <font color='#FF0000'>president</font> or vice <font color='#FF0000'>president</font> when they travel, ",
-            "TestID": "control_642",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0225_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0225-president-d1-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0225-president-d1-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0225-president-d1-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0225-president-d1-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0225-president-d1-4_gen.wav"
             }
         },
         {
@@ -9667,18 +9487,6 @@ var TestConfig = {
             }
         },
         {
-            "Name": "As has been pointed out, the <font color='#FF0000'>commission</font> has not resolved all the proposals which could be made. the <font color='#FF0000'>commission</font> nevertheless is confident that, ",
-            "TestID": "control_805",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0276_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0276-commission-d3-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0276-commission-d3-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0276-commission-d3-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0276-commission-d3-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0276-commission-d3-4_gen.wav"
-            }
-        },
-        {
             "Name": "As has been pointed out, the commission has not <font color='#FF0000'>resolved</font> all the proposals which could be made. the commission nevertheless is confident that, ",
             "TestID": "control_806",
             "Files": {
@@ -9688,18 +9496,6 @@ var TestConfig = {
                 "3": "audio/Control_d_all/synthesized/LJ050-0276-resolved-d4-2_gen.wav",
                 "4": "audio/Control_d_all/synthesized/LJ050-0276-resolved-d4-3_gen.wav",
                 "5": "audio/Control_d_all/synthesized/LJ050-0276-resolved-d4-4_gen.wav"
-            }
-        },
-        {
-            "Name": "As has been pointed out, the <font color='#FF0000'>commission</font> has not resolved all the proposals which could be made. the <font color='#FF0000'>commission</font> nevertheless is confident that, ",
-            "TestID": "control_807",
-            "Files": {
-                "Reference": "audio/Control_new/GT/LJ050-0276_gen.wav",
-                "1": "audio/Control_d_all/synthesized/LJ050-0276-commission-d2-0_gen.wav",
-                "2": "audio/Control_d_all/synthesized/LJ050-0276-commission-d2-1_gen.wav",
-                "3": "audio/Control_d_all/synthesized/LJ050-0276-commission-d2-2_gen.wav",
-                "4": "audio/Control_d_all/synthesized/LJ050-0276-commission-d2-3_gen.wav",
-                "5": "audio/Control_d_all/synthesized/LJ050-0276-commission-d2-4_gen.wav"
             }
         },
         {
