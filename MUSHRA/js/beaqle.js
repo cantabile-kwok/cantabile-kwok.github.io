@@ -1077,15 +1077,18 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
         }
 
         // create new test table
-        var tab = document.createElement('table');
-        tab.setAttribute('id','TestTable');
+
+        var tab2 = document.createElement('table');
+        tab2.setAttribute('id','TestTable2');
         
         var row = new Array();
         var cell = new Array();
-        row = tab.insertRow(-1);
+        row = tab2.insertRow(-1);
         cell[0] = row.insertCell(-1);
         cell[0].innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
         
+        var tab = document.createElement('table');
+        tab.setAttribute('id','TestTable');
         var fileID = "";
         var row = new Array();
         var cell = new Array();
