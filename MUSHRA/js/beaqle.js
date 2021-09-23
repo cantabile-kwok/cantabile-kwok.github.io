@@ -1086,6 +1086,9 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
             
         // add reference
         fileID = "Reference";
+        row_first = tab.insertRow(-1);
+        c = row_first.insertCell(-1);
+        c.innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
         row  = tab.insertRow(-1);
         cell[0] = row.insertCell(-1);
         cell[0].innerHTML = "<span class='testItem'>Reference</span>";
