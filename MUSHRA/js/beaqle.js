@@ -1086,18 +1086,21 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
             
         // add reference
         fileID = "Reference";
-        row_first = tab.insertRow(-1);
-        c = row_first.insertCell(-1);
-        c.innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
+        // row_first = tab.insertRow(-1);
+        //  = row_first.insertCell(-1);
+        // c.innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
+        
         row  = tab.insertRow(-1);
         cell[0] = row.insertCell(-1);
-        cell[0].innerHTML = "<span class='testItem'>Reference</span>";
+        cell[0].innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
         cell[1] = row.insertCell(-1);
-        cell[1].innerHTML =  '<button id="play'+fileID+'Btn" class="playButton" rel="'+fileID+'">Play</button>';
+        cell[1].innerHTML = "<span class='testItem'>Reference</span>";
         cell[2] = row.insertCell(-1);
-        cell[2].innerHTML = "<button class='stopButton'>Stop</button>";  	
+        cell[2].innerHTML =  '<button id="play'+fileID+'Btn" class="playButton" rel="'+fileID+'">Play</button>';
         cell[3] = row.insertCell(-1);
-        cell[3].innerHTML = "<img id='ScaleImage' src='"+this.TestConfig.RateScalePng+"'/>";  	
+        cell[3].innerHTML = "<button class='stopButton'>Stop</button>";  	
+        cell[4] = row.insertCell(-1);
+        cell[4].innerHTML = "<img id='ScaleImage' src='"+this.TestConfig.RateScalePng+"'/>";  	
         
         this.addAudio(TestIdx, fileID, fileID);
             
