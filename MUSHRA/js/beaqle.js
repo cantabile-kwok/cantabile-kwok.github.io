@@ -1079,7 +1079,13 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
         // create new test table
         var tab = document.createElement('table');
         tab.setAttribute('id','TestTable');
-            
+        
+        var row = new Array();
+        var cell = new Array();
+        row = tab.insertRow(-1);
+        cell[0] = row.insertCell(-1);
+        cell[0].innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
+        
         var fileID = "";
         var row = new Array();
         var cell = new Array();
@@ -1089,9 +1095,7 @@ MushraTest.prototype.createTestDOM = function (TestIdx) {
         // row_first = tab.insertRow(-1);
         //  = row_first.insertCell(-1);
         // c.innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
-        row = tab.insertRow(-1);
-        cell[0] = row.insertCell(-1);
-        cell[0].innerHTML = "<p style='text-align:center'>先听<font color='#FF0000'>Reference</font>中标红的单词，再根据<font color='#00FF00'>Test Item</font>中的这个词韵律相似程度进行打分</p>"
+       
         row = tab.insertRow(-1);
         cell[0] = row.insertCell(-1);
         cell[0].innerHTML = "<span class='testItem'>Reference</span>";
