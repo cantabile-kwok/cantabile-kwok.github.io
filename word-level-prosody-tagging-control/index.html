@@ -39,6 +39,25 @@
     <br />
     <b><center><font size=5>1. Naturalness</font></center></b><br/>
     <center>
+        <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+            <tbody>
+            <tr> 
+                <td width="100" style="word-break:normal;">
+                    This part presents the naturalness of compared four systems, corresonding to Section 3.3 in the paper.     
+                    Note that all the audio is synthesized from MelGAN, including ground truth.
+                    <br/><br/>
+                    <b>GT</b>: Ground truth
+                    <br/>
+                    <b>Raw_FSP</b>: Typical FastSpeech2 model with no prosody modeling
+                    <br/>
+                    <b>PLP_MDN</b>: Phone-level prosody modeling with mixture density network
+                    <br/>
+                    <b>WLP_predict</b>: Purposed word-level prosody tagging system. Here all the tags are automatically predicted from text.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br/>
     <table class="table">
         <tbody>
             <!-- <tr><td scope="col" colspan="4">The FBI has indicated, that it is willing to continue to make such assistance available.</td></tr> -->
@@ -98,6 +117,18 @@
 <HR align=center width=1000>
 <b><center><font size=5>2. Prosody Controllability</font></center></b><br />
 <center>
+    <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+        <tbody>
+        <tr> 
+            <td width="100" style="word-break:normal;">This part presents the experiment of prosody controllability in Section 3.4 of the paper. <br/>
+                In this demo, all the controlled words belong to the same leaf node "d". In each row below, we present
+                the ground truth speech (synthesized from MelGAN) and five synthetic speeches we obtain by controlling with the five prosody tags.
+                The word being controlled here is marked red. Listeners can verify that, when the specified prosody tag is equal to the ground-truth prosody tag, the word prosody in the synthetic speech should be most similar to the recordings.                
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">International business machines <font color='#FF0000'>corporation</font>, <br/>and a panel of psychiatric and psychological experts. </th>
             <th><font color='#FFFFFF'>White</font></th>
@@ -485,8 +516,25 @@
 <!-- <b><center><font size=5>3. Controllability</font></center></b><br /> -->
 
 <center>
+    <br/>
+    <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+        <tbody>
+        <tr> 
+            <td width="100" style="word-break:normal;">
+                In addition to the experiments mentioned in the paper, we also present a similar demo for word-level prosody control,
+                which might be easier to understand.  
+                Here, the controlled words can come from different leaf nodes.
+                For each of those words, we synthesize it using the five prosody tags in its leaf node.
+                For each tag, we concatenate the words in the training set that have this specific ground truth tag.
+                These concatenated words are called <b>reference words</b>.
+                Listeners can verify that the controlled word in the right column has the similar prosody with the reference words at left.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</td></tr>
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8"><b>And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</b></td></tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
@@ -524,11 +572,16 @@
     </tbody></table></center>
 
 <br/>
-<HR align=center width=750>
+<br/>
+<!-- <HR align=center width=750> -->
 
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should <br/>be worked out between the secret service and both of these agencies.</td></tr>
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+            <b>
+            Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should <br/>be worked out between the secret service and both of these agencies.
+            </b>
+        </td></tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
@@ -560,12 +613,17 @@
             <td><audio src="./audio/control/LJ050-0121-arrangements(4)4.wav" controls=""></audio></td>
         </tr>
     </tbody></table></center>
-    <HR align=center width=750>
+    <!-- <HR align=center width=750> -->
 
+<br/>
 <br/>
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Since these <font color='#FF0000'>agencies</font> are already obliged constantly to evaluate the activities of such groups.</tr>
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+            <b>
+            Since these <font color='#FF0000'>agencies</font> are already obliged constantly to evaluate the activities of such groups.
+            </b>
+        </tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
@@ -597,14 +655,19 @@
             <td><audio src="./audio/control/LJ050-0118-agencies(4)4.wav" controls=""></audio></td>
         </tr>
     </tbody></table></center>
-<HR align=center width=750>
+<!-- <HR align=center width=750> -->
        
 
 
     <br />
+    <br />
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and CIA.</font></tr>
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+            <b>
+            This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and CIA.
+            </b>
+        </tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
@@ -636,12 +699,17 @@
             <td><audio src="./audio/control/LJ050-0115-necessary(0)4.wav" controls=""></audio></td>
         </tr>
     </tbody></table></center>
-    <HR align=center width=750>
+    <!-- <HR align=center width=750> -->
 
+    <br />
     <br />
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">Since the <font color='#FF0000'>assassination</font>, both the secret service and the FBI have recognized.</tr>
+        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+            <b>
+            Since the <font color='#FF0000'>assassination</font>, both the secret service and the FBI have recognized.
+            </b>
+        </tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
