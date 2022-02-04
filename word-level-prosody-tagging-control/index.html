@@ -30,9 +30,9 @@
     <div style="background:#EAEAEA;color:#000;width:1000">
         <br />
       <b><font size=6><center>Audio Samples from</center></font></b> <br />
-          <center><font size=4.2>"Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</font></center></h1>
+          <center><font size=4.2>"Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis", ICASSP2022</font></center></h1>
       <p class="lead"><center><i>Yiwei Guo, Chenpeng Du, Kai Yu</i></center></p>
-      <br />
+      <!-- <br /> -->
       <p class="lead"><center>cantabile_kwok@sjtu.edu.cn</center></p>
       <br/>
 <!--      <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs »</a>-->
@@ -47,12 +47,13 @@
                 <td width="100" style="word-break:normal;">
                     This part presents the naturalness of four compared systems, corresonding to Section 3.3 in the paper.     
                     Note that all the audio on this page is synthesized from MelGAN, including ground truth.
+                    All the utterances are from <a href="https://keithito.com/LJ-Speech-Dataset/">LJspeech</a> with utterance IDs listed.
                     <br/><br/>
-                    <b>GT</b>: Ground truth
+                    <b>GT</b>: Ground truth (resynthesized)
                     <br/>
-                    <b>Raw_FSP</b>: Typical FastSpeech2 model with no prosody modeling
+                    <b>Raw_FSP</b>: Typical <a href="https://arxiv.org/pdf/2006.04558.pdf?ref=https://githubhelp.com">FastSpeech2</a> model with no prosody modeling
                     <br/>
-                    <b>PLP_MDN</b>: Phone-level prosody modeling with mixture density network
+                    <b>PLP_MDN</b>: Phone-level prosody modeling with mixture density network (purposed in this <a href="https://arxiv.org/pdf/2102.00851.pdf">paper</a>)
                     <br/>
                     <b>WLP_predict</b>: Purposed word-level prosody tagging system. Here all the tags are automatically predicted from text.
                 </td>
