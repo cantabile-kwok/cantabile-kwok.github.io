@@ -3,7 +3,7 @@
     <title>Audio Samples from "Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <style>
       .bd-placeholder-img {
@@ -18,6 +18,7 @@
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
+          /* display: inline; */
         }
       }
     </style>
@@ -131,7 +132,22 @@
         </tr>
         </tbody>
     </table>
-    <br/>
+    <br/><br/>
+    <!-- <center> -->
+        <!-- <div style="disp;"> -->
+
+        <!-- <img src="single_utt_mel.png" width="400" style='float:left;'/> -->
+        <!-- <table class='table' style='float:left'> -->
+            <!-- <tbody><tr><th></th></tr></tbody> -->
+            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)0.wav' controls=''></audio></td></tr> -->
+            <!-- <tr><td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=''></audio></td></tr> -->
+            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)2.wav' controls=''></audio></td></tr> -->
+            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)3.wav' controls=''></audio></td></tr> -->
+            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)4.wav' controls=''></audio></td></tr> -->
+        <!-- </table> -->
+        <!-- </div> -->
+    <!-- </center> -->
+        <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">International Business Machines <font color='#FF0000'>Corporation</font>, <br/>and a panel of psychiatric and psychological experts. </th>
             <th><font color='#FFFFFF'>White</font></th>
@@ -191,27 +207,11 @@
             <td>Synthetic Speech with tag 4</td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-4_gen.wav" controls=""></audio></td>
         </tr>
-        <!-- <tr>
-            <td>2</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
-        </tr> -->
         </tbody>
     </table>
 </center>
 <br/>
 <br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
 <center>
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8"><font color='#FF0000'>Determination</font> to use a means, other than legal or peaceful, to satisfy his <br/>grievance, end quote, within the meaning of the new criteria.</th>
@@ -531,17 +531,21 @@
                 For each tag, we concatenate some words in the training set of recordings that have this specific ground truth tag.
                 These concatenated words are called <b>reference words</b>.
                 Listeners can verify that the controlled word in the right column has the similar prosody with the reference words at left.
+                <br/>
+                The mel-spectrograms are also shown so as to depict the prosodic variations.
             </td>
         </tr>
         </tbody>
     </table>
     <br/>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8"><b>And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</b></td></tr>
+        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</b></td>
+            <!-- <td></td> -->
+        </tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
-            <th>Synthesized Speech</th>
+            <th colspan="2">Synthesized Speech</th>
         </tr>
 <!--        <tr>-->
 <!--            <td>FastSpeech2</td>-->
@@ -551,6 +555,7 @@
             <td>0</td>
             <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
             <td><audio src="./audio/control/LJ050-0114-responsibilities(4)0.wav" controls=""></audio></td>
+            <td rowspan="5"><img src="LJ050-0114-mel.png" width="400"/></td>
         </tr>
         <tr>
             <td>1</td>
@@ -572,7 +577,8 @@
             <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
             <td><audio src="./audio/control/LJ050-0114-responsibilities(4)4.wav" controls=""></audio></td>
         </tr>
-    </tbody></table></center>
+    </tbody></table>
+</center>
 
 <br/>
 <br/>
@@ -580,20 +586,21 @@
 
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
             <b>
-            Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should <br/>be worked out between the secret service and both of these agencies.
+            Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should be worked out between the secret service and <br/> both of these agencies.
             </b>
         </td></tr>
         <tr>
             <td></td>
             <th>Reference Words</th>
-            <th>Synthesized Speech</th>
+            <th colspan="2">Synthesized Speech</th>
         </tr>
         <tr>
             <td>0</td>
             <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
             <td><audio src="./audio/control/LJ050-0121-arrangements(4)0.wav" controls=""></audio></td>
+            <td rowspan="5"><img src="LJ050-0121-mel.png" width="400"/></td>
         </tr>
         <tr>
             <td>1</td>
@@ -622,7 +629,7 @@
 <br/>
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
             <b>
             Since these <font color='#FF0000'>agencies</font> are already obliged constantly to evaluate the activities of such groups.
             </b>
@@ -630,12 +637,13 @@
         <tr>
             <td></td>
             <th>Reference Words</th>
-            <th>Synthesized Speech</th>
+            <th colspan="2">Synthesized Speech</th>
         </tr>
         <tr>
             <td>0</td>
             <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
             <td><audio src="./audio/control/LJ050-0118-agencies(4)0.wav" controls=""></audio></td>
+            <td rowspan="5"><img src="LJ050-0118-mel.png" width="400"/></td>
         </tr>
         <tr>
             <td>1</td>
@@ -666,7 +674,7 @@
     <br />
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
             <b>
             This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and CIA.
             </b>
@@ -674,12 +682,13 @@
         <tr>
             <td></td>
             <th>Reference Words</th>
-            <th>Synthesized Speech</th>
+            <th colspan="2">Synthesized Speech</th>
         </tr>
         <tr>
             <td>0</td>
             <td><audio src="./audio/control/a(0).m4a" controls=""></audio></td>
             <td><audio src="./audio/control/LJ050-0115-necessary(0)0.wav" controls=""></audio></td>
+            <td rowspan="5"><img src="LJ050-0115-mel.png" width="400"/></td>
         </tr>
         <tr>
             <td>1</td>
@@ -708,7 +717,7 @@
     <br />
 <center>
     <table class="table">
-        <tbody><tr><td scope="col" colspan="3" bgcolor="#F8F8F8">
+        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align="center">
             <b>
             Since the <font color='#FF0000'>assassination</font>, both the secret service and the FBI have recognized.
             </b>
@@ -716,32 +725,33 @@
         <tr>
             <td></td>
             <th>Reference Words</th>
-            <th>Synthesized Speech</th>
+            <th colspan="2">Synthesized Speech</th>
         </tr>
         <tr>
             <td>0</td>
             <td><audio src="./audio/control/d(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)0.wav" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination-d0-0_gen.wav" controls=""></audio></td>
+            <td rowspan="5"><img src="LJ050-0054-mel.png" width="400"/></td>
         </tr>
         <tr>
             <td>1</td>
             <td><audio src="./audio/control/d(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)1.wav" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination-d0-1_gen.wav" controls=""></audio></td>
         </tr>
         <tr>
             <td>2</td>
             <td><audio src="./audio/control/d(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)2.wav" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination-d0-2_gen.wav" controls=""></audio></td>
         </tr>
         <tr>
             <td>3</td>
             <td><audio src="./audio/control/d(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)3.wav" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination-d0-3_gen.wav" controls=""></audio></td>
         </tr>
         <tr>
             <td>4</td>
             <td><audio src="./audio/control/d(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination(3)4.wav" controls=""></audio></td>
+            <td><audio src="./audio/control/LJ050-0054-assassination-d0-4_gen.wav" controls=""></audio></td>
         </tr>
     </tbody></table></center>
 
