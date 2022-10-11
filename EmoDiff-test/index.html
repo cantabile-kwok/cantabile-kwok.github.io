@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+
+    <!--
+    BeaqleJS - HTML5 and JavaScript framework for listening tests, <https://github.com/HSU-ANT/beaqlejs>
+
+    This file and all corresponding parts of BeaqleJS are published under the GPLv3 license, <http://www.gnu.org/licenses/>    
+    -->
+
+
+    <title>BeaqleJS</title>
+    
+    <!-- load the test config file -->
+        <script src="config/preference_test.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!---->
+    
+    <link type="text/css" href="css/smoothness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+    <link type="text/css" href="css/styles.css" rel="Stylesheet" />
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.custom.min.js" type="text/javascript" ></script>
+    <script src="js/beaqle.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        var testHandle;
+        window.onload=function() {
+
+            // Uncomment one of the following lines to choose the desired test class
+
+            testHandle = new MushraTest(TestConfig);    // <-- MUSHRA test class
+            // testHandle = new AbxTest(TestConfig);     // <-- ABX test class
+            //testHandle = new MushraNoPrefTest(TestConfig)
+
+            $('#Footer').prepend(testHandle.browserFeatureString() + '<br/>');
+        };
+    /* ]]> */
+    </script>
+   
+</head>
+
+<body>
+
+<div id="Wrapper">
+
+    <div id="TestTitle" class="commonBox">
+        <!-- overall title at the top 
+             DO NOT EDIT! This box is automatically filled with content!
+        -->
+        Loading...
+    </div>
+    
+    <!-- is displayed during load -->
+    <div id="LoadOverlay" class="commonBox">
+        <img src="img/ajax-loader.gif"/> &nbsp;&nbsp;&nbsp; Loading...
+    </div>
+
+    <!-- introduction before the test starts -->
+    <div id="TestIntroduction" class="commonBox">
+        
+        <!-- edit here if you want to change the welcome message  and instructions -->
+
+        <div style="text-align:left">
+            Thanks for taking part in this listening test about prosody control in text-to-speech systems. There are three sub-tests in total: naturalness, controllability and similarity. You can return to this page once you have finished any of these three.
+            <br/>
+            感谢您参加此次听音测试。本次听音测试是关于语音合成系统中的韵律控制。共有三个子测试，分别是自然度、控制力和相似度。完成其中任意一个后，均可以回到这个页面。
+            <br />
+            <br />
+            Click the button below to enter naturalness test. It has 10 items and will take about 6-7 minutes.
+            <br/>
+            点击下方按钮以进入自然度测试。共有10项，共计花费6-7分钟。
+            <br/>
+            <button onclick="window.location.href='./diversity.html'" type="button" id="Jump">Click here to go to naturalness test</button>
+            <br />
+            <br />
+
+            Instructions:
+            <ul>
+                <li>Most important: use high quality studio headphones and a good soundcard!</li>
+                <li>It's OK if you have to leave from the screen for a moment in the middle of a test. Just keep the page on and remember to finish it when you come back. Also, you can close the page if you have to once you have finished any test of the three.</li>
+                <li>There is a toggle bar at every page of the listening test. Drag it if you think the audio is too long.</li>
+                <li>Please carefully rate every item. Your scores matter a lot. Most important of all: have a nice time!</li>
+                <li>For mac users: Chrome is preferred instead of Safari.</li>
+            </ul>
+            <br/>
+            说明：
+            <ul>
+                <li>首先，请务必确保您使用较高质量的耳机设备，且处于较安静的环境中。</li>
+                <li>如您需要中途离开，只需保持页面打开即可。另外，三个子测试结束后都会分别提交结果，如您时间不允许，可以只做其一或其二。</li>
+                <li>每个测试页面下方都有一个滑块，可以用来改变播放的范围。如果您遇到冗长且无用的片段，可以拖动滑块跳过。</li>
+                <li>请仔细为每个音频打分，您的提交结果对我们很重要。Have fun！</li>
+                <li>For Mac用户：请使用Chrome浏览器。Safari可能会有播放音频上的问题。</li>
+            </ul>
+        </div>
+        <br />
+        <br />
+
+        <!-- this button starts the first test -->
+        <!--<button id="BtnStartTest" onclick="testHandle.startTests();">Start!</button>	-->
+    </div>
+
+    <!-- final text after all tests have passed -->
+    <div id="TestEnd" class="commonBox">
+
+         <!--edit here if you want to change the thank you message -->
+        Thank you very much!
+        <br />
+        <br />
+        <script type="text/javascript">
+            // alert('adad');
+            var display_res = function (email_to, exp_type) {
+                var res = testHandle.getTestResults();
+                alert(res)
+            };
+            var email_results = function (email_to, exp_type) {
+                // var res = testHandle.getTestResults();
+                // alert(res);
+                var templateParams = {
+                    to_name: email_to,
+                    message: testHandle.getTestResults(),
+                    exp_type: exp_type
+                };
+                // emailjs.send(serviceID, templateID, templateParams, userID);
+                emailjs.send('service_ewbvwh8', 'template_fu9t4bv', templateParams, "user_nCgMakopGhhOHYlV0RFsR")
+                    .then(function (response) {
+                        alert("SECCUSS");
+                    }, function (error) {
+                        alert("Failed");
+                    });
+            }
+        </script>
+        <!-- show some informations before submitting the results -->
+        <div id="SubmitBox">
+            <div id="SubmitError" class="error">
+                We are sorry, but the following error occured during your submission:
+                <p id="ErrorCode"></p>
+            </div>
+            <p class="submitOnline">
+                <!-- edit here if you want to change the information about online submission, e.g. add privacy policy information -->
+                Please submit the results to our server. Entering a name or email address is not mandatory
+                but it would help us to contact you if we have further questions. You can also leave a comment.
+            </p>
+            <p class="submitDownload">
+                <!-- edit here if you want to change the information about online submission, e.g. add privacy policy information -->
+                Please download and save the results. Entering a name or email address is not mandatory 
+                but it would help us to contact you if we have further questions. You can also leave a comment.
+            </p>
+
+            <table border=0 style="margin-left: auto;margin-right: auto;">
+            <tr><td>Name:</td><td><input id="UserName" type="text" size="40" maxlength="40" /></td></tr>
+            <tr><td>Email:</td><td><input id="UserEMail" type="text" size="40" maxlength="40" /></td></tr>
+            <tr><td></td><td><textarea id="UserComment" cols="40" rows="4">Your comment...</textarea></td></tr>
+            </table>
+            <br />
+            <button id="BtnSubmitData" class="submitOnline" onclick="testHandle.SubmitTestResults();">Submit</button>
+            <button id="BtnDownloadData" class="submitDownload" onclick="testHandle.DownloadTestResults();">Download下载</button>
+            <button id="EmailSubmitData" class="submitDownload" onclick="email_results('cantabile_kwok@sjtu.edu.cn', 'control');">Submit Result提交结果</button>
+
+
+
+            <!--<button id="TestEMail" class="submitDownload" onclick="email.handlerEmail('cantabile_kwok@sjtu.edu.cn', 'dada', 'control');">EMail</button>-->
+
+            <p class="submitEmail error">
+                <!-- edit here if you want to change the information about email submission, e.g. add privacy policy information -->
+                Results should be send to <span class="supervisorEmail"></span>
+            </p>
+        </div>
+        
+        <!-- the test results are displayed in this box -->
+        <div id="ResultsBox">
+        </div>
+    </div>
+
+    <div id="TableContainer" class="commonBox">
+        <!-- container for the test items and sliders 
+             DO NOT EDIT! This box is automatically filled with content!
+        -->    
+
+        <!-- heading for the single test -->
+        <div id="TestHeading">
+        </div>
+    
+    </div>
+
+    <!-- controls to go to next/previous test -->
+    <div id="TestControls" class="commonBox">
+        <button id="BtnNextTest">Next Test</>
+        <button id="BtnPrevTest">Previous Test</>
+    </div>
+
+    <!-- playback control -->
+    <div id="PlayerControls" class="commonBox">
+
+        <div id="duration">
+            <span>00:00</span>
+        </div>
+        
+        <div id="TimeLine">
+            <div id="ProgressBar"></div>
+            <div id="ABRange"></div>
+        </div>
+        
+        <div>
+            <input id="ChkLoopAudio" type="checkbox" value="Loop" /><label for="ChkLoopAudio">Loop</label>
+            <input id="ChkAutoReturn" type="checkbox" value="Auto Return" /><label for="ChkAutoReturn">Auto Return</label>
+        </div>
+        
+        <div id="Volume">
+            Volume
+            <div id="VolumeSlider"></div>
+        </div>
+        
+        <br style="clear:both"/>
+    
+    </div>
+
+    <!-- Footer -->
+    <div id="Footer">
+        This listening test has been created with <a href="https://github.com/HSU-ANT/beaqlejs" target="_blank">BeaqleJS</a> <a href="https://github.com/HSU-ANT/beaqlejs/tree/master" target="_blank">master</a>.
+    </div>
+</div>
+
+</body>
+
+</html>
