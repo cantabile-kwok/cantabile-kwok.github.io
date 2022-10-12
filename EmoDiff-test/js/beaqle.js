@@ -1651,10 +1651,12 @@ PrefTest.prototype.createTestDOM = function (TestIdx) {
         this.addAudio(TestIdx, fileID, fileID);
 
         cell[2] = row.insertCell(-1);
-        cell[2].innerHTML = "<button class='stopButton'>Stop</button>";
-        
+        cell[2].innerHTML = "Can't Decide"
         cell[3] = row.insertCell(-1);
-        cell[3].innerHTML = "Press buttons to start/stop playback."; 
+        cell[3].innerHTML = "<button class='stopButton'>Stop</button>";
+        
+        cell[4] = row.insertCell(-1);
+        cell[4].innerHTML = "点击按钮来播放A/B音频，或者停止"; 
  
         row[1]  = tab.insertRow(-1);
         cell[0] = row[1].insertCell(-1);
@@ -1662,8 +1664,10 @@ PrefTest.prototype.createTestDOM = function (TestIdx) {
         cell[1] = row[1].insertCell(-1);
         cell[1].innerHTML = "<input type='radio' name='ItemSelection' id='selectB'/>";  
         cell[2] = row[1].insertCell(-1);
+        cell[2].innerHTML = "<input type='radio' name='ItemSelection' id='selectC'/>";
         cell[3] = row[1].insertCell(-1);
-        cell[3].innerHTML = "Please select the item which you prefer!";
+        cell[4] = row[1].insertCell(-1);
+        cell[4].innerHTML = "请选择一项。如果难以区分优劣，请点击'Can't Decide'";
        
         // add spacing
         row = tab.insertRow(-1);
@@ -1689,8 +1693,9 @@ PrefTest.prototype.readRatings = function (TestIdx) {
         $("#selectA").prop("checked", true);
     } else if (this.TestState.Ratings[TestIdx] === "B") {
         $("#selectB").prop("checked", true);
+    } else if (this.TestState.Ratings[TestIdx] === "C") {
+        $("#selectC").prop("checked", true);
     }
-
 }
 
 PrefTest.prototype.saveRatings = function (TestIdx) {
@@ -1699,6 +1704,8 @@ PrefTest.prototype.saveRatings = function (TestIdx) {
         this.TestState.Ratings[TestIdx] = "A";
     } else if ($("#selectB").prop("checked")) {
         this.TestState.Ratings[TestIdx] = "B";
+    } else if ($("#selectC").prop("checked")) {
+        this.TestState.Ratings[TestIdx] = "C";
     }
 }
 

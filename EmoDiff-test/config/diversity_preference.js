@@ -1,11 +1,12 @@
 // configure the test here
 var TestConfig = {
-  "TestName": "Preference Demo Test",
+  "TestName": "Emotion Preference Test",
   "LoopByDefault": false,
   "ShowFileIDs": false,
   "ShowResults": true,
   "EnableABLoop": true,
   "EnableOnlineSubmission": false,
+  "RandomizeFileOrder": true,
   "BeaqleServiceURL": "/web_service/beaqleJS_Service.php",
   "SupervisorContact": "",
   "AudioRoot": "",
