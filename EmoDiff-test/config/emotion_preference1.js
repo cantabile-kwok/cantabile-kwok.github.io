@@ -6,7 +6,7 @@ var TestConfig = {
   "ShowResults": true,
   "EnableABLoop": true,
   "EnableOnlineSubmission": false,
-  "MaxTestsPerRun": 20,
+  "MaxTestsPerRun": 15,
   "RandomizeFileOrder": true,
   "BeaqleServiceURL": "/web_service/beaqleJS_Service.php",
   "SupervisorContact": "",

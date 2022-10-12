@@ -489,6 +489,7 @@ $.extend({ alert: function (message, title) {
         $('#Jump').button();
         $('#Jump2').button();
         $('#Jump3').button();
+        $('#Jump4').button();
 
 
         // install handler to warn user when test is running and he tries to leave the page
