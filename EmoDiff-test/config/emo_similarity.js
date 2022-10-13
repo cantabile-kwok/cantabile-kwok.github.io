@@ -1,6 +1,6 @@
 // configure the test here
 var TestConfig = {
-  "TestName": "Mushra Demo Test",
+  "TestName": "Emotion Test",
   "RateScalePng": "img/new_9_mos_scale_with_digit.png",
   "RateScaleBgPng": "img/new_9_mos_scale.png",
   "RateMinValue": 1,
