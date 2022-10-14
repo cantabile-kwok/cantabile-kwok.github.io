@@ -14,7 +14,7 @@ var TestConfig = {
   "BeaqleServiceURL": "/web_service/beaqleJS_Service.php",
   "SupervisorContact": "",
   "RandomizeTestOrder": false,
-  "MaxTestsPerRun": 15,
+  "MaxTestsPerRun": 20,
   "RequireMaxRating": false,
   "AudioRoot": "",
   "Testsets": 
