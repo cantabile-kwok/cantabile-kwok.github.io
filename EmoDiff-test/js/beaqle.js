@@ -1226,11 +1226,11 @@ MushraTest.prototype.formatResults = function () {
 // MUSHRA test main object
 
 // inherit from ListeningTest
-function MushraNoPrefTest(TestData) {
+function MushraNoRefTest(TestData) {
     ListeningTest.apply(this, arguments);
 }
-MushraNoPrefTest.prototype = new ListeningTest();
-MushraNoPrefTest.prototype.constructor = MushraTest;
+MushraNoRefTest.prototype = new ListeningTest();
+MushraNoRefTest.prototype.constructor = MushraTest;
 
 
 // implement specific code
@@ -1238,7 +1238,7 @@ MushraNoPrefTest.prototype.constructor = MushraTest;
 
 // ###################################################################
 // create random mapping to test files
-MushraNoPrefTest.prototype.createFileMapping = function (TestIdx) {
+MushraNoRefTest.prototype.createFileMapping = function (TestIdx) {
     var NumFiles = $.map(this.TestConfig.Testsets[TestIdx].Files, function(n, i) { return i; }).length;
     var fileMapping = new Array(NumFiles);
 
@@ -1258,7 +1258,7 @@ MushraNoPrefTest.prototype.createFileMapping = function (TestIdx) {
 
 // ###################################################################
 // read ratings from TestState object
-MushraNoPrefTest.prototype.readRatings = function (TestIdx) {
+MushraNoRefTest.prototype.readRatings = function (TestIdx) {
 
     if ((TestIdx in this.TestState.Ratings)==false) return false;
 
@@ -1275,7 +1275,7 @@ MushraNoPrefTest.prototype.readRatings = function (TestIdx) {
 
 // ###################################################################
 // save ratings to TestState object
-MushraNoPrefTest.prototype.saveRatings = function (TestIdx) {
+MushraNoRefTest.prototype.saveRatings = function (TestIdx) {
     var ratings = new Object();
     $(".rateSlider").each( function() {
         var pos = $(this).attr('id').lastIndexOf('slider');
@@ -1301,7 +1301,7 @@ MushraNoPrefTest.prototype.saveRatings = function (TestIdx) {
 }
 
 
-MushraNoPrefTest.prototype.createTestDOM = function (TestIdx) {
+MushraNoRefTest.prototype.createTestDOM = function (TestIdx) {
 
         // clear old test table
         if ($('#TableContainer > table')) {
@@ -1392,7 +1392,7 @@ MushraNoPrefTest.prototype.createTestDOM = function (TestIdx) {
 
 }
 
-MushraNoPrefTest.prototype.formatResults = function () {
+MushraNoRefTest.prototype.formatResults = function () {
 
     var resultstring = "";
 
