@@ -58,23 +58,27 @@
     </div>
     </center>
     <br />
-    <b><center><font size=5>1. Naturalness</font></center></b><br/>
+    <b><center><font size=5>1. Emotional TTS Quality</font></center></b><br/>
     <center>
         <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
             <tbody>
             <tr> 
                 <td width="100" style="word-break:normal;">
-                    This part presents the naturalness of four compared systems, corresonding to Section 3.3 in the paper.     
-                    Note that all the audio on this page is synthesized from MelGAN, including ground truth.
-                    All the utterances are from <a href="https://keithito.com/LJ-Speech-Dataset/">LJspeech</a> with utterance IDs listed.
+                    This part presents the quality of compared systems, corresonding to Section 4.2 in the paper.     
+                    Note that all the audio on this page is synthesized from HifiGAN implemented in <a href="https://github.com/kan-bayashi/ParallelWaveGAN">this repo</a>, except ground truth.
+                    All the utterances are from <a href="https://github.com/HLTSingapore/Emotional-Speech-Data/">ESD</a> speaker ID 0015.
                     <br/><br/>
-                    <b>GT</b>: Ground truth (resynthesized)
+                    <b>GT</b>: Ground truth recording.
+                    <br />
+                    <b>GT (voc.)</b>: Ground truth mel-spectrogram + HifiGAN.
                     <br/>
-                    <b>Raw_FSP</b>: Typical <a href="https://arxiv.org/pdf/2006.04558.pdf?ref=https://githubhelp.com">FastSpeech2</a> model with no prosody modeling
+                    <b>MixedEmotion</b>: Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>. We use the <a href="https://github.com/KunZhou9646/Mixed_Emotions">official code</a>.
+                    It is an autoregressive model based on relative attributes rank to pre-calculate intensity values for training. 
+                    It much resembles <a href="https://arxiv.org/abs/2201.03967">Emovox</a> for intensity controllable emotion conversion.
                     <br/>
-                    <b>PLP_MDN</b>: Phone-level prosody modeling with mixture density network (purposed in this <a href="https://arxiv.org/pdf/2102.00851.pdf">paper</a>)
+                    <b>GradTTS w/ emo label</b>: a conditional <a href="https://proceedings.mlr.press/v139/popov21a.html">GradTTS</a> model with hard emotion labels as input. It therefore does not have intensity controllability, but should have good sample quality, as a certified acoustic model.
                     <br/>
-                    <b>WLP_predict</b>: Purposed word-level prosody tagging system. Here all the tags are automatically predicted from text.
+                    <b>EmoDiff</b>: Proposed intensity controllable emotional TTS model.
                 </td>
             </tr>
             </tbody>
@@ -148,30 +152,12 @@
         </tbody>
     </table>
     <br/><br/>
-    <!-- <center> -->
-        <!-- <div style="disp;"> -->
-
-        <!-- <img src="single_utt_mel.png" width="400" style='float:left;'/> -->
-        <!-- <table class='table' style='float:left'> -->
-            <!-- <tbody><tr><th></th></tr></tbody> -->
-            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)0.wav' controls=''></audio></td></tr> -->
-            <!-- <tr><td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=''></audio></td></tr> -->
-            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)2.wav' controls=''></audio></td></tr> -->
-            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)3.wav' controls=''></audio></td></tr> -->
-            <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)4.wav' controls=''></audio></td></tr> -->
-        <!-- </table> -->
-        <!-- </div> -->
-    <!-- </center> -->
-        <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">International Business Machines <font color='#FF0000'>Corporation</font>, <br/>and a panel of psychiatric and psychological experts. </th>
             <th><font color='#FFFFFF'>White</font></th>
-            <!-- <th scope="col" colspan="2" bgcolor="#F8F8F8"><font color='#FF0000'>Determination</font> to use a means, other than legal or peaceful, <br/>to satisfy his grievance, end quote, within the meaning of the new criteria.</th></tr> -->
             <th scope="col" colspan="2" bgcolor="#F8F8F8">Both Director Hoover and Belmont expressed to the <font color='#FF0000'>Commission</font> the great <br/> concern of the FBI, which is shared by the Secret Service</th></tr>
         <tr>
             <th></th>
-            <!-- <th>Ground truth (with tag 0)</th> -->
-            <!-- <th>Synthesized speech <br/>using different tags</th> -->
             <th></th>
             <th></th>
             <th></th>
@@ -182,16 +168,13 @@
             <td><audio src="./audio/control-in-paper/GT/LJ050-0047_gen.wav" controls=""></audio></td>
             <td></td>
             <td>GT with tag 0</td>
-            <!-- <td><audio src="./audio/control-in-paper/GT/LJ050-0098_gen.wav" controls=""></audio></td> -->
             <td><audio src="./audio/control-in-paper/GT/LJ050-0071_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
         </tr>
         <tr>
             <td>Synthetic Speech with tag 0</td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td>
             <td></td>
             <td>Synthetic Speech with tag 0</td>
-            <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-0_gen.wav" controls=""></audio></td> -->
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-0_gen.wav" controls=""></audio></td>
         </tr>
         <tr>
@@ -245,7 +228,6 @@
             <td></td>
             <td>GT with tag 1</td>
             <td><audio src="./audio/control-in-paper/GT/LJ050-0083_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
         </tr>
         <tr>
             <td>Synthetic Speech with tag 0</td>
@@ -282,27 +264,11 @@
             <td>Synthetic Speech with tag 4</td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-4_gen.wav" controls=""></audio></td>
         </tr>
-        <!-- <tr>
-            <td>2</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
-        </tr> -->
         </tbody>
     </table>
 </center>
 <br/>
 <br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
 <center>
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">The Commission notes with approval several recent measures taken and <br/>proposed by the Secret Service to <font color='#FF0000'>improve</font> its liaison arrangements.</th>
@@ -321,7 +287,6 @@
             <td></td>
             <td>GT with tag 2</td>
             <td><audio src="./audio/control-in-paper/GT/LJ050-0170_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
         </tr>
         <tr>
             <td>Synthetic Speech with tag 0</td>
@@ -358,27 +323,12 @@
             <td>Synthetic Speech with tag 4</td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-4_gen.wav" controls=""></audio></td>
         </tr>
-        <!-- <tr>
-            <td>2</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
-        </tr> -->
+        
         </tbody>
     </table>
 </center>
 <br/>
 <br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
 <center>
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">To <font color='#FF0000'>establish</font> liaison with local intelligence gathering agencies and to <br/>provide for the immediate evaluation of information received from them.</th>
@@ -397,7 +347,6 @@
             <td></td>
             <td>GT with tag 3</td>
             <td><audio src="./audio/control-in-paper/GT/LJ050-0206_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
         </tr>
         <tr>
             <td>Synthetic Speech with tag 0</td>
@@ -434,27 +383,11 @@
             <td>Synthetic Speech with tag 4</td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-4_gen.wav" controls=""></audio></td>
         </tr>
-        <!-- <tr>
-            <td>2</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
-        </tr> -->
         </tbody>
     </table>
 </center>
 <br/>
 <br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
 <center>
     <table class="table">
         <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">So that these arrangements can be made <font color='#FF0000'>permanent</font> without<br/> adversely affecting the operations of the Service's field offices.</th>
@@ -473,7 +406,6 @@
             <td></td>
             <td>GT with tag 4</td>
             <td><audio src="./audio/control-in-paper/GT/LJ050-0194_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
         </tr>
         <tr>
             <td>Synthetic Speech with tag 0</td>
@@ -510,21 +442,7 @@
             <td>Synthetic Speech with tag 4</td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-4_gen.wav" controls=""></audio></td>
         </tr>
-        <!-- <tr>
-            <td>2</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td></td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
-        </tr> -->
+        
         </tbody>
     </table>
 </center>
@@ -771,48 +689,8 @@
     </tbody></table></center>
 
   </div>
-<!--  <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
 <br />
-<HR align=center width=1000>
 <br/>
-<center>
-<b><center><font size=5>Appendix</font></center></b><br />
-<table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-    <tbody>
-    <tr> 
-        <td width="100" style="word-break:normal;">
-            We present the model structure of our prosody extractor and prosody predictor here.
-            <br/>
-            Both the extractor and the predictor is auto-regressive, i.e. the prosody embedding 
-            <img src="http://latex.codecogs.com/gif.latex?\mathbf e" />
-            or tag embedding  
-            <img src="http://latex.codecogs.com/gif.latex?\mathbf t" />
-            at current step is conditioned on the output of the previous step.
-            In the prosody predictor, each word will go through a pre-GRU separately (with its phone encodings as inputs). This pre-GRU can be regarded as a granularity-converter.
-            In each timestamp, a word is fed into the GRU, and the output is a vector of logits. The dimension of this vector is just the number of prosody tags in total (50 in our case).
-            The corresponding segment of a word's leaf node (i.e. dimension 25-30) is taken for softmax.
-            Then  the index of the predicted tag can either be sampled from this distribution or manually specified.
-            This index will go through an embedding table and finally become the "tag embedding" in our language.
-            <!-- $\mathbf e$ -->
-        </td>
-    </tr>
-    </tbody>
-</table>
-<table class="table">
-<tbody>
-    <tr>
-        <td align="center"><img src="extractor_model.png" width="200"></td>
-        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-        <td align="center"><img src="predictor_model_v3.png" width="500"></td>
-    </tr>
-    <tr>
-        <td align="center">Prosody Extractor (image from <a href="https://arxiv.org/pdf/2102.00851.pdf">paper</a>)</td>
-        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-        <td align="center">Prosody Predictor</td>
-    </tr>
-</tbody>
-</table>
-</center>
 </body><style id="stylish-2" class="stylish" type="text/css">#notebook-container * {
 
 font-family: Consolas, "微软雅黑"
