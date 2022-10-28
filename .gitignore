@@ -1,5 +1,6 @@
 .idea
 .DS_Store
+EmoDiff-test/*
 EmoDiff-test/log/*
 *ipynb
 EmoDiff-test-demo/*
