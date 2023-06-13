@@ -1,0 +1,848 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>WSM doc similarity</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4f60ad25-c3a1-487d-94c1-7d04dd3b1280" class="page sans"><header><h1 class="page-title">WSM doc similarity</h1><p class="page-description"></p></header><div class="page-body"><h3 id="3d64f7cf-281d-4742-8d7c-af935e98c308" class="">实验设置</h3><p id="ee9a1d8b-c91d-4d76-8b00-741ee1210e47" class="">在c4-train.00004-of-00512.json中，过滤出所有与Trump相关的doc。然后随机选取其中一个作为anchor，从另外的中选取若干（比如1k个）。对于这些doc，计算与anchor的语义相关性，然后选出最高的几个。</p><p id="8bcdf5f8-af5f-42be-94b7-f209fe5e80e5" class="">显卡：2080ti。 模型：<code>SentenceTransformer(&#x27;all-MiniLM-L6-v2&#x27;)</code> 。显存占用：估计小于2G。</p><p id="7ac4789d-431f-4ed2-b654-751b27a8aa88" class="">为了看着方便，全都翻译成了中文。</p><p id="aace4936-7428-4c59-bf84-e1d96cedba6c" class="">例1</p><ul id="e2bf4a10-46da-4f16-af74-7c183220947f" class="toggle"><li><details open=""><summary>Anchor doc</summary><p id="86765e2a-ac68-42c6-8070-59cb33c3d248" class="">周四，弗吉尼亚州的一名联邦法官将前特朗普竞选团队主席保罗·马纳福特的审判日期定在7月10日，这是他在特别检察官罗伯特·穆勒(Robert Mueller)提起的两起案件中面临的两项指控之一。
+美国地方法院法官T.S.埃利斯三世(T.S. Ellis III)在亚历山大港举行的听证会上制定的时间表，使得这起涉及18项逃税和银行欺诈指控的相对较新的弗吉尼亚州案件，在穆勒团队去年在华盛顿提起的另一起案件之前进入庭审阶段，后者指控马纳福特洗钱，并没有登记为与乌克兰工作有关的外国说客。
+上周，一名法官下令9月17日开始对马纳福特的华盛顿审判。
+埃利斯的决定，以及亚历山大法院所谓的“火箭式诉讼”的快速推进，意味着穆勒办公室可能在今年夏天面临第一次重大的法庭考验，这是针对这位资深说客和政治顾问的案件。马纳福特居住的弗吉尼亚州的陪审团可能比来自华盛顿特区的陪审团对这位前特朗普竞选团队负责人更友好
+然而，马纳福特的律师凯文·唐宁要求将弗吉尼亚州的案件定在11月的某个时候，也就是华盛顿审判之后。唐宁告诉埃利斯，辩方需要时间来收集两起案件的法律动议，并为连续的审判做准备。
+“这是一次大规模的起诉，”辩护律师说。“我们原计划在华盛顿特区的案件之后，于11月对此案进行审判。”
+“你需要再去看验光师，”埃利斯反驳道。法官表示，7月10日将有足够的时间。他告诉唐宁，如果情况需要，他可以要求延期。
+穆勒团队的检察官安德鲁·魏斯曼(Andrew Weissmann)支持弗吉尼亚一案的早期审判。他告诉埃利斯，亚历山大港的审判可能会相对简短，持续8到10天，涉及20到25名证人。
+在周四下午近一个小时的听证会上，马纳福特被正式传讯，罪名是税务和银行欺诈，上个月，弗吉尼亚州的一个大陪审团应穆勒团队的要求退回了起诉书。唐宁代表马纳福特提出无罪抗辩。
+去年10月对马纳福特及其助手里克·盖茨(Rick Gates)提出的指控，是穆勒公开的首批法律行动之一。穆勒正在调查俄罗斯干预2016年大选，以及唐纳德·特朗普总统的助手是否参与其中。马纳福特誓言要对抗针对他的指控，尽管盖茨现在正在与穆勒的团队合作。
+爱唠叨的埃利斯是罗纳德·里根(Ronald Reagan)总统任命的，他很快就提出了这样一个事实:无论是华盛顿特区的案件，还是弗吉尼亚的案件，似乎都与穆勒被任命调查的核心问题没有任何联系。
+埃利斯对唐宁说:“你想指出，这与俄罗斯或干涉选举没有任何关系。”
+“你表达了我的观点，”马纳福特的律师回答说。
+唐宁表示，他计划在华盛顿特区和弗吉尼亚州的案件中提出动议，辩称穆勒已经超越了他的职权范围，没有追究马纳福特案件的法律权力。
+穆勒的团队周四没有参与这个问题，但政府律师在法庭文件中辩称，穆勒的任命赋予了他追究指控的自由，马纳福特无权对司法部领导人如何分配该机构的人员提出异议。
+去年5月，司法部长杰夫·塞申斯(Jeff Sessions)回避与选举有关的事务后，司法部副部长罗德·罗森斯坦(Rod Rosenstein)任命了穆勒。穆勒的具体任务范围尚不清楚，但他已被批准调查俄罗斯涉嫌干预2016年总统大选，以及任何阻挠或阻碍该调查的行为。
+埃利斯周四对这两起案件可能进行的连续审判表示了一些愤怒，这两起案件确实涉及一些重叠。在华盛顿提起的共同指控包括穆勒的团队正在弗吉尼亚州追查的税务犯罪。
+“我们为什么要对这项指控进行两次审判?”法官直截了当地问道。
+魏斯曼说，检察官向马纳福特的辩护律师提供了在华盛顿巩固指控的机会，但他们拒绝了。检察官说，华盛顿特区的指控在华盛顿是“适当的”。
+唐宁暗示，马纳福特的团队愿意将以华盛顿特区为基础的指控提交给亚历山大，但穆勒的团队拒绝了。辩护律师说:“我们实际上是想把阴谋(指控)带到这里来。”
+根据法律，马纳福特有权在每项被控罪行的部分发生地接受审判。但是，他可以放弃这项权利。
+埃利斯说，他不会强迫他这么做，但他认为这可能是个好主意。
+“我不想强迫人们放弃他们的权利，我也不打算在这里，(但)在一个地区进行审判会更有意义，”法官说。
+这位77岁的法官似乎被穆勒团队的几个决定激怒了。背诵另一位法官敦促的一件轶事</p></details></li></ul><ul id="a7eed396-03b7-4696-ba35-7b313a3b2517" class="toggle"><li><details open=""><summary>similar doc 1 分数0.8088225722312927</summary><p id="466602cd-1a6a-4ca6-9f62-42c2e9d42e11" class="">华盛顿(路透社)-一名联邦法官驳斥了唐纳德·特朗普总统前竞选主席保罗·马纳福特的律师周三在他的长期民事案件中提出的所有法律论点，以说服她，特别检察官罗伯特·穆勒的调查已经失控，应该受到控制。
+“我真的不明白你的案子还剩下什么，”美国地方法院法官艾米·伯曼·杰克逊(Amy Berman Jackson)对马纳福特的律师凯文·唐宁(Kevin Downing)说，此前他向他提出了一系列冗长的问题。
+1月3日，马纳福特在美国哥伦比亚特区地方法院对穆勒和任命特别检察官的司法部官员、副检察长罗德·罗森斯坦(Rod Rosenstein)提起民事诉讼，这是对穆勒职权范围的关键法律考验。
+杰克逊没有说她什么时候会对这起民事案件作出裁决，司法部正在寻求驳回此案。
+穆勒正在调查特朗普竞选团队与俄罗斯之间可能存在的勾结，以及总统是否非法试图阻挠调查。
+迄今为止，穆勒已经起诉了22名个人和实体，其中包括马纳福特和他的助手里克·盖茨。马纳福特的民事诉讼标志着被告首次试图挑战他的权威。
+马纳福特在2016年担任特朗普竞选主席之前，曾为亲俄罗斯的前乌克兰总统进行游说工作，他面临穆勒在华盛顿和弗吉尼亚州亚历山大的联邦法院提起的两项起诉。对他的指控包括合谋洗钱、未注册为外国代理人、银行欺诈和提交虚假纳税申报表。
+马纳福特拒不认罪，没有一项指控与他为特朗普竞选团队所做的工作直接相关。
+特朗普否认与俄罗斯勾结，并称穆勒的调查是政治迫害。
+法律专家从一开始就表示，马纳福特的民事诉讼面临着一场艰苦的战斗。
+司法部的规定明确指出，私人当事人无权在法庭上对这些规定提出质疑。审理之前案件的法官通常也不允许像马纳福特这样的刑事案件的被告利用民事诉讼来挑战刑事指控。
+但周三，唐宁告诉杰克逊，他正在缩小针对司法部的民事诉讼的范围，在杰克逊看来，马纳福特的案子似乎更弱了。
+马纳福特的诉讼最初要求法官宣布罗森斯坦任命穆勒的整个命令无效，并撤销对他的刑事指控。
+唐宁周三表示，他只是对罗森斯坦命令的一部分提出质疑，他并不是要求法官放弃对此案的指控，而是寻求保护他的客户免受未来可能与俄罗斯无关的指控。
+这促使杰克逊提出了一系列问题，包括如果马纳福特没有受到任何伤害，他怎么能有法律地位来挑战这一命令，他怎么能确切地知道穆勒未来是否会在罗森斯坦命令的适当范围内提出指控，以及是否有法律先例允许某人根据《行政程序法》(Administrative Procedure Act)挑战起诉。
+“在我看来，你似乎在试图两全其美，”她说，并补充说，唐宁并没有试图驳回起诉书，但对马纳福特被起诉仍然有意见。
+唐宁告诉法官，罗森斯坦的命令违反了管理特别检察官的规定，因为它允许穆勒广泛调查俄罗斯干预调查“引起或可能直接引起的任何问题”。
+他强调，马纳福特甚至从未在俄罗斯设立过办公室，针对他的刑事案件可以追溯到2014年，远远早于大选。
+周一提交的一份法庭文件似乎在一定程度上削弱了这一说法，因为它显示，罗森斯坦在2017年8月特别授权穆勒调查马纳福特是否与俄罗斯勾结干涉2016年总统大选，以及他在2016年之前涉及乌克兰前亲俄罗斯政府的活动。
+杰克逊还在处理针对马纳福特的刑事案件，预计本月晚些时候将听取口头辩论，届时唐宁将要求她驳回起诉书。</p></details></li></ul><ul id="8b913794-ca87-4124-9ad7-fef6c52e07b6" class="toggle"><li><details open=""><summary>similar doc 2 分数0.7206802368164062</summary><p id="9eeb72d5-ae05-4800-9a5a-6f891475c71f" class="">华盛顿——周三，一名联邦法官对前特朗普竞选团队主席保罗·马纳福特(Paul Manafort)追加判处三年半监禁，并质疑他的悔过心，批评他的罪行和多年来的谎言。
+美国地区法官艾米·伯曼·杰克逊周三对马纳福特说:“谎言的数量、欺诈的数量以及所涉及的巨额资金都很难夸大。”随后，他对马纳福特判处了与外国游说工作和干扰证人有关的串谋指控。
+他请求法官不要再判处他额外的刑期。</p></details></li></ul><ul id="a38ebb9c-4f04-4633-9e30-558557fbdcc7" class="toggle"><li><details open=""><summary>similar doc 3 分数0.6685938835144043</summary><p id="05f1f4e1-3352-46d9-ae52-b4d26831f7be" class="">为了准备昨天在汤姆·谢卢的节目上露面，我认真研读了穆勒调查的最新进展。我主要依靠斯科特最近帖子中的链接，和往常一样，安迪·麦卡锡的工作是最有价值的。
+最近的活动至少有三条战线:保罗·马纳福特战线、杰罗姆·科西/罗杰·斯通战线和迈克尔·科恩战线。让我们依次讨论它们，重点讨论对特朗普总统的影响。
+在马纳福特的问题上，穆勒宣布认罪协议无效。他声称马纳福特对特别检察官团队撒谎。据称马纳福特在撒谎什么?我们不知道。
+我怀疑他没有向穆勒提供他想要的关于特朗普竞选的信息。一种可能性是在特朗普大厦会见俄罗斯女士。
+这些信息将成为马纳福特“出狱”(在这种情况下，是单独监禁)的筹码。如果不能让穆勒满意，马纳福特可能会被判终身监禁。
+但穆勒的立场并不像这一事实所表明的那样坚定。特朗普有权赦免马纳福特或为他减刑。我敢打赌，即使在最糟糕的情况下，马纳福特也不会在特朗普总统任期结束后继续呆在监狱里。
+至于马纳福特是在撒谎，还是没有说出穆勒想听的话，我不知道。
+至于科西和斯通，我同意安迪·麦卡锡的观点，这里似乎没有犯罪。即使其中一人或两人就约翰·波德斯塔(John Podesta)的电子邮件联系了维基解密，即使他们是在代表特朗普进行调查，在我看来，这是令人讨厌的政治行为，而不是犯罪行为。
+克林顿的竞选团队通过中间人与俄罗斯人合作，发布了有关特朗普的负面信息。最坏的情况是，如果穆勒能把很多可能根本不存在的点联系起来，特朗普就会通过中间人与维基解密合作，把约翰·波德斯塔的电子邮件中包含的关于希拉里的一点点负面信息公布于众。维基解密可能是非法获得这些信息的，但科西/斯通似乎与这一罪行无关。
+调查的这一方面可能是通过科西，以某种“虚假陈述”的罪名起诉斯通，然后与斯通达成协议，暗示特朗普是某种形式的犯罪行为。如果是这样，穆勒可能还有一条漫长而艰难的路要走。
+最后，在特朗普是否仍在与俄罗斯做生意或试图与俄罗斯做生意的问题上，科恩承认撒谎，他对此表示认罪。我不认为这意味着特朗普犯了什么罪。
+如果特朗普向穆勒的团队提供了与科恩的认罪不一致的信息，那就有可能。然而，鲁迪·朱利安尼表示，特朗普对穆勒问题的书面回答与科恩所说的一致。
+如果特朗普指示科恩提供虚假证词，可能还会出现刑事问题。不过，据我所知，科恩表示，他是从特朗普竞选团队的言论中获取线索的，而不是特朗普的指示。
+尽管如此，科恩的承认(显然与特朗普在书面回答中所说的一致)令人不安，至少对我来说是这样。总统候选人不应该在竞选期间与俄罗斯做生意。这就是为什么特朗普的团队声称这段关系在2016年1月结束，当时特朗普很有可能赢得共和党提名。
+如果这是一个谎言，就像它看起来的那样，那就是对选民的重大欺骗。我知道，如果巴拉克•奥巴马(Barack Obama)参与了这场骗局，我肯定会抱怨的。特朗普的标准不应该有所不同。
+特朗普试图与俄罗斯达成协议也可能有助于解释他的亲普京言论，大卫·弗兰奇(David French)提出了这一点。最令人作呕的例子是，特朗普对俄罗斯的谋杀不以为然，他告诉比尔·奥莱利(Bill O &#x27;Reilly)，实际上，美国也在杀人。
+是什么促使特朗普假定美国和普京领导下的俄罗斯在道德上是对等的?这可能是为了促进特朗普对与俄罗斯做生意的持续兴趣。
+我同意特朗普的行动比他的言论更重要。我也同意，他在担任总统期间对俄罗斯采取的行动在很大程度上是无可非议的，而且往往值得称赞。
+但让我们记住，特朗普的亲普京言论导致共和党人的公众舆论急剧转向普京。如果这些言论有一部分是基于特朗普的私人利益，那么对任何愿意客观看待这件事的人来说，问题都是显而易见的。
+因为特朗普的言论改变了公众对俄罗斯的看法，所以在这种情况下，它们确实很重要。
+最后，需要再次强调的是，我们这里讨论的不是共谋。据我们所知，经过这么长时间，穆勒仍然没有证据表明存在共谋。他在寻找让特朗普难堪的东西，但这不是他的任务，或者至少不应该是。</p></details></li></ul><p id="7f324aeb-6c1e-4026-9784-aa8dc5c946f9" class="">
+</p><p id="e3e7eac2-4608-4475-a315-3212ba53f646" class="">例2</p><ul id="f0912e69-d4ff-420f-a339-1ea7f5b50a49" class="toggle"><li><details open=""><summary>Anchor doc</summary><p id="ff8cfbe6-0734-4173-85ce-9f8eba24ac2b" class="">民主党和共和党长期以来都对拉丁裔选民抱有很大的期望。现在，随着加州准备举行几十年来第一次看似有影响力的总统初选，两党的梦想可能都不会实现。
+他们寄予厚望的是:加州和其他地方的民主党人希望拉美裔选民的投票率不断攀升，他们假设拉美裔选民总是倾向于他们，并确保明年及以后的胜利。共和党人梦想，随着越来越多的拉美裔人从罗马天主教会转投福音派基督教，拉美裔人最终会改变自己的立场。福音派基督教强调所谓的“家庭价值观”，包括反对堕胎和强调严惩犯罪。
+如果说有哪一年，民主党人认为拉美裔选民的比例会朝着他们的方向强劲增长，那就是2018年。事实上，去年秋天在加州和全国范围内，拉美裔选民的投票人数都有所上升，有超过40%的合格拉美裔选民参加了投票。他们的人数增加有助于民主党接管众议院，特别是在加利福尼亚州，民主党人在那里推翻了七个以前共和党的国会选区。
+参加人数增加的部分原因是特朗普总统的移民政策，该政策导致许多寻求庇护者被拘留，5000多名儿童与父母分离，法官后来裁定这种策略是非法的。
+但拉美裔投票给民主党和共和党的比例仍然相当稳定，与上世纪60年代、70年代和80年代以来的情况大致相同，当时罗纳德·里根(Ronald Reagan)先是竞选加州州长，后来又竞选总统。
+里根总是赢得大约36%的西班牙裔选票，1984年达到39%的峰值，1972年最后一次竞选州长时跌至33%的低点。
+根据芝加哥大学收集的美联社VoteCast数据，去年，在特朗普多次称墨西哥移民为罪犯和强奸犯，并抓住无证移民偶尔犯下的重大罪行后，32%的拉美裔选民投票给了共和党。在过去的半个世纪里，这个百分比变化不大。
+其他调查和出口民调也得出了类似的拉美裔选民数字。
+这让民主党人失望，也让共和党人松了一口气，他们长期以来一直担心，他们可能会遭到美国增长最快的族裔群体几乎一致的反对。
+和往常一样，共和党的拉丁裔选票主要来自福音派和退伍军人，前者占去年秋天所有拉美裔选民的四分之一，后者占拉美裔选民的13%。这两个群体之间有一些重叠，但最终数据显示，这两个群体对共和党的支持率约为90%。
+这一比例略高于非洲裔选民的比例，而非洲裔选民是民主党投票联盟中最可靠的一部分。
+沮丧的民主党人无法理解，为什么更多的拉美裔没有被特朗普频繁在Twitter上对移民“大篷车”和他的家庭分离政策的长篇大论所冒犯。当他们看到民调显示移民是迄今为止西班牙裔选民最重要的问题时，他们更加困惑。
+一些人建议，民主党人应该像去年在奥兰治县赢得四个原共和党国会席位时那样，付出努力和金钱来赢得三分之一的拉美裔人的支持。
+但民主党人长期以来一直认为拉丁裔选民是理所当然的。与此同时，共和党人希望最大限度地获得西班牙裔选民的支持。例子:史蒂夫·弗兰克(Steve Frank)是一位长期的共和党活动家、博主和文图拉县的竞选经理，他在今年冬天竞选共和党州主席时建议，他的政党应该在加州各地的福音派教堂举办拉票派对，确保他们倾向保守派的会众投票，并收集和归档他们的选票。
+但两党可能会发现，他们的挫败感会无限期地持续下去，因为在过去50年里，尽管拉丁裔选民的数量大幅增加，但迄今为止尝试过的任何策略都没有让拉丁裔选民的投票偏好发生太大变化。这一切都表明，只有一些戏剧性的事情才能打破这些长期存在的投票习惯和偏好。</p></details></li></ul><ul id="544775c3-e817-42a8-8099-81331a27cd8c" class="toggle"><li><details open=""><summary>similar doc 1 分数0.6947934627532959</summary><p id="00ae8ba4-8b0d-46f7-a526-0201b2c81f09" class="">他们在加州疯狂竞选的真正遗产可能是新登记选民的激增——仅5月以来就超过65万，民主党人是共和党人的五倍。他们中的许多人是第一次投票，被桑德斯竞选活动的兴奋和特朗普疏远的言论唤醒。
+毫无疑问，除了初选结束、大选开始时总是会出现的亲民主党倾向之外，金州的选民正在变得更蓝。
+这种激增的登记可以按党派、种族和年龄分列，并显示出不同群体之间的显著差异。在传统的选举年，与去年同期相比，65%的增长将是了不起的。但今年，我们看到拉丁裔选民的登记人数增长了一倍，一些年轻选民的登记人数增长了150%以上，民主党选民的登记人数增长了近三倍。
+很难记住，在人们的记忆中，加州是一个摇摆州，在总统和其他州级选举中，投票给共和党的次数比投票给民主党的次数多。现在，具有象征意义的事件是今年公开的美国参议院竞选，没有共和党人有资格通过该州的前两名制度参加大选。共和党人自1992年以来就没有赢得过加州的参议院选举，自1988年以来也没有赢得过总统选举。前参议员和州长皮特·威尔逊(Pete Wilson)的反移民倡议通常被认为是加州倾向民主党的原因，不管这是不是真的，唐纳德·特朗普(Donald Trump)在拉美裔和亚裔美国人中令人讨厌的名声，可能会让加州进一步陷入民主党阵营。</p></details></li></ul><ul id="dbdffa91-063f-472c-891f-16260a96c42e" class="toggle"><li><details open=""><summary>similar doc 2 分数0.6806204319000244</summary><p id="c91d2172-f27f-43d7-bc8b-d6fa1234611a" class="">在最近的一项民意调查中，只有44%的拉美裔人称他们“肯定”会投票给民主党。民主党全国委员会新任拉美裔媒体总监已经准备好迎接挑战。
+德克萨斯州奥斯汀——民主党全国委员会新任拉美裔媒体主管恩里克·古蒂海姆雷斯(Enrique gutisamurez)上任之际，民主党希望利用拉美裔对特朗普政策的愤怒和失望，使其在民调中发挥优势。
+但前提是民主党人能够向拉美裔人传达他们的信息，并说服他们，他们的投票可以帮助改变影响他们生活的政策，比如医疗政策或移民政策。最近的民意调查显示该党还有很多工作要做。
+周一宣布聘用古蒂姆萨雷斯的消息，他告诉NBC新闻，他与社区中许多人现在感到的愤怒有关，这种愤怒在焦点小组和民意调查机构拉丁裔决定为一组民主党政治行动委员会所做的研究中得到了体现。
+民调显示，民主党在今年的中期选举中有机会让更多拉美裔选民参与投票，赢得更多拉美裔选民的选票，因为拉美裔选民对总统和共和党领导的国会深感愤怒。
+“拉美裔人对目前的政治状况极度愤怒，”这家政治民意研究公司在为国会拉美裔核心小组(Congressional Hispanic Caucus)下属的BOLDPAC、优先美国(Priorities USA)和众议院多数党政治行动委员会(House Majority PAC)进行的民意调查和焦点小组分析中说。这些政治团体都向民主党捐款。
+研究人员对佛罗里达州、亚利桑那州、内华达州和科罗拉多州以及其他州11个拉美裔国会选区的拉美裔人进行了调查。它还组织了七个焦点小组进行评估。
+他们发现，拉美裔对特朗普的压倒性情绪是负面的，包括愤怒、恐惧、羞耻和不尊重。民意调查发现，愤怒排在第一位，87%的人对政府在边境隔离儿童感到愤怒，同样比例的人对共和党的医疗保健提案感到愤怒，该提案将使更多的人没有保险。
+皮尤研究中心(Pew Research Center)的数据显示，拉丁裔选民与共和党相比，更有可能支持民主党或倾向于民主党，比例超过2:1。
+拉丁裔决定发现，在普通投票中，民主党人以67%对22%领先，在战场区以72对18领先。
+但这并不能保证拉美裔人会去投票站投票给民主党候选人。
+在拉丁裔决定的民意调查中，只有44%的人说他们“肯定”会投票给民主党，只有53%的人说他们肯定会在11月投票。
+“拉丁裔人想知道他们的投票到底带来了什么变化，”拉丁裔决定组织在关于调查结果的备忘录中说。
+古铁雷斯亲眼目睹了政策如何对动员产生个人影响。当加州187号提案(一项打击移民的投票措施)通过时，他还是一个大约8、9岁的小男孩，这使政治成为他家餐桌上讨论的话题。他的父母当时是墨西哥的合法居民，他们突然把注意力转向了政治，以及他们吃饭时主要谈论的话题。
+“187号提案改变了我的家庭和我成长过程中的观点，”古铁雷斯说，他看到了严厉的政策如何影响了他的父母。
+“我在他们身上看到了一种转变，那就是我们并不真正安全，”古蒂海姆雷兹说。“它在某种程度上改变了我的生活。”
+这件事对古铁雷斯的影响挥之不去。多年后，当他在社区大学上夜班，在联合包裹公司(UPS)把包裹装到拖车上时——这份工作薪水很高，福利也很好——他决定要通过政治来改变。
+古铁雷斯继续在研究生院学习政治管理，在成为民主党全国委员会的西班牙裔媒体发言人之前，他曾参与过几次竞选活动。
+他指的是唐纳德·特朗普总统的移民政策，他说:“激发我这种精神的变化，就是我现在反对187号提案的原因。”
+古铁雷斯必须确保该党传达出自己的信息。
+该调查警告说，不要以为拉美裔人在密切关注24小时的新闻循环。拉丁美洲人忙于工作、家庭和社区事务，但华盛顿正在发生的事情“只是模糊地熟悉”。
+该公司表示，焦点小组的参与者表现出政治上的老练，但并不总是高度参与和了解日常时事的政治知识。
+“我们不应该假设他们是新闻迷，尽管他们自我报告的新闻消费水平——他们不是，”分析指出。
+政治咨询公司普洛斯彼罗拉丁人(Prospero Latino)的创始人约瑟夫·帕拉(joseph Parra)曾为内华达州前参议员哈里·里德(Harry Reid)处理媒体事务。他说，民主党人必须停止把拉丁裔选民视为一个特定的实体，而不是一个需要招募的选区。
+但他说，这不能仅仅通过发出民主党的信息来实现。信息本身必须让人觉得平易近人、有针对性和真实，否则就会落空。
+有人抱怨说，拉丁裔选民的投票也是如此</p></details></li></ul><ul id="4b279a34-276b-4bbd-a094-f98e27927151" class="toggle"><li><details open=""><summary>similar doc 3 分数0.625438928604126</summary><p id="ea441d53-d79d-4a66-9279-9b76ec9f0313" class="">共和党人需要面对严峻的事实。
+对梦想法案(或任何大赦)的主要批评之一是，它将对合法移民产生持久的影响。一旦入籍，“梦想者”就可以为他们的父母和其他家庭成员提供担保，将原本对美国长期居民的有限特赦变成了意外的合法移民激增。
+或许也不是有意为之。现在，移民倡导团体和相关的民族游说团体已经成为民主党的主要选区，大规模移民的政治后果已经变得难以忽视。一个人不需要是一个党派或愤世嫉俗的人，就会相信“无证民主党人”这个词不仅仅是一个保守的绰号，而且实际上正是查克·舒默和其他民主党领导人看待今天美国非法移民的方式。问题不仅在于特赦，还在于我们合法移民体系的结构。由于家庭偏好，移民会带来更多的移民——舒默敏锐地意识到这一事实。
+马里兰大学(University of Maryland)政治学家詹姆斯·金佩尔(James Gimpel)在一份关于2016年之前选举的报告中发现，县级移民水平的增加与共和党支持率的下降有关，即使在控制了收入和先前的人口统计数据之后也是如此。值得注意的是，金佩尔发现，移民把一些县变成蓝色，不仅是因为移民提供了选票——许多人不是公民，因此不能投票——还因为当地人不喜欢与移民相关的文化和经济变化，他们向外移民。正是这种反应有助于解释，尽管几十年来倾向于支持民主党的人移民美国，但共和党人仍然执政。虽然民主党在其联盟中增加了大多数拉美裔和亚裔选民，但他们失去了大部分白人工人阶级。例如，西弗吉尼亚州在不到30年的时间里，从一个支持杜卡基斯的民主党坚定支持者，变成了深红色的特朗普支持者。
+新联盟已经改变了共和党，因为该党特朗普支持者的民粹主义倾向与保罗·瑞安(Paul Ryan)领导的亲商派发生了冲突。这些紧张关系是可以预料到的，因为在两党制中不断变化的联盟需要改变战略。因此，问题不在于移民是否会摧毁共和党——两党制中总会有两个政党——而是共和党人能否在选民转变的过程中继续支持小政府和传统价值观。
+乐观主义者提出了几个理由来说明为什么大规模移民不会削弱保守派的力量。没有一个让人放心。首先，移民是“天生的保守派”，只要小政府政党放弃对移民的怀疑态度，他们就会投票给该党。就我个人而言，我很难想象大规模移民所带来的巨大文化和经济变化，从任何意义上说，对大规模移民的支持都是“保守的”。然而，更重要的是，阿拉巴马大学的政治学家乔治·霍利(George Hawley)表明，自然保守主义的故事情节更多的是神话，而不是事实。在财政问题上，移民，以及拉美裔和亚裔，都比普通美国选民偏左。例如，根据皮尤的调查，75%的西班牙裔美国人表示，他们更喜欢一个拥有更多服务的大政府，而不是一个拥有更少服务的小政府，而在普通公众中，这一比例仅为41%。
+如果共和党在移民问题上变得像民主党一样进步，但在所有其他问题上都保持保守，那么大量移民会支持共和党吗?鉴于上述调查数据，绝大多数新选民很可能会继续支持民主党候选人。事实上，皮尤拉美裔中心的数据进一步表明，如果无证移民获得公民身份并有资格投票，他们成为民主党人的人数将远远超过共和党人。
+一些乐观主义者承认移民对大政府的吸引力，但相信这可以通过更好的信息传递来解决。“让人们听你的话真的很难……如果他们认为你想驱逐他们的祖母，”马可·卢比奥(Marco Rubio)有一句名言。但许多共和党领导人从未想过驱逐祖母。罗纳德·里根、布什和约翰·麦凯恩都支持大赦或扩大合法移民，或两者兼而有之。没有人获得超过40%的西班牙裔选票。当然，这并不意味着外展是浪费时间，但它确实表明，作为一种招聘工具，消息传递有其局限性。有时人们只是不同意有关政策。
+另一个乐观的观点是，意识形态差异将随着移民的同化而消失。同样，这也不足以让人放心。不断上升的左翼多数，即使是短暂的，也可以永久存在</p></details></li></ul><p id="cfbaea58-4f50-40ba-9438-c8595f4be986" class="">
+</p><p id="d9e62f62-bd03-47f8-b16e-704357f4fa3d" class="">例3</p><ul id="ab906006-ed82-4773-af1e-7e7a7884e10d" class="toggle"><li><details open=""><summary>Anchor doc</summary><p id="bddc07d8-2f87-408f-bf39-b8d0e40f0df3" class="">主流媒体。说谎的媒体。不诚实的媒体。我们都知道“记者”不是一个职业的成员，而只是使用某种策略的政治活动家。记者的存在是为了塑造公众叙事，压制持不同政见者，支持当权者的利益。
+他们在这个过程中使用的许多工具之一是我称之为“恶意联想”的东西。这与“有关联的负罪感”，甚至是越来越流行的“无关联的负罪感”都不完全一样。在联想犯罪中，那些没有直接关系但至少有某种接触的人被集中在一起，作为诋毁某人的一部分。在后一种情况下，那些甚至没有间接关系或没有接触点，但可能被认为至少有一些模糊的意识形态联系的人物，被集中在一起。
+&quot;恶意联想&quot;是最后一步。在这里，那些直接反对媒体试图诋毁的个人或组织的人与目标联系在一起，作为诋毁努力的一部分。例如，主流媒体在竞选期间不断告诉我们，唐纳德·特朗普集会期间“爆发了暴力事件”，却没有告诉我们，特朗普的对手才是真正的责任人。
+现在，我们有另一个例子。在宾夕法尼亚州哈里斯堡举行的反伊斯兰教法抗议活动中，一名“反法”极左抗议者因涉嫌刺伤警车而被捕。她面临多项指控。一些媒体准确地报道了她所在的组织和她的意图[更新:反伊斯兰教法示威者在反对伊斯兰教法的游行中袭击了警察的马，瓦莱丽·瓦尔兹，福克斯43,2017年6月12日]。
+然而，其他媒体试图将代表美国的ACT与抗议他们并据称袭击动物的人联系起来。他们只是简单地不把嫌疑人丽莎·乔伊·西蒙(Lisa Joy Simon)(她看起来并不像一个保守派)报道为反法组织的成员，甚至根本没有报道反示威者的存在。相反，他们报告了被指控的罪行，然后为了美国一再污蔑ACT。
+当局表示，一名23岁的费城女子周六在哈里斯堡被捕，据称她在一次抗议活动中用旗杆袭击了一辆州警马。
+周一晚上，丽莎·乔伊·西蒙仍被关押在多芬县监狱，以代替10万美元的保释金，罪名是严重袭击警察，嘲笑警用动物，拒捕以及相关罪行。
+[费城女子被控在抗议活动中袭击警马]。(<a href="http://philly.com/">Philly.com</a>, 2017年6月12日)
+没有提到她和反法的关系，甚至没有提到他们在那里。显然，其目的是将被指控的罪犯与美国行动联系起来。其他媒体也使用了同样的技术，但后来更新了故事(大概那时会有更少的人读这个故事)。然而，Philly.com并没有更新这个故事的相关信息。
+这种言论会产生真正的后果，因为保守派团体，尤其是大学校园里的保守派团体，经常被认为要为左翼暴力，尤其是“反法”(antifa)所造成的令人发指的“安全成本”负责。前提是保守派，或者在这种情况下，伊斯兰教法的反对者，是对暴力负责的人，即使它实际上是由他们最可恨的敌人实施的。
+特朗普现象最好的部分之一是，媒体明确的政治角色被揭示得多么彻底。但我们都能认识到公开偏见。有时会更微妙，比如这里。我们所有的读者都需要意识到这一点，并大声疾呼。</p></details></li></ul><ul id="2d2a9be0-adf7-4d2c-916c-71b23f7fd195" class="toggle"><li><details open=""><summary>similar doc 1 分数 0.5380085706710815</summary><p id="6f817128-cb69-4558-adce-99c1eace4b37" class="">在昨天的Facebook和Twitter现场采访中，我向保守派专栏作家奎恩·希利尔询问了我从主要支持唐纳德·特朗普的人那里听到和读到的抱怨——特朗普的批评者和主流媒体成员永远不会接受特朗普的任何言论或行为，无论如何都会批评他。
+例如，昨天，有人在Facebook上讽刺地写道，如果特朗普治愈癌症，其他人会反对，并声称“他伤害了制药公司”。
+在过去的几天里，特朗普的批评者能否放他一马，不要事事都对他吹毛求疵，成为了一个更大的问题。周六，特朗普未能孤立极右翼纳粹、三k党和Alt right等人，因为他们在弗吉尼亚州夏洛茨维尔举行的“团结右翼”集会上煽动仇恨和暴力。批评他的人抨击他没有这样做。周一，特朗普宣读了一份事先准备好的声明，点名纳粹、三k党和其他右翼组织。
+具有讽刺意味的是，当希利尔先生和我在社交媒体上进行现场采访时，总统正在举行新闻发布会，他似乎在会上进一步支持他之前对夏洛茨维尔暴力事件的反应。
+自那次新闻发布会以来，更多的共和党人和媒体人士对特朗普的回应表达了集体愤怒。
+尽管如此，希里尔的观点仍然与特朗普的批评者和主流媒体是否会对特朗普感到满意这个问题非常相关，甚至更相关。
+“答案是肯定的——对于一些特朗普的批评者来说，这个问题不是本能地反特朗普或支持特朗普或其他什么——而是要对特朗普的行为和言论做出回应，因为每个人的行为和言论都有价值——仅仅因为有人连续五次批评特朗普，并不意味着他们只是因为喜欢批评特朗普而批评他——可能是特朗普做了或说了一些愚蠢的事情，或者不仅仅是连续五次。”
+也许他所做或所说的第六件事不会被认为是愚蠢或令人讨厌的，同样的批评者会称赞他。
+所以我认为仅仅给某人贴上反特朗普的标签，从而忽视那个人提出的合理批评是不公平的。
+这还不够。我也是那些说这还不够的人之一。我很自豪能与许多其他保守派人士站在一起，包括《国家评论》的编辑、阿肯色州参议员汤姆·科顿——他是特朗普的忠实支持者，南卡罗来纳州的参议员蒂姆·斯科特犹他州的参议员奥林·哈奇等等很多很多人都认为特朗普是在试图主张道德上的等同，或者在这个特殊情况下，在纳粹和白人至上主义者以及抗议纳粹和白人至上主义者的人之间的不道德的等同。虽然我们完全可以合理地说，总的来说，反法组织，左翼组织都是坏分子，他们可能表现得不好，受到各种各样的批评，总的来说，简单的现实是，在这种情况下，这些是纳粹分子和白人至上主义者，他们挥舞着纳粹旗帜，故意武装到牙齿，故意喊纳粹口号，故意煽动骚乱和暴力，是他们的一名成员犯下了令人发指的谋杀，在这种情况下，美国总统不应该把责任直接归咎于白人至上主义时期，声明结束。
+问:那么你认为影响是什么，我的意思是，显然他不想，他不想增加额外的名字——他受到了抨击，我认为在这一点上，对于首席执行官来说，他的制造集团的人决定退出，你认为这是暂时的还是什么?
+希利尔:嗯，听着，嗯，我会把功劳归于总统。我仍然不认为当他在48小时后发表新的声明时，不应该花48小时，但是当他没有发表新的声明时，即使看起来他是被迫的，就像他的心并没有真正在这一点上一样，事实是他对另一个人说的话，非常好，非常合适，所以我要给他一点信任。但你知道，我认为在某种程度上，我们需要停止纠结于总统说了什么或没有说什么，接受他的话，继续前进。
+但因为你提到了他对工业委员会辞职的反应，或者不管它叫什么——这很奇怪，也很能说明问题，尽管总统不能，不能在48小时内专门点名白人至上主义者和新纳粹分子，他非常迅速、非常热情地攻击默克公司的黑人首席执行官，他把默克公司的黑人首席执行官任命为委员会成员，他过去曾称赞过默克公司的黑人首席执行官，突然间，因为默克公司的黑人首席执行官因为对特朗普的失败感到不满而敢于从委员会辞职，特朗普急切地、痛苦地攻击他，而不是说你知道吗</p></details></li></ul><ul id="89756020-99cd-45e4-bb64-4dafc8e4cbf1" class="toggle"><li><details open=""><summary>similar doc 2分数0.5281016230583191</summary><p id="bd69fd72-b21f-41ec-a5cd-8d3cf8fc413f" class="">这是由冥王星出版社今天出版的新书《宣传闪电战——企业媒体如何扭曲现实》的前言略作修改的版本。热烈感谢John Pilger为我们的书贡献了这篇精彩的文章。
+今年早些时候，罗伯特·帕里(Robert Parry)去世，感觉就像是向记者时代告别。西摩·赫什(Seymour Hersh)写道，帕里是“独立新闻的开拓者”，他和他有很多共同点。
+赫什揭露了越南美莱村大屠杀和对柬埔寨的秘密轰炸，帕里揭露了伊朗门，一个毒品和枪支走私的阴谋，最终入主白宫。2016年，他们分别拿出了令人信服的证据，证明叙利亚阿萨德政府没有使用化学武器。他们没有被原谅。
+虽然新闻业一直是权力的松散延伸，但近年来发生了一些变化。当我在上世纪60年代加入英国一家全国性报纸时，异见得到了容忍，但随着自由资本主义走向某种形式的企业独裁，异见已退化为暗含意义的地下活动。这是一个巨大的转变，记者们监督着新的“群体思维”，正如帕里所说的那样，抛开它的神话和干扰，追捕它的敌人。
+见证了对难民和移民的政治迫害、“我也是”(MeToo)狂热者对我们最古老的自由的肆意抛弃、无罪推定、反俄种族主义和反英国脱欧的歇斯底里、日益高涨的反华运动以及对世界大战警告的压制。
+随着许多(如果不是大多数的话)独立记者被禁止或驱逐出“主流”，互联网的一个角落已成为披露和循证分析的重要来源:真正的新闻。维基解密、联盟新闻网、<a href="http://wss.org/">wss.org</a>、<a href="http://truthdig.com/">truthdig.com</a>、<a href="http://globalresearch.org/">globalresearch.org</a>、counterpunch.org和informationclearinghouse.com等网站是那些试图理解当今世界的必读网站，在这个世界上，科学和技术取得了惊人的进步，而可怕的“民主国家”的政治和经济生活却在媒体自以为了不起的表象下倒退。
+在英国，只有一家网站一贯提供独立的媒体批评。这就是了不起的媒体镜头——之所以了不起，部分原因在于，自2001年以来，它的创始人、编辑以及仅有的两位作者戴维•爱德华兹(David Edwards)和戴维•克伦威尔(David Cromwell)就不再把目光集中在通常的嫌疑人保守党媒体上，而是集中在声誉良好的自由新闻的典范上:英国广播公司(BBC)、《卫报》(Guardian)、第四频道新闻(Channel 4 News)。
+他们的方法很简单。他们的研究一丝不苟，当他们问记者为什么他或她制作了如此片面的报道，或者没有披露重要事实或宣扬不可信的神话时，他们是尊重和礼貌的。
+他们收到的回复通常是防御性的，有时是辱骂性的;有些人歇斯底里，好像他们推开了一个受保护物种的屏障。
+我想说，Media Lens打破了关于企业新闻的沉默。就像诺姆·乔姆斯基(Noam Chomsky)和爱德华·赫尔曼(Edward Herman)在《制造同意》(Manufacturing Consent)一书中所写的那样，他们代表了解构和揭开媒体权力神秘面纱的第五阶层。
+特别有趣的是，他们都不是记者。大卫·爱德华兹是一名教师，大卫·克伦威尔是一名前科学家。然而，他们对新闻道德的理解——这是一个很少使用的术语;让我们称之为真正的客观性——这是他们在线媒体镜头报道的一种令人振奋的品质。
+我认为他们的工作是英勇的，我会把他们刚刚出版的书《宣传闪电战》(Propaganda Blitz)放在每一所为企业系统服务的新闻学院，就像他们一样。
+以《解散国民医疗服务体系》一章为例，爱德华兹和克伦威尔在书中描述了记者在英国先锋医疗服务面临的危机中发挥的关键作用。
+国民医疗服务体系危机是被称为“紧缩”的政治和媒体结构的产物，其欺骗性的、狡猾的语言是“效率节约”(BBC对削减公共开支的说法)和“艰难选择”(故意破坏现代英国文明生活的前提)。
+“紧缩”是一个发明。英国是一个富裕的国家，但欠下债务的是不老实的银行，而不是人民。原本可以轻松地为国民健康服务(nhs)提供资金的资源，在光天化日之下被少数获准逃税的人偷走了。
+用企业委婉的词汇，公共资助的医疗服务被自由市场狂热分子故意贬低，以证明其抛售的合理性。杰里米·科尔宾(Jeremy Corbyn)领导的工党似乎反对这一点，但事实是这样吗?答案很可能是否定的。媒体对此只字未提，更不用说解释了。
+爱德华兹和克伦威尔剖析了2012年的《健康与社会保障法》，其无伤大雅的标题掩盖了其可怕的后果。大多数人都不知道，该法案结束了英国政府提供普遍免费医疗保健的法律义务:这是第二次世界大战后NHS建立的基础。私人</p></details></li></ul><ul id="da03c5f8-512f-44ab-90c3-2700ba659839" class="toggle"><li><details open=""><summary>similar doc 3分数0.5137116312980652</summary><p id="2d50c3b7-199d-4ff1-9eac-c0cf6b669db7" class="">以上内容:一位专家解释了如何识别假新闻。
+一项新的益普索调查显示，美国总统唐纳德·特朗普对媒体的无情攻击使“假新闻”成为一个家喻户晓的词，但许多加拿大人对这个概念的了解仍然没有他们想象的那么多。
+益普索(Ipsos)负责公共事务的副总裁肖恩·辛普森(Sean Simpson)说:“假新闻的有趣之处在于，我们甚至无法就什么是假达成一致。”
+他说，特朗普领导下的美国已经成为“假新闻的焦点”，尽管民意调查数据显示，人们对假新闻的含义存在分歧。
+特朗普用这个词来攻击记者的不利新闻报道和错误，他称这些记者是“人民的敌人”。然而，他也吹捧了一些虚假的叙述，比如声称前总统巴拉克·奥巴马不是在美国出生。
+ipo的调查是全球顾问公司(Global Advisor)对27个国家进行的调查的一部分，调查发现，在特朗普对媒体开战的第二年，受访者对这个词的含义存在分歧。
+近60%的加拿大人(58%)和美国人(62%)将“假新闻”定义为事实有误的报道。然而，46%的人也把这个词用在政客和只呈现一方观点的新闻报道上。另有46%的加拿大人和51%的美国人表示，政客们用这个词来诋毁他们不同意的媒体报道。
+辛普森说，总的来说，美国受访者对这个词的含义比加拿大人更困惑。
+该调查还显示，在辨别真假方面，加拿大人比其他人更相信自己，尽管他们中的许多人也曾被虚假故事所愚弄。
+调查发现，64%的加拿大人对自己区分真实新闻和编造故事的能力充满信心。然而，只有40%的加拿大人相信普通人能够区分真实新闻和假新闻。
+数据显示，近一半的受访者(48%)还承认，他们后来得知的新闻报道是假的。
+他指出，去年大多数加拿大人都没有通过益普索测验，该测验要求受访者判断故事是真的还是假的。
+辛普森说:“也许少一点指责别人，多一点反省是有必要的。”
+调查还显示，大多数加拿大人(59%)和美国人(77%)认为，普通人生活在互联网上由相似观点和偏见构成的“泡沫”中。然而，每个国家只有十分之三的受访者认为他们生活在自己的互联网泡沫中。
+辛普森说，这些“泡沫”是由个人偏见形成的，在别人身上比在自己身上更容易发现。
+总体而言，不到一半的加拿大受访者表示他们看过假新闻。这低于全球60%的平均水平，也低于美国61%的比例。德国人排在最后，只有30%的人说他们看过假新闻，而阿根廷人排在最前面(82%)。
+益普索民意调查显示，大多数受访者(57%)还认为，与30年前相比，普通人更不相信政客会说实话。美国受访者则持更怀疑的态度，69%的人认为普通人现在比过去更不信任政客。
+益普索表示，调查结果显示，人们普遍认为，如今政治和媒体中的谎言更为普遍。
+独家全球新闻益普索民意调查受版权保护。这些信息和/或数据只有在获得“全球新闻益普索”完整和适当的信誉和署名的情况下才能重播或重新发布。该调查于2018年6月22日至7月6日进行，在27个国家进行了19243次采访，其中包括来自益普索在线小组的1000多名加拿大人。益普索在线调查的准确性是用可信区间来衡量的。如果对所有加拿大成年人进行调查，这项调查的准确率在±3.5个百分点之间，为19 / 20。</p></details></li></ul><p id="da040c00-6a54-43af-90a8-dda01c3a5dd1" class="">
+</p><p id="c214b6fe-59ac-40bd-b561-4c95b7903b24" class="">
+</p></div></article></body></html>
