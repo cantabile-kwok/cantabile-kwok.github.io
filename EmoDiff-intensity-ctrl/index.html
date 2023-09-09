@@ -1,6 +1,8 @@
-<html><head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-<script type="text/x-mathjax-config;executed=true">
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    <script type="text/x-mathjax-config;executed=true">
   window.MathJax.Hub.Config({
       showProcessingMessages: false, //关闭js加载过程信息
       messageStyle: "none", //不显示信息
@@ -17,287 +19,461 @@
   });
   window.MathJax.Hub.Queue(["Typeset", MathJax.Hub,document.getElementsByClassName("ck-content")]);
 </script>
-  <meta charset="utf-8">
-  <title>Audio Samples from "Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</title>
+    <meta charset="utf-8">
+    <title>Audio Samples from "Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</title>
 
-  <!-- Bootstrap core CSS -->
-  <!-- <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-        /* display: inline; */
-      }
-    }
-  </style>
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                /* display: inline; */
+            }
+        }
+    </style>
 </head>
 
 <!--<link href="./dist/css/bootstrap.min.css" rel="stylesheet">-->
+
 <body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
-<div class="container">
-    <center>
-  <div style="background:#EAEAEA;color:#000;width:1000">
-      <br />
-    <b><font size=6><center>Audio Samples</center></font></b> <br />
-        <center><font size=4.2>from <b>EmoDiff: Intensity Controllable Emotional Text-to-Speech with Soft-Label Guidance</b>, Submitted to ICASSP2023</font></center></h1>
-    <p class="lead"><center><i>Yiwei Guo, Chenpeng Du, Xie Chen, Kai Yu</i></center></p>
-    <!-- <br /> -->
-    <p class="lead"><center><a href="mailto:cantabile_kwok@sjtu.edu.cn">cantabile_kwok@sjtu.edu.cn</a></center></p>
-    <p class="lead"><center>Shanghai Jiao Tong University, China</center></p>
-    <!-- <p class="lead"><center><font color='red'><b>NOTE: this page is still under construction.</b></font></center></p> -->
-  </div>
-  </center>
-  <br />
-  <b><center><font size=5>1. Emotional TTS Quality</font></center></b><br/>
-  <center>
-      <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-          <tbody>
-          <tr> 
-              <td width="100" style="word-break:normal;">
-                  This part presents the quality of compared systems, corresonding to Section 4.2 in the paper.     
-                  Note that all the audio on this page was synthesized from HifiGAN implemented in <a href="https://github.com/kan-bayashi/ParallelWaveGAN">this repo</a>, except ground truth.
-                  All the utterances are from <a href="https://github.com/HLTSingapore/Emotional-Speech-Data/">ESD</a> speaker ID 0015.
-                  <br/><br/>
-                  <b>GT</b>: Ground truth recording.
-                  <br />
-                  <b>GT (voc.)</b>: Ground truth mel-spectrogram + HifiGAN.
-                  <br/>
-                  <b>MixedEmotion</b>: Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>. We use the <a href="https://github.com/KunZhou9646/Mixed_Emotions">official code</a>.
-                  It is an autoregressive model based on relative attributes rank to pre-calculate intensity values for training. 
-                  It much resembles <a href="https://arxiv.org/abs/2201.03967">Emovox</a> for intensity controllable emotion conversion.
-                  <br/>
-                  <b>GradTTS w/ emo label</b>: a conditional <a href="https://proceedings.mlr.press/v139/popov21a.html">GradTTS</a> model with hard emotion labels as input. It therefore does not have intensity controllability, but should have good sample quality, as a certified acoustic model.
-                  <br/>
-                  <b>EmoDiff</b>: Proposed intensity controllable emotional TTS model.
-              </td>
-          </tr>
-          </tbody>
-      </table>
-      <br/>
-  <table class="table" style="width:10%">
-      <tbody>
-      <tr>
-          <td></td>
-          <th>GT</th>
-          <th>GT (voc.)</th>
-          <th>MixedEmotion</th>
-          <th>GradTTS w/ emo label</th>
-          <th><b>EmoDiff</b></th>
-      </tr>
-      <tr>
-          <td>Surprise</td>
-          <td><audio src="./audio/naturalness/GT/0015_001485.wav" controls="" style="width:200px;"></audio></td>
-          <td><audio src="./audio/naturalness/voc/0015-Surprise_001485.wav" controls="" style="width:200px;"></audio></td>
-          <td><audio src="./audio/naturalness/MixedEmotion/Mel_85_ref_Surprise_TTS.wav" controls="" style="width:200px;"></audio></td>
-          <td><audio src="./audio/naturalness/GradTTS-cond/0015-Surprise_001485.wav" controls="" style="width:200px;"></audio></td>
-          <td><audio src="./audio/naturalness/EmoDiff/0015-Surprise_001485.wav" controls="" style="width:200px;"></audio></td>
-      </tr>
-      <tr>
-          <td>Happy</td>
-          <td><audio src="./audio/naturalness/GT/0015_000794.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/voc/0015-Happy_000794.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/MixedEmotion/Mel_94_ref_Happy_TTS.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/GradTTS-cond/0015-Happy_000794.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/EmoDiff/0015-Happy_000794.wav" controls="" style="width:200px"></audio></td>
-      </tr>
-      <tr>
-          <td>Sad</td>
-          <td><audio src="./audio/naturalness/GT/0015_001072.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/voc/0015-Sad_001072.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/MixedEmotion/Mel_72_ref_Sad_TTS.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/GradTTS-cond/0015-Sad_001072.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/EmoDiff/0015-Sad_001072.wav" controls="" style="width:200px"></audio></td>
-      </tr>
-      <tr>
-          <td>Angry</td>
-          <td><audio src="./audio/naturalness/GT/0015_000362.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/voc/0015-Angry_000362.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/MixedEmotion/Mel_62_ref_Angry_TTS.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/GradTTS-cond/0015-Angry_000362.wav" controls="" style="width:200px"></audio></td>
-          <td><audio src="./audio/naturalness/EmoDiff/0015-Angry_000362.wav" controls="" style="width:200px"></audio></td>
-      </tr>
-      </tbody>
-  </table>
-</center>
-<br />
-<HR align=center width=1000>
-<b><center><font size=5>2. Controllability of Emotion Intensity</font></center></b><br />
-<center>
-  <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-      <tbody>
-      <tr> 
-          <td width="100" style="word-break:normal;">Here we synthesized speech with emotion intensity from 0.0 to 1.0 with 0.2 interval. 
-              Each row contains the same utterance.
-              The controlled emotion is listed at the beginning.
-              <br />
-              <br />
-          </td>
-      </tr>
-      </tbody>
-      <table class="table" style="width:10%">
-          <tbody>
-          <tr>
-              <td></td>
-              <th>0.0 (Neutral)</th>
-              <th><img src='arrow.png' height="20"></th>
-              <th><img src='arrow.png' height="20"></th>
-              <th><img src='arrow.png' height="20"></th>
-              <th><img src='arrow.png' height="20"></th>
-              <th>1.0 (100% intense)</th>
-          </tr>
-          <tr>
-              <td>Surprise</td>
-              <td><audio src="./audio/intensity/Surprise/0.0/[spk_4]-[emo_2]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.2/[spk_4]-[emo_2(0.8)_4(0.2)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.4/[spk_4]-[emo_2(0.6)_4(0.4)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.6/[spk_4]-[emo_2(0.4)_4(0.6)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.8/[spk_4]-[emo_2(0.2)_4(0.8)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/1.0/[spk_4]-[emo_4]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Surprise</td>
-              <td><audio src="./audio/intensity/Surprise/0.0/[spk_4]-[emo_2]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.2/[spk_4]-[emo_2(0.8)_4(0.2)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.4/[spk_4]-[emo_2(0.6)_4(0.4)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.6/[spk_4]-[emo_2(0.4)_4(0.6)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/0.8/[spk_4]-[emo_2(0.2)_4(0.8)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Surprise/1.0/[spk_4]-[emo_4]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Angry</td>
-              <td><audio src="./audio/intensity/Angry/0.0/[spk_4]-[emo_2]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.2/[spk_4]-[emo_2(0.8)_0(0.19999999999999996)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.4/[spk_4]-[emo_2(0.6)_0(0.4)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.6/[spk_4]-[emo_2(0.4)_0(0.6)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.8/[spk_4]-[emo_2(0.2)_0(0.8)]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/1.0/[spk_4]-[emo_0]0011-Angry_000379.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Angry</td>
-              <td><audio src="./audio/intensity/Angry/0.0/[spk_4]-[emo_2]0011-Angry_000396.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.2/[spk_4]-[emo_2(0.8)_0(0.19999999999999996)]0011-Angry_000396.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.4/[spk_4]-[emo_2(0.6)_0(0.4)]0011-Angry_000396.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.6/[spk_4]-[emo_2(0.4)_0(0.6)]0011-Angry_000396.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/0.8/[spk_4]-[emo_2(0.2)_0(0.8)]0011-Angry_000396.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Angry/1.0/[spk_4]-[emo_0]0011-Angry_000396.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Happy</td>
-              <td><audio src="./audio/intensity/Happy/0.0/[spk_4]-[emo_2]0011-Angry_000380.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.2/[spk_4]-[emo_2(0.8)_1(0.19999999999999996)]0011-Angry_000380.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.4/[spk_4]-[emo_2(0.6)_1(0.4)]0011-Angry_000380.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.6/[spk_4]-[emo_2(0.4)_1(0.6)]0011-Angry_000380.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.8/[spk_4]-[emo_2(0.2)_1(0.8)]0011-Angry_000380.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/1.0/[spk_4]-[emo_1]0011-Angry_000380.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Happy</td>
-              <td><audio src="./audio/intensity/Happy/0.0/[spk_4]-[emo_2]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.2/[spk_4]-[emo_2(0.8)_1(0.19999999999999996)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.4/[spk_4]-[emo_2(0.6)_1(0.4)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.6/[spk_4]-[emo_2(0.4)_1(0.6)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/0.8/[spk_4]-[emo_2(0.2)_1(0.8)]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Happy/1.0/[spk_4]-[emo_1]0011-Angry_000369.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Sad</td>
-              <td><audio src="./audio/intensity/Sad/0.0/[spk_4]-[emo_2]0011-Angry_000391.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.2/[spk_4]-[emo_2(0.8)_3(0.19999999999999996)]0011-Angry_000391.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.4/[spk_4]-[emo_2(0.6)_3(0.4)]0011-Angry_000391.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.6/[spk_4]-[emo_2(0.4)_3(0.6)]0011-Angry_000391.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.8/[spk_4]-[emo_2(0.2)_3(0.8)]0011-Angry_000391.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/1.0/[spk_4]-[emo_3]0011-Angry_000391.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          <tr>
-              <td>Sad</td>
-              <td><audio src="./audio/intensity/Sad/0.0/[spk_4]-[emo_2]0011-Angry_000365.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.2/[spk_4]-[emo_2(0.8)_3(0.19999999999999996)]0011-Angry_000365.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.4/[spk_4]-[emo_2(0.6)_3(0.4)]0011-Angry_000365.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.6/[spk_4]-[emo_2(0.4)_3(0.6)]0011-Angry_000365.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/0.8/[spk_4]-[emo_2(0.2)_3(0.8)]0011-Angry_000365.wav" controls="" style="width:200px;"></audio></td>
-              <td><audio src="./audio/intensity/Sad/1.0/[spk_4]-[emo_3]0011-Angry_000365.wav" controls="" style="width:200px;"></audio></td>
-          </tr>
-          
-          </tbody>
-      </table>
-</center>
-<br/>
-<br/>
+    <div class="container">
+        <center>
+            <div style="background:#EAEAEA;color:#000;width:1000">
+                <br />
+                <b>
+                    <font size=6>
+                        <center>Audio Samples</center>
+                    </font>
+                </b> <br />
+                <center>
+                    <font size=4.2>from <b>EmoDiff: Intensity Controllable Emotional Text-to-Speech with Soft-Label
+                            Guidance</b>, Accepted to ICASSP2023</font>
+                </center>
+                </h1>
+                <p class="lead">
+                    <center><i>Yiwei Guo, Chenpeng Du, Xie Chen, Kai Yu</i></center>
+                </p>
+                <!-- <br /> -->
+                <p class="lead">
+                    <center><a href="mailto:yiwei.guo@sjtu.edu.cn">yiwei.guo@sjtu.edu.cn</a></center>
+                </p>
+                <p class="lead">
+                    <center>Shanghai Jiao Tong University, China</center>
+                </p>
+                <br/>
+                <!-- <p class="lead"><center><font color='red'><b>NOTE: this page is still under construction.</b></font></center></p> -->
+            </div>
+        </center>
+        <br />
+        <b>
+            <center>
+                <font size=5>1. Emotional TTS Quality</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            This part presents the quality of compared systems, corresonding to Section 4.2 in the
+                            paper.
+                            Note that all the audio on this page was synthesized from HifiGAN implemented in <a
+                                href="https://github.com/kan-bayashi/ParallelWaveGAN">this repo</a>, except ground
+                            truth.
+                            All the utterances are from <a
+                                href="https://github.com/HLTSingapore/Emotional-Speech-Data/">ESD</a> speaker ID 0015.
+                            <br /><br />
+                            <b>GT</b>: Ground truth recording.
+                            <br />
+                            <b>GT (voc.)</b>: Ground truth mel-spectrogram + HifiGAN.
+                            <br />
+                            <b>MixedEmotion</b>: Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>.
+                            We use the <a href="https://github.com/KunZhou9646/Mixed_Emotions">official code</a>.
+                            It is an autoregressive model based on relative attributes rank to pre-calculate intensity
+                            values for training.
+                            It much resembles <a href="https://arxiv.org/abs/2201.03967">Emovox</a> for intensity
+                            controllable emotion conversion.
+                            <br />
+                            <b>GradTTS w/ emo label</b>: a conditional <a
+                                href="https://proceedings.mlr.press/v139/popov21a.html">GradTTS</a> model with hard
+                            emotion labels as input. It therefore does not have intensity controllability, but should
+                            have good sample quality, as a certified acoustic model.
+                            <br />
+                            <b>EmoDiff</b>: Proposed intensity controllable emotional TTS model.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table class="table" style="width:10%">
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <th>GT</th>
+                        <th>GT (voc.)</th>
+                        <th>MixedEmotion</th>
+                        <th>GradTTS w/ emo label</th>
+                        <th><b>EmoDiff</b></th>
+                    </tr>
+                    <tr>
+                        <td>Surprise</td>
+                        <td><audio src="./audio/naturalness/GT/0015_001485.wav" controls=""
+                                style="width:200px;"></audio></td>
+                        <td><audio src="./audio/naturalness/voc/0015-Surprise_001485.wav" controls=""
+                                style="width:200px;"></audio></td>
+                        <td><audio src="./audio/naturalness/MixedEmotion/Mel_85_ref_Surprise_TTS.wav" controls=""
+                                style="width:200px;"></audio></td>
+                        <td><audio src="./audio/naturalness/GradTTS-cond/0015-Surprise_001485.wav" controls=""
+                                style="width:200px;"></audio></td>
+                        <td><audio src="./audio/naturalness/EmoDiff/0015-Surprise_001485.wav" controls=""
+                                style="width:200px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Happy</td>
+                        <td><audio src="./audio/naturalness/GT/0015_000794.wav" controls="" style="width:200px"></audio>
+                        </td>
+                        <td><audio src="./audio/naturalness/voc/0015-Happy_000794.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/MixedEmotion/Mel_94_ref_Happy_TTS.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/GradTTS-cond/0015-Happy_000794.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/EmoDiff/0015-Happy_000794.wav" controls=""
+                                style="width:200px"></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Sad</td>
+                        <td><audio src="./audio/naturalness/GT/0015_001072.wav" controls="" style="width:200px"></audio>
+                        </td>
+                        <td><audio src="./audio/naturalness/voc/0015-Sad_001072.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/MixedEmotion/Mel_72_ref_Sad_TTS.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/GradTTS-cond/0015-Sad_001072.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/EmoDiff/0015-Sad_001072.wav" controls=""
+                                style="width:200px"></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Angry</td>
+                        <td><audio src="./audio/naturalness/GT/0015_000362.wav" controls="" style="width:200px"></audio>
+                        </td>
+                        <td><audio src="./audio/naturalness/voc/0015-Angry_000362.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/MixedEmotion/Mel_62_ref_Angry_TTS.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/GradTTS-cond/0015-Angry_000362.wav" controls=""
+                                style="width:200px"></audio></td>
+                        <td><audio src="./audio/naturalness/EmoDiff/0015-Angry_000362.wav" controls=""
+                                style="width:200px"></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <HR align=center width=1000>
+        <b>
+            <center>
+                <font size=5>2. Controllability of Emotion Intensity</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">Here we synthesized speech with emotion intensity
+                            from 0.0 to 1.0 with 0.2 interval.
+                            Each row contains the same utterance.
+                            The controlled emotion is listed at the beginning.
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                </tbody>
+                <table class="table" style="width:10%">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <th>0.0 (Neutral)</th>
+                            <th><img src='arrow.png' height="20"></th>
+                            <th><img src='arrow.png' height="20"></th>
+                            <th><img src='arrow.png' height="20"></th>
+                            <th><img src='arrow.png' height="20"></th>
+                            <th>1.0 (100% intense)</th>
+                        </tr>
+                        <tr>
+                            <td>Surprise</td>
+                            <td><audio src="./audio/intensity/Surprise/0.0/[spk_4]-[emo_2]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.2/[spk_4]-[emo_2(0.8)_4(0.2)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.4/[spk_4]-[emo_2(0.6)_4(0.4)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.6/[spk_4]-[emo_2(0.4)_4(0.6)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.8/[spk_4]-[emo_2(0.2)_4(0.8)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Surprise/1.0/[spk_4]-[emo_4]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Surprise</td>
+                            <td><audio src="./audio/intensity/Surprise/0.0/[spk_4]-[emo_2]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.2/[spk_4]-[emo_2(0.8)_4(0.2)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.4/[spk_4]-[emo_2(0.6)_4(0.4)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.6/[spk_4]-[emo_2(0.4)_4(0.6)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.8/[spk_4]-[emo_2(0.2)_4(0.8)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Surprise/1.0/[spk_4]-[emo_4]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Angry</td>
+                            <td><audio src="./audio/intensity/Angry/0.0/[spk_4]-[emo_2]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.2/[spk_4]-[emo_2(0.8)_0(0.19999999999999996)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.4/[spk_4]-[emo_2(0.6)_0(0.4)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.6/[spk_4]-[emo_2(0.4)_0(0.6)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.8/[spk_4]-[emo_2(0.2)_0(0.8)]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Angry/1.0/[spk_4]-[emo_0]0011-Angry_000379.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Angry</td>
+                            <td><audio src="./audio/intensity/Angry/0.0/[spk_4]-[emo_2]0011-Angry_000396.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.2/[spk_4]-[emo_2(0.8)_0(0.19999999999999996)]0011-Angry_000396.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.4/[spk_4]-[emo_2(0.6)_0(0.4)]0011-Angry_000396.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.6/[spk_4]-[emo_2(0.4)_0(0.6)]0011-Angry_000396.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Angry/0.8/[spk_4]-[emo_2(0.2)_0(0.8)]0011-Angry_000396.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Angry/1.0/[spk_4]-[emo_0]0011-Angry_000396.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Happy</td>
+                            <td><audio src="./audio/intensity/Happy/0.0/[spk_4]-[emo_2]0011-Angry_000380.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.2/[spk_4]-[emo_2(0.8)_1(0.19999999999999996)]0011-Angry_000380.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.4/[spk_4]-[emo_2(0.6)_1(0.4)]0011-Angry_000380.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.6/[spk_4]-[emo_2(0.4)_1(0.6)]0011-Angry_000380.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.8/[spk_4]-[emo_2(0.2)_1(0.8)]0011-Angry_000380.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Happy/1.0/[spk_4]-[emo_1]0011-Angry_000380.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Happy</td>
+                            <td><audio src="./audio/intensity/Happy/0.0/[spk_4]-[emo_2]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.2/[spk_4]-[emo_2(0.8)_1(0.19999999999999996)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.4/[spk_4]-[emo_2(0.6)_1(0.4)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.6/[spk_4]-[emo_2(0.4)_1(0.6)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Happy/0.8/[spk_4]-[emo_2(0.2)_1(0.8)]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Happy/1.0/[spk_4]-[emo_1]0011-Angry_000369.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Sad</td>
+                            <td><audio src="./audio/intensity/Sad/0.0/[spk_4]-[emo_2]0011-Angry_000391.wav" controls=""
+                                    style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Sad/0.2/[spk_4]-[emo_2(0.8)_3(0.19999999999999996)]0011-Angry_000391.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/0.4/[spk_4]-[emo_2(0.6)_3(0.4)]0011-Angry_000391.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/0.6/[spk_4]-[emo_2(0.4)_3(0.6)]0011-Angry_000391.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/0.8/[spk_4]-[emo_2(0.2)_3(0.8)]0011-Angry_000391.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/1.0/[spk_4]-[emo_3]0011-Angry_000391.wav" controls=""
+                                    style="width:200px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Sad</td>
+                            <td><audio src="./audio/intensity/Sad/0.0/[spk_4]-[emo_2]0011-Angry_000365.wav" controls=""
+                                    style="width:200px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Sad/0.2/[spk_4]-[emo_2(0.8)_3(0.19999999999999996)]0011-Angry_000365.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/0.4/[spk_4]-[emo_2(0.6)_3(0.4)]0011-Angry_000365.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/0.6/[spk_4]-[emo_2(0.4)_3(0.6)]0011-Angry_000365.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/0.8/[spk_4]-[emo_2(0.2)_3(0.8)]0011-Angry_000365.wav"
+                                    controls="" style="width:200px;"></audio></td>
+                            <td><audio src="./audio/intensity/Sad/1.0/[spk_4]-[emo_3]0011-Angry_000365.wav" controls=""
+                                    style="width:200px;"></audio></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+        </center>
+        <br />
+        <br />
 
 
-<HR align=center width=1000>
-<b><center><font size=5>3. Diversity of Emotional Samples</font></center></b><br />
-<center>
-  <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-      <tbody>
-      <tr> 
-          <td width="100" style="word-break:normal;">
-              In this experiment, we synthesized each utterance four times with MixedEmotion and EmoDiff respectively. 
-              Each audio below contains four samples of the same utterance. 
-              Listeners can pay attention to the diversity within each emotion.
-          </td>
-      </tr>
-      </tbody>
-  </table>
-  <br/>
-  <table class="table">
-      <tbody>
-      <tr>
-          <td></td>
-          <th>MixedEmotion</th>
-          <th>EmoDiff</th>
-      </tr>
-      <tr>
-          <td>Happy</td>
-          <td><audio src="./audio/diversity/MixedEmotion/Mel_12_ref_Happy_TTS.wav" controls=""></audio></td>
-          <td><audio src="./audio/diversity/EmoDiff/0015-Happy_000712.wav" controls=""></audio></td>
-      </tr>
-      <tr>
-          <td>Surprise</td>
-          <td><audio src="./audio/diversity/MixedEmotion/Mel_70_ref_Surprise_TTS.wav" controls=""></audio></td>
-          <td><audio src="./audio/diversity/EmoDiff/0015-Surprise_001470.wav" controls=""></audio></td>
-      </tr>
-      <tr>
-          <td>Angry</td>
-          <td><audio src="./audio/diversity/MixedEmotion/Mel_54_ref_Angry_TTS.wav" controls=""></audio></td>
-          <td><audio src="./audio/diversity/EmoDiff/0015-Angry_000354.wav" controls=""></audio></td>
-      </tr>
-      <tr>
-          <td>Surprise</td>
-          <td><audio src="./audio/diversity/MixedEmotion/Mel_12_ref_Surprise_TTS.wav" controls=""></audio></td>
-          <td><audio src="./audio/diversity/EmoDiff/0015-Surprise_001412.wav" controls=""></audio></td>
-      </tr>
-      <tr>
-          <td>Sad</td>
-          <td><audio src="./audio/diversity/MixedEmotion/Mel_44_ref_Sad_TTS.wav" controls=""></audio></td>
-          <td><audio src="./audio/diversity/EmoDiff/0015-Sad_001144.wav" controls=""></audio></td>
-      </tr>
-      <tr>
-          <td>Angry</td>
-          <td><audio src="./audio/diversity/MixedEmotion/Mel_72_ref_Angry_TTS.wav" controls=""></audio></td>
-          <td><audio src="./audio/diversity/EmoDiff/0015-Angry_000354.wav" controls=""></audio></td>
-      </tr>
-      
-  </tbody></table>
-</center>
+        <HR align=center width=1000>
+        <b>
+            <center>
+                <font size=5>3. Diversity of Emotional Samples</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            In this experiment, we synthesized each utterance four times with MixedEmotion and EmoDiff
+                            respectively.
+                            Each audio below contains four samples of the same utterance.
+                            Listeners can pay attention to the diversity within each emotion.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <th>MixedEmotion</th>
+                        <th>EmoDiff</th>
+                    </tr>
+                    <tr>
+                        <td>Happy</td>
+                        <td><audio src="./audio/diversity/MixedEmotion/Mel_12_ref_Happy_TTS.wav" controls=""></audio>
+                        </td>
+                        <td><audio src="./audio/diversity/EmoDiff/0015-Happy_000712.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Surprise</td>
+                        <td><audio src="./audio/diversity/MixedEmotion/Mel_70_ref_Surprise_TTS.wav" controls=""></audio>
+                        </td>
+                        <td><audio src="./audio/diversity/EmoDiff/0015-Surprise_001470.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Angry</td>
+                        <td><audio src="./audio/diversity/MixedEmotion/Mel_54_ref_Angry_TTS.wav" controls=""></audio>
+                        </td>
+                        <td><audio src="./audio/diversity/EmoDiff/0015-Angry_000354.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Surprise</td>
+                        <td><audio src="./audio/diversity/MixedEmotion/Mel_12_ref_Surprise_TTS.wav" controls=""></audio>
+                        </td>
+                        <td><audio src="./audio/diversity/EmoDiff/0015-Surprise_001412.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Sad</td>
+                        <td><audio src="./audio/diversity/MixedEmotion/Mel_44_ref_Sad_TTS.wav" controls=""></audio></td>
+                        <td><audio src="./audio/diversity/EmoDiff/0015-Sad_001144.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Angry</td>
+                        <td><audio src="./audio/diversity/MixedEmotion/Mel_72_ref_Angry_TTS.wav" controls=""></audio>
+                        </td>
+                        <td><audio src="./audio/diversity/EmoDiff/0015-Angry_000354.wav" controls=""></audio></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </center>
 
 
+        <HR align=center width=1000>
+        <br />
+        <center>
+            <b>
+                <center>
+                    <font size=5>Citation</font>
+                </center>
+            </b><br />
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 50px; margin-right: 50px;">
+                <tbody>
+                    <tr>
+                        <td width="50" style="word-break:normal;" bgcolor="#F8F8F8">
+                            <code>
+                    @inproceedings{guo2023emodiff,<br/>
+                        &nbsp&nbsp&nbsp&nbsp title={Emodiff: Intensity controllable emotional text-to-speech with soft-label guidance},<br/>
+                        &nbsp&nbsp&nbsp&nbsp author={Guo, Yiwei and Du, Chenpeng and Chen, Xie and Yu, Kai},<br/>
+                        &nbsp&nbsp&nbsp&nbsp booktitle={ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},<br/>
+                        &nbsp&nbsp&nbsp&nbsp year={2023},<br/>
+                        &nbsp&nbsp&nbsp&nbsp organization={IEEE}<br/>
+                      }
+                </code>
+                            <!-- $\mathbf e$ -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-</div>
-<br />
-<br/>
-</body><style id="stylish-2" class="stylish" type="text/css">#notebook-container * {
+            </table>
+        </center>
 
-font-family: Consolas, "微软雅黑"
+    </div>
+    <br />
+    <br />
+</body>
+<style id="stylish-2" class="stylish" type="text/css">
+    #notebook-container * {
 
-}</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+        font-family: Consolas, "微软雅黑"
+
+    }
+</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>

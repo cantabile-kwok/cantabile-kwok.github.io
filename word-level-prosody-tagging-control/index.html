@@ -1,6 +1,8 @@
-<html><head>
+<html>
+
+<head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
-<script type="text/x-mathjax-config;executed=true">
+    <script type="text/x-mathjax-config;executed=true">
     window.MathJax.Hub.Config({
         showProcessingMessages: false, //关闭js加载过程信息
         messageStyle: "none", //不显示信息
@@ -18,274 +20,358 @@
     window.MathJax.Hub.Queue(["Typeset", MathJax.Hub,document.getElementsByClassName("ck-content")]);
 </script>
     <meta charset="utf-8">
-    <title>Audio Samples from "Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</title>
+    <title>Audio Samples from "<b>Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis</b>"</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-          /* display: inline; */
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-      }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                /* display: inline; */
+            }
+        }
     </style>
 </head>
 
 <!--<link href="./dist/css/bootstrap.min.css" rel="stylesheet">-->
+
 <body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
-  <div class="container">
-      <center>
-    <div style="background:#EAEAEA;color:#000;width:1000">
+    <div class="container">
+        <center>
+            <div style="background:#EAEAEA;color:#000;width:1000">
+                <br />
+                <b>
+                    <font size=6>
+                        <center>Audio Samples from</center>
+                    </font>
+                </b> <br />
+                <center>
+                    <font size=4.2>"<b>Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis</b>",
+                        ICASSP2022</font>
+                </center>
+                </h1>
+                <p class="lead">
+                    <center><i>Yiwei Guo, Chenpeng Du, Kai Yu</i></center>
+                </p>
+                <!-- <br /> -->
+                <p class="lead">
+                    <center>yiwei.guo@sjtu.edu.cn</center>
+                </p>
+                <p class="lead">
+                    <center>Shanghai Jiao Tong University</center>
+                </p>
+
+                <!-- <style>
+        .citation {
+          text-align: left;
+        }
+      </style> -->
+
+                <br />
+                <!--      <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs »</a>-->
+            </div>
+        </center>
         <br />
-      <b><font size=6><center>Audio Samples from</center></font></b> <br />
-          <center><font size=4.2>"Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis", ICASSP2022</font></center></h1>
-      <p class="lead"><center><i>Yiwei Guo, Chenpeng Du, Kai Yu</i></center></p>
-      <!-- <br /> -->
-      <p class="lead"><center>cantabile_kwok@sjtu.edu.cn</center></p>
-      <br/>
-<!--      <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs »</a>-->
-    </div>
-    </center>
-    <br />
-    <b><center><font size=5>1. Naturalness</font></center></b><br/>
-    <center>
-        <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-            <tbody>
-            <tr> 
-                <td width="100" style="word-break:normal;">
-                    This part presents the naturalness of four compared systems, corresonding to Section 3.3 in the paper.     
-                    Note that all the audio on this page is synthesized from MelGAN, including ground truth.
-                    All the utterances are from <a href="https://keithito.com/LJ-Speech-Dataset/">LJspeech</a> with utterance IDs listed.
-                    <br/><br/>
-                    <b>GT</b>: Ground truth (resynthesized)
-                    <br/>
-                    <b>Raw_FSP</b>: Typical <a href="https://arxiv.org/pdf/2006.04558.pdf?ref=https://githubhelp.com">FastSpeech2</a> model with no prosody modeling
-                    <br/>
-                    <b>PLP_MDN</b>: Phone-level prosody modeling with mixture density network (proposed in this <a href="https://ieeexplore.ieee.org/abstract/document/9640518">paper</a>)
-                    <br/>
-                    <b>WLP_predict</b>: Proposed word-level prosody tagging system. Here all the tags are automatically predicted from text.
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <br/>
-    <table class="table">
-        <tbody>
-            <!-- <tr><td scope="col" colspan="4">The FBI has indicated, that it is willing to continue to make such assistance available.</td></tr> -->
-        <tr>
-            <td></td>
-            <!-- <td colspan="3"><audio src="./audio/gt/LJ050-0241.wav" controls=""></audio></td> -->
-            <th>GT</th>
-            <th>Raw_FSP</th>
-            <th>PLP_MDN</th>
-            <th>WLP_predict</th>
-        </tr>
-        <tr>
-            <td>LJ050-0179</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0179_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0179_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/cpd_phone/LJ050-0179_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0179_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0185</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0185_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0185_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/cpd_phone/LJ050-0185_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0185_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0187</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0187_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0187_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/cpd_phone/LJ050-0187_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0187_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0191</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0191_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0191_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/cpd_phone/LJ050-0191_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0191_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0206</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0206_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0206_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/cpd_phone/LJ050-0206_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0206_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>LJ050-0227</td>
-            <td><audio src="./audio/naturalness/GT/LJ050-0227_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0227_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/cpd_phone/LJ050-0227_gen.wav" controls=""></audio></td>
-            <td><audio src="./audio/naturalness/wl_cluster/LJ050-0227_gen.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
 
-<br />
-<HR align=center width=1000>
-<b><center><font size=5>2. Prosody Controllability</font></center></b><br />
-<center>
-    <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-        <tbody>
-        <tr> 
-            <td width="100" style="word-break:normal;">This part presents the experiment of prosody controllability in Section 3.4 of the paper. <br/>
-                In this demo, all the controlled words belong to a same leaf node (i.e. the phonetic variation among them is reduced). For each utterance, we present
-                the ground truth speech and five synthetic speeches we obtain by controlling with the five prosody tags.
-                The word being controlled here is marked red. Listeners can verify that, when the specified prosody tag is equal to the ground-truth prosody tag, the word prosody in the synthetic speech should be most similar to the recordings.                
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <br/><br/>
-    <!-- <center> -->
-        <!-- <div style="disp;"> -->
+        <b>
+            <center>
+                <font size=5>1. Naturalness</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            This part presents the naturalness of four compared systems, corresonding to Section 3.3 in
+                            the paper.
+                            Note that all the audio on this page is synthesized from MelGAN, including ground truth.
+                            All the utterances are from <a href="https://keithito.com/LJ-Speech-Dataset/">LJspeech</a>
+                            with utterance IDs listed.
+                            <br /><br />
+                            <b>GT</b>: Ground truth (resynthesized)
+                            <br />
+                            <b>Raw_FSP</b>: Typical <a
+                                href="https://arxiv.org/pdf/2006.04558.pdf?ref=https://githubhelp.com">FastSpeech2</a>
+                            model with no prosody modeling
+                            <br />
+                            <b>PLP_MDN</b>: Phone-level prosody modeling with mixture density network (proposed in this
+                            <a href="https://ieeexplore.ieee.org/abstract/document/9640518">paper</a>)
+                            <br />
+                            <b>WLP_predict</b>: Proposed word-level prosody tagging system. Here all the tags are
+                            automatically predicted from text.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table class="table">
+                <tbody>
+                    <!-- <tr><td scope="col" colspan="4">The FBI has indicated, that it is willing to continue to make such assistance available.</td></tr> -->
+                    <tr>
+                        <td></td>
+                        <!-- <td colspan="3"><audio src="./audio/gt/LJ050-0241.wav" controls=""></audio></td> -->
+                        <th>GT</th>
+                        <th>Raw_FSP</th>
+                        <th>PLP_MDN</th>
+                        <th>WLP_predict</th>
+                    </tr>
+                    <tr>
+                        <td>LJ050-0179</td>
+                        <td><audio src="./audio/naturalness/GT/LJ050-0179_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0179_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/cpd_phone/LJ050-0179_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/wl_cluster/LJ050-0179_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>LJ050-0185</td>
+                        <td><audio src="./audio/naturalness/GT/LJ050-0185_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0185_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/cpd_phone/LJ050-0185_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/wl_cluster/LJ050-0185_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>LJ050-0187</td>
+                        <td><audio src="./audio/naturalness/GT/LJ050-0187_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0187_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/cpd_phone/LJ050-0187_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/wl_cluster/LJ050-0187_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>LJ050-0191</td>
+                        <td><audio src="./audio/naturalness/GT/LJ050-0191_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0191_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/cpd_phone/LJ050-0191_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/wl_cluster/LJ050-0191_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>LJ050-0206</td>
+                        <td><audio src="./audio/naturalness/GT/LJ050-0206_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0206_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/cpd_phone/LJ050-0206_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/wl_cluster/LJ050-0206_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>LJ050-0227</td>
+                        <td><audio src="./audio/naturalness/GT/LJ050-0227_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/raw_fastspeech/LJ050-0227_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/cpd_phone/LJ050-0227_gen.wav" controls=""></audio></td>
+                        <td><audio src="./audio/naturalness/wl_cluster/LJ050-0227_gen.wav" controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
 
-        <!-- <img src="single_utt_mel.png" width="400" style='float:left;'/> -->
-        <!-- <table class='table' style='float:left'> -->
+        <br />
+        <HR align=center width=1000>
+        <b>
+            <center>
+                <font size=5>2. Prosody Controllability</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">This part presents the experiment of prosody
+                            controllability in Section 3.4 of the paper. <br />
+                            In this demo, all the controlled words belong to a same leaf node (i.e. the phonetic
+                            variation among them is reduced). For each utterance, we present
+                            the ground truth speech and five synthetic speeches we obtain by controlling with the five
+                            prosody tags.
+                            The word being controlled here is marked red. Listeners can verify that, when the specified
+                            prosody tag is equal to the ground-truth prosody tag, the word prosody in the synthetic
+                            speech should be most similar to the recordings.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br />
+            <!-- <center> -->
+            <!-- <div style="disp;"> -->
+
+            <!-- <img src="single_utt_mel.png" width="400" style='float:left;'/> -->
+            <!-- <table class='table' style='float:left'> -->
             <!-- <tbody><tr><th></th></tr></tbody> -->
             <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)0.wav' controls=''></audio></td></tr> -->
             <!-- <tr><td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=''></audio></td></tr> -->
             <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)2.wav' controls=''></audio></td></tr> -->
             <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)3.wav' controls=''></audio></td></tr> -->
             <!-- <tr><td><audio src='./audio/control/LJ050-0114-responsibilities(4)4.wav' controls=''></audio></td></tr> -->
-        <!-- </table> -->
-        <!-- </div> -->
-    <!-- </center> -->
-        <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
-    <table class="table">
-        <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">International Business Machines <font color='#FF0000'>Corporation</font>, <br/>and a panel of psychiatric and psychological experts. </th>
-            <th><font color='#FFFFFF'>White</font></th>
-            <!-- <th scope="col" colspan="2" bgcolor="#F8F8F8"><font color='#FF0000'>Determination</font> to use a means, other than legal or peaceful, <br/>to satisfy his grievance, end quote, within the meaning of the new criteria.</th></tr> -->
-            <th scope="col" colspan="2" bgcolor="#F8F8F8">Both Director Hoover and Belmont expressed to the <font color='#FF0000'>Commission</font> the great <br/> concern of the FBI, which is shared by the Secret Service</th></tr>
-        <tr>
-            <th></th>
-            <!-- <th>Ground truth (with tag 0)</th> -->
-            <!-- <th>Synthesized speech <br/>using different tags</th> -->
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>GT with tag 0</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0047_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>GT with tag 0</td>
-            <!-- <td><audio src="./audio/control-in-paper/GT/LJ050-0098_gen.wav" controls=""></audio></td> -->
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0071_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 0</td>
-            <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-0_gen.wav" controls=""></audio></td> -->
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-0_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-1_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-4_gen.wav" controls=""></audio></td>
-        </tr>
-        </tbody>
-    </table>
-</center>
-<br/>
-<br/>
-<center>
-    <table class="table">
-        <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8"><font color='#FF0000'>Determination</font> to use a means, other than legal or peaceful, to satisfy his <br/>grievance, end quote, within the meaning of the new criteria.</th>
-            <th><font color='#FFFFFF'>White</font></th>
-            <th scope="col" colspan="2" bgcolor="#F8F8F8">Information is <font color='#FF0000'>requested</font> also concerning individuals<br/> or groups who have demonstrated an interest in the President.</th></tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>GT with tag 1</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0098_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>GT with tag 1</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0083_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-0_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-0_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-1_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-2_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-3_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-4_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-4_gen.wav" controls=""></audio></td>
-        </tr>
-        <!-- <tr>
+            <!-- </table> -->
+            <!-- </div> -->
+            <!-- </center> -->
+            <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">International Business Machines <font
+                                color='#FF0000'>Corporation</font>, <br />and a panel of psychiatric and psychological
+                            experts. </th>
+                        <th>
+                            <font color='#FFFFFF'>White</font>
+                        </th>
+                        <!-- <th scope="col" colspan="2" bgcolor="#F8F8F8"><font color='#FF0000'>Determination</font> to use a means, other than legal or peaceful, <br/>to satisfy his grievance, end quote, within the meaning of the new criteria.</th></tr> -->
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">Both Director Hoover and Belmont expressed to the
+                            <font color='#FF0000'>Commission</font> the great <br /> concern of the FBI, which is shared
+                            by the Secret Service</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <!-- <th>Ground truth (with tag 0)</th> -->
+                        <!-- <th>Synthesized speech <br/>using different tags</th> -->
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>GT with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0047_gen.wav" controls=""></audio></td>
+                        <td></td>
+                        <td>GT with tag 0</td>
+                        <!-- <td><audio src="./audio/control-in-paper/GT/LJ050-0098_gen.wav" controls=""></audio></td> -->
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0071_gen.wav" controls=""></audio></td>
+                        <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 0</td>
+                        <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-0_gen.wav" controls=""></audio></td> -->
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-0_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-1_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-1_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-1_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-3_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-3_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0071-commission-d0-4_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <br />
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">
+                            <font color='#FF0000'>Determination</font> to use a means, other than legal or peaceful, to
+                            satisfy his <br />grievance, end quote, within the meaning of the new criteria.
+                        </th>
+                        <th>
+                            <font color='#FFFFFF'>White</font>
+                        </th>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">Information is <font color='#FF0000'>requested
+                            </font> also concerning individuals<br /> or groups who have demonstrated an interest in the
+                            President.</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>GT with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0098_gen.wav" controls=""></audio></td>
+                        <td></td>
+                        <td>GT with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0083_gen.wav" controls=""></audio></td>
+                        <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-0_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-0_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-1_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-1_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-2_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-2_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-3_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-3_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0098-determination-d1-4_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0083-requested-d1-4_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <!-- <tr>
             <td>2</td>
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
@@ -300,68 +386,86 @@
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
         </tr> -->
-        </tbody>
-    </table>
-</center>
-<br/>
-<br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
-<center>
-    <table class="table">
-        <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">The Commission notes with approval several recent measures taken and <br/>proposed by the Secret Service to <font color='#FF0000'>improve</font> its liaison arrangements.</th>
-            <th><font color='#FFFFFF'>White</font></th>
-            <th scope="col" colspan="2" bgcolor="#F8F8F8">This matter is obviously <font color='#FF0000'>beyond</font> the jurisdiction of the Commission</th></tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>GT with tag 2</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0132_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>GT with tag 2</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0170_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-0_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-0_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-1_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-2_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-3_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-4_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-4_gen.wav" controls=""></audio></td>
-        </tr>
-        <!-- <tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <br />
+        <!-- <img src="single_utt_mel.png" width="800" /> -->
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">The Commission notes with approval several recent
+                            measures taken and <br />proposed by the Secret Service to <font color='#FF0000'>improve
+                            </font> its liaison arrangements.</th>
+                        <th>
+                            <font color='#FFFFFF'>White</font>
+                        </th>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">This matter is obviously <font color='#FF0000'>
+                                beyond</font> the jurisdiction of the Commission</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>GT with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0132_gen.wav" controls=""></audio></td>
+                        <td></td>
+                        <td>GT with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0170_gen.wav" controls=""></audio></td>
+                        <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-0_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-0_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-1_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-1_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-2_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-2_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-3_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-3_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0132-improve-d2-4_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0170-beyond-d2-4_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <!-- <tr>
             <td>2</td>
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
@@ -376,68 +480,87 @@
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
         </tr> -->
-        </tbody>
-    </table>
-</center>
-<br/>
-<br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
-<center>
-    <table class="table">
-        <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">To <font color='#FF0000'>establish</font> liaison with local intelligence gathering agencies and to <br/>provide for the immediate evaluation of information received from them.</th>
-            <th><font color='#FFFFFF'>White</font></th>
-            <th scope="col" colspan="2" bgcolor="#F8F8F8">Suggest that the Secret Service is trying to <font color='#FF0000'>accomplish</font> its job with <br/>too few people and without adequate modern equipment.</th></tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>GT with tag 3</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0176_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>GT with tag 3</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0206_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-0_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-0_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-1_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-2_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-3_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-4_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-4_gen.wav" controls=""></audio></td>
-        </tr>
-        <!-- <tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <br />
+        <!-- <img src="single_utt_mel.png" width="800" /> -->
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">To <font color='#FF0000'>establish</font> liaison
+                            with local intelligence gathering agencies and to <br />provide for the immediate evaluation
+                            of information received from them.</th>
+                        <th>
+                            <font color='#FFFFFF'>White</font>
+                        </th>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">Suggest that the Secret Service is trying to <font
+                                color='#FF0000'>accomplish</font> its job with <br />too few people and without adequate
+                            modern equipment.</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>GT with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0176_gen.wav" controls=""></audio></td>
+                        <td></td>
+                        <td>GT with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0206_gen.wav" controls=""></audio></td>
+                        <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-0_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-0_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-1_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-1_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-2_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-2_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-3_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-3_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0176-establish-d3-4_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0206-accomplish-d3-4_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <!-- <tr>
             <td>2</td>
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
@@ -452,68 +575,87 @@
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
         </tr> -->
-        </tbody>
-    </table>
-</center>
-<br/>
-<br/>
-<!-- <img src="single_utt_mel.png" width="800" /> -->
-<center>
-    <table class="table">
-        <tbody><tr><th scope="col" colspan="2" bgcolor="#F8F8F8">So that these arrangements can be made <font color='#FF0000'>permanent</font> without<br/> adversely affecting the operations of the Service's field offices.</th>
-            <th><font color='#FFFFFF'>White</font></th>
-            <th scope="col" colspan="2" bgcolor="#F8F8F8">And should not be relied upon to the <font color='#FF0000'>detriment</font> of <br/>the imaginative application of judgment in special cases.</th></tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>GT with tag 4</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0180_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>GT with tag 4</td>
-            <td><audio src="./audio/control-in-paper/GT/LJ050-0194_gen.wav" controls=""></audio></td>
-             <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-0_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 0</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-0_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-1_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 1</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-2_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 2</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-3_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 3</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-4_gen.wav" controls=""></audio></td>
-            <td></td>
-            <td>Synthetic Speech with tag 4</td>
-            <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-4_gen.wav" controls=""></audio></td>
-        </tr>
-        <!-- <tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <br />
+        <!-- <img src="single_utt_mel.png" width="800" /> -->
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">So that these arrangements can be made <font
+                                color='#FF0000'>permanent</font> without<br /> adversely affecting the operations of the
+                            Service's field offices.</th>
+                        <th>
+                            <font color='#FFFFFF'>White</font>
+                        </th>
+                        <th scope="col" colspan="2" bgcolor="#F8F8F8">And should not be relied upon to the <font
+                                color='#FF0000'>detriment</font> of <br />the imaginative application of judgment in
+                            special cases.</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>GT with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0180_gen.wav" controls=""></audio></td>
+                        <td></td>
+                        <td>GT with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/GT/LJ050-0194_gen.wav" controls=""></audio></td>
+                        <!-- <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-0_gen.wav" controls=""></audio></td> -->
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-0_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 0</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-0_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-1_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 1</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-1_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-2_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 2</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-2_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-3_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 3</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-3_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0180-permanent-d4-4_gen.wav"
+                                controls=""></audio></td>
+                        <td></td>
+                        <td>Synthetic Speech with tag 4</td>
+                        <td><audio src="./audio/control-in-paper/synthesized/LJ050-0194-detriment-d4-4_gen.wav"
+                                controls=""></audio></td>
+                    </tr>
+                    <!-- <tr>
             <td>2</td>
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-2_gen.wav" controls=""></audio></td>
@@ -528,296 +670,380 @@
             <td></td>
             <td><audio src="./audio/control-in-paper/synthesized/LJ050-0047-corporation-d0-4_gen.wav" controls=""></audio></td>
         </tr> -->
-        </tbody>
-    </table>
-</center>
+                </tbody>
+            </table>
+        </center>
 
-<HR align=center width=1000>
+        <HR align=center width=1000>
 
-<!-- <b><center><font size=5>3. Controllability</font></center></b><br /> -->
+        <!-- <b><center><font size=5>3. Controllability</font></center></b><br /> -->
 
-<center>
-    <br/>
-    <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-        <tbody>
-        <tr> 
-            <td width="100" style="word-break:normal;">
-                In addition to the experiments mentioned in the paper, we also present a similar demo for word-level prosody control,
-                which might be easier to understand.  
-                Here, the controlled words can come from different leaf nodes.
-                For each of those words, we synthesize it using the five prosody tags in its leaf node.
-                For each tag, we concatenate some words in the training set of recordings that have this specific ground truth tag.
-                These concatenated words are called <b>reference words</b>.
-                Listeners can verify that the controlled word in the right column has the similar prosody with the reference words at left.
-                <br/>
-                The mel-spectrograms are also shown so as to depict the prosodic variations.
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <br/>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>And the respective <font color='#FF0000'>responsibilities</font> for any further investigation that may be required.</b></td>
-            <!-- <td></td> -->
-        </tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th colspan="2">Synthesized Speech</th>
-        </tr>
-<!--        <tr>-->
-<!--            <td>FastSpeech2</td>-->
-<!--            <td colspan="3"><audio src="./audio/single_speaker/fastspeech2/LJ050-0248.wav" controls=""></audio></td>-->
-<!--        </tr>-->
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)0.wav" controls=""></audio></td>
-            <td rowspan="5"><img src="LJ050-0114-mel.png" width="400"/></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0114-responsibilities(4)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table>
-</center>
+        <center>
+            <br />
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            In addition to the experiments mentioned in the paper, we also present a similar demo for
+                            word-level prosody control,
+                            which might be easier to understand.
+                            Here, the controlled words can come from different leaf nodes.
+                            For each of those words, we synthesize it using the five prosody tags in its leaf node.
+                            For each tag, we concatenate some words in the training set of recordings that have this
+                            specific ground truth tag.
+                            These concatenated words are called <b>reference words</b>.
+                            Listeners can verify that the controlled word in the right column has the similar prosody
+                            with the reference words at left.
+                            <br />
+                            The mel-spectrograms are also shown so as to depict the prosodic variations.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>And the respective <font
+                                    color='#FF0000'>responsibilities</font> for any further investigation that may be
+                                required.</b></td>
+                        <!-- <td></td> -->
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th>Reference Words</th>
+                        <th>Synthesized Speech</th>
+                        <th>Synthesized Mel-Spectrogram</th>
+                        <!-- <th colspan="2">Synthesized Speech</th> -->
+                    </tr>
+                    <!--        <tr>-->
+                    <!--            <td>FastSpeech2</td>-->
+                    <!--            <td colspan="3"><audio src="./audio/single_speaker/fastspeech2/LJ050-0248.wav" controls=""></audio></td>-->
+                    <!--        </tr>-->
+                    <tr>
+                        <td>0</td>
+                        <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0114-responsibilities(4)0.wav" controls=""></audio></td>
+                        <td rowspan="5"><img src="LJ050-0114-mel.png" width="400" /></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0114-responsibilities(4)1.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0114-responsibilities(4)2.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0114-responsibilities(4)3.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0114-responsibilities(4)4.wav" controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
 
-<br/>
-<br/>
-<!-- <HR align=center width=750> -->
+        <br />
+        <br />
+        <!-- <HR align=center width=750> -->
 
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
-            <b>
-            Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font> should be worked out between the secret service and <br/> both of these agencies.
-            </b>
-        </td></tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th colspan="2">Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)0.wav" controls=""></audio></td>
-            <td rowspan="5"><img src="LJ050-0121-mel.png" width="400"/></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0121-arrangements(4)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
-    <!-- <HR align=center width=750> -->
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
+                            <b>
+                                Detailed formal agreements embodying these <font color='#FF0000'>arrangements</font>
+                                should be worked out between the secret service and <br /> both of these agencies.
+                            </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th>Reference Words</th>
+                        <th>Synthesized Speech</th>
+                        <th>Synthesized Mel-Spectrogram</th>
+                        <!-- <th colspan="2">Synthesized Speech</th> -->
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0121-arrangements(4)0.wav" controls=""></audio></td>
+                        <td rowspan="5"><img src="LJ050-0121-mel.png" width="400" /></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0121-arrangements(4)1.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0121-arrangements(4)2.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0121-arrangements(4)3.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0121-arrangements(4)4.wav" controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <!-- <HR align=center width=750> -->
 
-<br/>
-<br/>
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
-            <b>
-            Since these <font color='#FF0000'>agencies</font> are already obliged constantly to evaluate the activities of such groups.
-            </b>
-        </tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th colspan="2">Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)0.wav" controls=""></audio></td>
-            <td rowspan="5"><img src="LJ050-0118-mel.png" width="400"/></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0118-agencies(4)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
-<!-- <HR align=center width=750> -->
-       
+        <br />
+        <br />
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
+                            <b>
+                                Since these <font color='#FF0000'>agencies</font> are already obliged constantly to
+                                evaluate the activities of such groups.
+                            </b>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th>Reference Words</th>
+                        <th>Synthesized Speech</th>
+                        <th>Synthesized Mel-Spectrogram</th>
+                        <!-- <th colspan="2">Synthesized Speech</th> -->
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td><audio src="./audio/control/e(0).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0118-agencies(4)0.wav" controls=""></audio></td>
+                        <td rowspan="5"><img src="LJ050-0118-mel.png" width="400" /></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><audio src="./audio/control/e(1).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0118-agencies(4)1.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><audio src="./audio/control/e(2).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0118-agencies(4)2.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><audio src="./audio/control/e(3).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0118-agencies(4)3.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><audio src="./audio/control/e(4).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0118-agencies(4)4.wav" controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <!-- <HR align=center width=750> -->
 
 
+
+        <br />
+        <br />
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
+                            <b>
+                                This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and
+                                CIA.
+                            </b>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th>Reference Words</th>
+                        <th>Synthesized Speech</th>
+                        <th>Synthesized Mel-Spectrogram</th>
+                        <!-- <th colspan="2">Synthesized Speech</th> -->
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td><audio src="./audio/control/a(0).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0115-necessary(0)0.wav" controls=""></audio></td>
+                        <td rowspan="5"><img src="LJ050-0115-mel.png" width="400" /></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><audio src="./audio/control/a(1).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0115-necessary(0)1.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><audio src="./audio/control/a(2).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0115-necessary(0)2.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><audio src="./audio/control/a(3).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0115-necessary(0)3.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><audio src="./audio/control/a(4).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0115-necessary(0)4.wav" controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <!-- <HR align=center width=750> -->
+
+        <br />
+        <br />
+        <center>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="col" colspan="4" bgcolor="#F8F8F8" align="center">
+                            <b>
+                                Since the <font color='#FF0000'>assassination</font>, both the secret service and the
+                                FBI have recognized.
+                            </b>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <th>Reference Words</th>
+                        <th>Synthesized Speech</th>
+                        <th>Synthesized Mel-Spectrogram</th>
+                        <!-- <th colspan="2">Synthesized Speech</th> -->
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td><audio src="./audio/control/d(0).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0054-assassination-d0-0_gen.wav" controls=""></audio></td>
+                        <td rowspan="5"><img src="LJ050-0054-mel.png" width="400" /></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><audio src="./audio/control/d(1).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0054-assassination-d0-1_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><audio src="./audio/control/d(2).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0054-assassination-d0-2_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><audio src="./audio/control/d(3).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0054-assassination-d0-3_gen.wav" controls=""></audio></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><audio src="./audio/control/d(4).m4a" controls=""></audio></td>
+                        <td><audio src="./audio/control/LJ050-0054-assassination-d0-4_gen.wav" controls=""></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+
+    </div>
+    <!--  <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
     <br />
+    <HR align=center width=1000>
     <br />
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'>
-            <b>
-            This is especially <font color='#FF0000'>necessary</font> with regards to the FBI and CIA.
-            </b>
-        </tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th colspan="2">Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/a(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)0.wav" controls=""></audio></td>
-            <td rowspan="5"><img src="LJ050-0115-mel.png" width="400"/></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/a(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)1.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/a(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)2.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/a(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)3.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/a(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0115-necessary(0)4.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
-    <!-- <HR align=center width=750> -->
+    <center>
+        <b>
+            <center>
+                <font size=5>Appendix</font>
+            </center>
+        </b><br />
+        <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+            <tbody>
+                <tr>
+                    <td width="100" style="word-break:normal;">
+                        We present the model structure of our prosody extractor and prosody predictor here.
+                        <br />
+                        Both the extractor and the predictor is auto-regressive, i.e. the prosody embedding
+                        <img src="http://latex.codecogs.com/gif.latex?\mathbf e" />
+                        or tag embedding
+                        <img src="http://latex.codecogs.com/gif.latex?\mathbf t" />
+                        at current step is conditioned on the output of the previous step.
+                        In the prosody predictor, each word will go through a pre-GRU separately (with its phone
+                        encodings as inputs). This pre-GRU can be regarded as a granularity-converter.
+                        In each timestamp, a word is fed into the GRU, and the output is a vector of logits. The
+                        dimension of this vector is just the number of prosody tags in total (50 in our case).
+                        The corresponding segment of a word's leaf node (i.e. dimension 25-30) is taken for softmax.
+                        Then the index of the predicted tag can either be sampled from this distribution or manually
+                        specified.
+                        This index will go through an embedding table and finally become the "tag embedding" in our
+                        language.
+                        <!-- $\mathbf e$ -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td align="center"><img src="extractor_model.png" width="200"></td>
+                    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                    <td align="center"><img src="predictor_model_v3.png" width="500"></td>
+                </tr>
+                <tr>
+                    <td align="center">Prosody Extractor (image from <a
+                            href="https://arxiv.org/pdf/2102.00851.pdf">paper</a>)</td>
+                    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                    <td align="center">Prosody Predictor</td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
 
+    <HR align=center width=1000>
     <br />
-    <br />
-<center>
-    <table class="table">
-        <tbody><tr><td scope="col" colspan="4" bgcolor="#F8F8F8" align="center">
-            <b>
-            Since the <font color='#FF0000'>assassination</font>, both the secret service and the FBI have recognized.
-            </b>
-        </tr>
-        <tr>
-            <td></td>
-            <th>Reference Words</th>
-            <th colspan="2">Synthesized Speech</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td><audio src="./audio/control/d(0).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination-d0-0_gen.wav" controls=""></audio></td>
-            <td rowspan="5"><img src="LJ050-0054-mel.png" width="400"/></td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><audio src="./audio/control/d(1).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination-d0-1_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><audio src="./audio/control/d(2).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination-d0-2_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><audio src="./audio/control/d(3).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination-d0-3_gen.wav" controls=""></audio></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><audio src="./audio/control/d(4).m4a" controls=""></audio></td>
-            <td><audio src="./audio/control/LJ050-0054-assassination-d0-4_gen.wav" controls=""></audio></td>
-        </tr>
-    </tbody></table></center>
+    <center>
+        <b>
+            <center>
+                <font size=5>Citation</font>
+            </center>
+        </b><br />
+        <table class="table" style="width: 50%; max-width: 50%;margin-left: 200px; margin-right: 200px;">
+            <tbody>
+                <tr>
+                    <td width="50" style="word-break:normal;" bgcolor="#F8F8F8">
+                        <code>
+                    @inproceedings{guo2022unsupervised,<br/>
+                        &nbsp&nbsp&nbsp&nbsp title={Unsupervised word-level prosody tagging for controllable speech synthesis},<br/>
+                        &nbsp&nbsp&nbsp&nbsp author={Guo, Yiwei and Du, Chenpeng and Yu, Kai},<br/>
+                        &nbsp&nbsp&nbsp&nbsp booktitle={ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},<br/>
+                        &nbsp&nbsp&nbsp&nbsp pages={7597--7601},<br/>
+                        &nbsp&nbsp&nbsp&nbsp year={2022},<br/>
+                        &nbsp&nbsp&nbsp&nbsp organization={IEEE}<br/>
+                      }
+                </code>
+                        <!-- $\mathbf e$ -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-  </div>
-<!--  <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
-<br />
-<HR align=center width=1000>
-<br/>
-<center>
-<b><center><font size=5>Appendix</font></center></b><br />
-<table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
-    <tbody>
-    <tr> 
-        <td width="100" style="word-break:normal;">
-            We present the model structure of our prosody extractor and prosody predictor here.
-            <br/>
-            Both the extractor and the predictor is auto-regressive, i.e. the prosody embedding 
-            <img src="http://latex.codecogs.com/gif.latex?\mathbf e" />
-            or tag embedding  
-            <img src="http://latex.codecogs.com/gif.latex?\mathbf t" />
-            at current step is conditioned on the output of the previous step.
-            In the prosody predictor, each word will go through a pre-GRU separately (with its phone encodings as inputs). This pre-GRU can be regarded as a granularity-converter.
-            In each timestamp, a word is fed into the GRU, and the output is a vector of logits. The dimension of this vector is just the number of prosody tags in total (50 in our case).
-            The corresponding segment of a word's leaf node (i.e. dimension 25-30) is taken for softmax.
-            Then  the index of the predicted tag can either be sampled from this distribution or manually specified.
-            This index will go through an embedding table and finally become the "tag embedding" in our language.
-            <!-- $\mathbf e$ -->
-        </td>
-    </tr>
-    </tbody>
-</table>
-<table class="table">
-<tbody>
-    <tr>
-        <td align="center"><img src="extractor_model.png" width="200"></td>
-        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-        <td align="center"><img src="predictor_model_v3.png" width="500"></td>
-    </tr>
-    <tr>
-        <td align="center">Prosody Extractor (image from <a href="https://arxiv.org/pdf/2102.00851.pdf">paper</a>)</td>
-        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-        <td align="center">Prosody Predictor</td>
-    </tr>
-</tbody>
-</table>
-</center>
-</body><style id="stylish-2" class="stylish" type="text/css">#notebook-container * {
+        </table>
+    </center>
+</body>
+<style id="stylish-2" class="stylish" type="text/css">
+    #notebook-container * {
 
-font-family: Consolas, "微软雅黑"
+        font-family: Consolas, "微软雅黑"
 
-}</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+    }
+</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>

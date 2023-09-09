@@ -1,1 +1,736 @@
-Work in progress
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/x-mathjax-config;executed=true">
+    window.MathJax.Hub.Config({
+        showProcessingMessages: false, //关闭js加载过程信息
+        messageStyle: "none", //不显示信息
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+            skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+        },
+        "HTML-CSS": {
+            availableFonts: ["STIX", "TeX"], //可选字体
+            showMathMenu: false //关闭右击菜单显示
+        }
+    });
+    window.MathJax.Hub.Queue(["Typeset", MathJax.Hub,document.getElementsByClassName("ck-content")]);
+  </script>
+  <style>
+    /* .exp1_table {} */
+        .exp1_table th, .exp1_table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .exp1_table thead {
+            border-bottom: 2px solid black;
+        }
+    .custom-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .custom-table th, .custom-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .custom-table thead {
+            border-bottom: 2px solid black;
+        }
+  </style>
+    <meta charset="utf-8">
+    <title>Audio Samples from "Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                /* display: inline; */
+            }
+        }
+    </style>
+</head>
+
+<!--<link href="./dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+<body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
+    <div class="container">
+        <center>
+            <div style="background:#EAEAEA;color:#000;width:1000">
+                <br />
+                <b>
+                    <font size=6>
+                        <center>Audio Samples</center>
+                    </font>
+                </b> <br />
+                <center>
+                    <font size=4.2>from <b>VoiceFlow: Efficient Text-to-Speech with Rectified Flow Matching</b>,
+                        Submitted to ICASSP2024</font>
+                </center>
+                </h1>
+                <p class="lead">
+                    <center><i>Yiwei Guo, Chenpeng Du, Ziyang Ma, Xie Chen, Kai Yu</i></center>
+                </p>
+                <!-- <br /> -->
+                <p class="lead">
+                    <center><a href="mailto:yiwei.guo@sjtu.edu.cn">yiwei.guo@sjtu.edu.cn</a></center>
+                </p>
+                <p class="lead">
+                    <center>Shanghai Jiao Tong University, China</center>
+                </p>
+                <br />
+                <!-- <p class="lead"><center><font color='red'><b>NOTE: this page is still under construction.</b></font></center></p> -->
+            </div>
+        </center>
+        <br />
+        <b>
+            <center>
+                <font size=5>1. Comparison with Diffusion-based TTS</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            This part presents the quality of compared systems, corresonding to Table. 1 in the paper.
+                            Note that all the audio on this page was synthesized from HifiGAN vocoder implemented in <a
+                                href="https://github.com/kan-bayashi/ParallelWaveGAN">this repo</a>.
+                            Sampling rate of audio files is 16kHz.
+                            <br /><br />
+                            <b>GT (voc.)</b>: Ground truth mel-spectrogram + HifiGAN.
+                            <br />
+                            <b>GradTTS</b>: Proposed in <a href="https://proceedings.mlr.press/v139/popov21a.html">this
+                                paper</a>. We use the <a
+                                href="https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS">official
+                                code</a> to train on our data configurations.
+                            <br />
+                            <b>VoiceFlow</b>: Proposed rectified flow matching TTS model. It has the same model
+                            architecture with GradTTS, hence nearly identical inference cost.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <HR align=center width=400>
+            <b>
+                <center>
+                    <font size=4>LJSpeech Samples</font>
+                </center>
+            </b>
+            <div id="lj_examples">
+                <div class="lj_example" data-page="1">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>and recognized as one of
+                                        the frequenters of the bogus law-stationers. His arrest led to that of
+                                        others.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td scope="col" colspan="3">
+                                    <center><audio src="./audio/GT/LJ/LJ018-0098.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LJ/LJ018-0098.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LJ/LJ018-0098.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LJ/LJ018-0098.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LJ/LJ018-0098.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LJ/LJ018-0098.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LJ/LJ018-0098.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lj_example" data-page="2">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b> His disappearance gave
+                                        color and substance to evil reports already in circulation that the will and
+                                        conveyance above referred to.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LJ/LJ018-0239.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LJ/LJ018-0239.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LJ/LJ018-0239.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LJ/LJ018-0239.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LJ/LJ018-0239.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LJ/LJ018-0239.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LJ/LJ018-0239.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lj_example" data-page="3">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b> On occasion the Secret
+                                        Service has been permitted to have an agent riding in the passenger compartment
+                                        with the President.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LJ/LJ049-0026.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LJ/LJ049-0026.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LJ/LJ049-0026.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LJ/LJ049-0026.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LJ/LJ049-0026.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LJ/LJ049-0026.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LJ/LJ049-0026.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lj_example" data-page="4">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>and she must have run down the stairs ahead of Oswald and would probably have seen or heard him.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LJ/LJ035-0129.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LJ/LJ035-0129.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LJ/LJ035-0129.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LJ/LJ035-0129.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LJ/LJ035-0129.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LJ/LJ035-0019.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LJ/LJ035-0129.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lj_example" data-page="5">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>accordingly they committed to him the command of their whole army, and put the keys of their city into his hands.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LJ/LJ028-0335.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LJ/LJ028-0335.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LJ/LJ028-0335.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LJ/LJ028-0335.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LJ/LJ028-0335.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LJ/LJ028-0335.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LJ/LJ028-0335.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="lj_example" data-page="6">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>Chapter seven. Lee Harvey Oswald: Background and Possible Motives, Part one.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LJ/LJ040-0002.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LJ/LJ040-0002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LJ/LJ040-0002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LJ/LJ040-0002.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LJ/LJ040-0002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LJ/LJ040-0002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LJ/LJ040-0002.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Add data-page attributes for the rest of the examples -->
+            </div>
+
+            <div id="lj_pagination">
+                <button class="lj_page" data-page="1">1</button>
+                <button class="lj_page" data-page="2">2</button>
+                <button class="lj_page" data-page="3">3</button>
+                <button class="lj_page" data-page="4">4</button>
+                <button class="lj_page" data-page="5">5</button>
+                <button class="lj_page" data-page="6">6</button>
+            </div>
+
+        <HR align=center width=400>
+
+            <b>
+                <center>
+                    <font size=4>LibriTTS Samples</font>
+                </center>
+            </b>
+            <div id="libri_examples">
+                <div class="libri_example" data-page="1">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b> "All the same, Freddy, I am glad you dropped in: I won't forget it."</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="libri_example" data-page="2">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b> Suddenly he withdrew his arm, turned quickly to the window and stood facing it. Another moment passed.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="libri_example" data-page="3">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b> "Yes, yes, mamma!" Snegiryov suddenly recollected, "they'll take away the bed, they'll take it away," he added as though alarmed that they really would.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="libri_example" data-page="4">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>I said sharply, "Don't be simple, Moa!" I shook off her grip.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="libri_example" data-page="5">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>I am absolutely confident about it, and I believe you are too.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="libri_example" data-page="6">
+                    <table class="exp1_table">
+                        <tbody>
+                            <tr>
+                                <td scope="col" colspan="4" bgcolor="#F8F8F8" align='center'><b>Then, when the decreasing speed of the train gave his legs the advantage, Fuller was ahead, heaving ties from the road.</b></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>GT (voc.)</b></td>
+                                <td colspan="3">
+                                    <center><audio src="./audio/GT/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <th>2 steps</th>
+                                <th>10 steps</th>
+                                <th>100 steps</th>
+                            </tr>
+                            <tr>
+                                <td><b>GradTTS</b></td>
+                                <td><audio src="./audio/GradTTS/2/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/10/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/GradTTS/100/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                            </tr>
+                            <tr>
+                                <td><b>VoiceFlow</b></td>
+                                <td><audio src="./audio/VoiceFlow/2/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/10/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                                <td><audio src="./audio/VoiceFlow/100/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Add data-page attributes for the rest of the examples -->
+            </div>
+
+
+            <div id="libri_pagination">
+                <button class="libri_page" data-page="1">1</button>
+                <button class="libri_page" data-page="2">2</button>
+                <button class="libri_page" data-page="3">3</button>
+                <button class="libri_page" data-page="4">4</button>
+                <button class="libri_page" data-page="5">5</button>
+                <button class="libri_page" data-page="6">6</button>
+            </div>
+
+
+        </center>
+        <br />
+        <HR align=center width=1000>
+        <b>
+            <center>
+                <font size=5>2. Comparison with only flow matching (no rectified flow)</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            Here we explore the impact of rectified flow in VoiceFlow. 
+                            This corresponds to Section 4.4 in the paper.
+                            <br />
+                            Note that all samples are synthesized at 2 steps.
+                            <br />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+                <div id="ablation_examples">
+                    <div class="ablation_example" data-page="1">
+                        <table class="custom-table" style="width:80%">
+                            <tbody>
+                                <tr>
+                                    <th style="width: 50%;text-align: center;">Text</th>
+                                    <th style="width: 25%;text-align: center;">VoiceFlow</th>
+                                    <th style="width: 25%;text-align: center;">VoiceFlow w/o ReFlow</th>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50%;" bgcolor="#F8F8F8">and recognized as one of the frequenters of the bogus law-stationers. His arrest led to that of others.</td>
+                                    <td style="width: 25%;"><audio src="./audio/VoiceFlow/2/LJ/LJ018-0098.wav" controls=""></audio></td>
+                                    <td style="width: 25%;"><audio src="./audio/VoiceFlow-NoReflow/2/LJ/LJ018-0098.wav" controls="" ></audio></td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#F8F8F8">His disappearance gave color and substance to evil reports already in circulation that the will and conveyance above referred to.</td>
+                                    <td><audio src="./audio/VoiceFlow/2/LJ/LJ018-0239.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LJ/LJ018-0239.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#F8F8F8">On occasion the Secret Service has been permitted to have an agent riding in the passenger compartment with the President.</td>
+                                    <td><audio src="./audio/VoiceFlow//2/LJ/LJ049-0026.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LJ/LJ049-0026.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#F8F8F8">and she must have run down the stairs ahead of Oswald and would probably have seen or heard him.</td>
+                                    <td><audio src="./audio/VoiceFlow//2/LJ/LJ035-0129.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LJ/LJ035-0129.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#F8F8F8">accordingly they committed to him the command of their whole army, and put the keys of their city into his hands.</td>
+                                    <td><audio src="./audio/VoiceFlow/2/LJ/LJ028-0335.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LJ/LJ028-0335.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#F8F8F8">Chapter seven. Lee Harvey Oswald: Background and Possible Motives, Part one.</td>
+                                    <td><audio src="./audio/VoiceFlow//2/LJ/LJ040-0002.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LJ/LJ040-0002.wav" controls=""></audio></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ablation_example" data-page="2">
+                        <table class="custom-table" style="width:80%">
+                            <tbody>
+                                <tr>
+                                    <th style="width: 50%;text-align: center;">Text</th>
+                                    <th style="width: 25%;text-align: center;">VoiceFlow</th>
+                                    <th style="width: 25%;text-align: center;">VoiceFlow w/o ReFlow</th>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50%;" bgcolor="#F8F8F8">"All the same, Freddy, I am glad you dropped in: I won't forget it."</td>
+                                    <td style="width: 25%;"><audio src="./audio/VoiceFlow/2/LibriTTS/614_161065_000055_000001.wav" controls=""></audio></td>
+                                    <td style="width: 25%;"><audio src="./audio/VoiceFlow-NoReflow/2/LibriTTS/614_161065_000055_000001.wav" controls="" ></audio></td>
+                                </tr>
+                                <tr>
+                                    <td  bgcolor="#F8F8F8">Suddenly he withdrew his arm, turned quickly to the window and stood facing it. Another moment passed.</td>
+                                    <td><audio src="./audio/VoiceFlow/2/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LibriTTS/2834_132497_000127_000002.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td  bgcolor="#F8F8F8">"Yes, yes, mamma!" Snegiryov suddenly recollected, "they'll take away the bed, they'll take it away," he added as though alarmed that they really would.</td>
+                                    <td><audio src="./audio/VoiceFlow//2/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LibriTTS/3638_758_000040_000000.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td  bgcolor="#F8F8F8">I said sharply, "Don't be simple, Moa!" I shook off her grip.</td>
+                                    <td><audio src="./audio/VoiceFlow//2/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LibriTTS/5181_2489_000092_000000.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td  bgcolor="#F8F8F8">I am absolutely confident about it, and I believe you are too.</td>
+                                    <td><audio src="./audio/VoiceFlow/2/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LibriTTS/6539_66420_000010_000012.wav" controls=""></audio></td>
+                                </tr>
+                                <tr>
+                                    <td  bgcolor="#F8F8F8">Then, when the decreasing speed of the train gave his legs the advantage, Fuller was ahead, heaving ties from the road.</td>
+                                    <td><audio src="./audio/VoiceFlow//2/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                                    <td><audio src="./audio/VoiceFlow-NoReflow/2/LibriTTS/4535_279849_000041_000002.wav" controls=""></audio></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="ablation_pagination">
+                    <button class="ablation_page" data-page="1">LJSpeech</button>
+                    <button class="ablation_page" data-page="2">LibriTTS</button>
+                </div>
+        </center>
+        <br />
+        <br />
+
+
+        <HR align=center width=1000>
+        <br />
+        <center>
+            <b>
+                <center>
+                    <font size=5>Citation</font>
+                </center>
+            </b><br />
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 50px; margin-right: 50px;">
+                <tbody>
+                    <tr>
+                        <td width="50" style="word-break:normal;">
+                            <code>
+                      
+                  </code>
+                            <!-- $\mathbf e$ -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </table>
+        </center>
+
+    </div>
+    <br />
+    <br />
+    <script src="script.js"></script>
+
+</body>
+<style id="stylish-2" class="stylish" type="text/css">
+    #notebook-container * {
+
+        font-family: Consolas, "微软雅黑"
+
+    }
+</style><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
