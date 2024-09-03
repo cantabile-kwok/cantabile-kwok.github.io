@@ -336,7 +336,7 @@
 			</center>
 			Apart from vq-wav2vec, we train <a href="https://github.com/X-LANCE/UniCATS-CTX-vec2wav">CTX-vec2wav</a> and vec2wav 2.0 on HuBERT tokens and wav2vec 2.0 tokens.
 			<br/>
-			We additionally train two variants of vec2wav 2.0 on vq-wav2vec inputs: <b>vec2wav 2.0-ab1</b> that removes the adaptive Snake activations in BigVGAN generator; and <b>vec2wav 2.0-ab2</b> that removes the adaptive Snakes and replaces BigVGAN with HifiGAN.
+			We additionally train two variants of vec2wav 2.0 on vq-wav2vec inputs: <b>vec2wav 2.0-ab1</b> that replaces the adaptive Snake activations in BigVGAN by the original Snakes; and <b>vec2wav 2.0-ab2</b> that further replaces BigVGAN with HifiGAN.
 			Thus the comparison between vec2wav2.0 and "ab1" indicates the effect of adaptive Snake activation, while that between CTX-vec2wav and "ab2" shows the difference made by prompt feature and modules.
 			<br/>
 			Perfect VC systems should lie on the top right of the following chart.
