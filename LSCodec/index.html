@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>LSCodec</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="style_examples.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+		<center>
+			<h1>LSCodec: Low-Bandwidth and Speaker-Decoupled Discrete Speech Codec</h1>
+			<h4 style="text-align: center"><a
+					href="https://scholar.google.com/citations?user=BJscnZMAAAAJ&hl=zh-CN">Yiwei Guo<sup>1</sup></a>,
+				Zhihan Li<sup>1</sup>, <a
+					href="https://scholar.google.com/citations?user=RY7xArYAAAAJ&hl=zh-CN">Chenpeng Du<sup>1</sup></a>,
+				Hankun Wang<sup>1</sup>
+				<!-- <a href="https://wsstriving.github.io/">Shuai Wang<sup>2</sup></a>,  -->
+				, <a href="https://chenxie95.github.io/">Xie Chen<sup>1</sup></a>, <a
+					href="https://x-lance.sjtu.edu.cn/~kaiyu/">Kai Yu<sup>1</sup></a>
+				<br><br><sup>1</sup>MoE Key Lab of Artificial Intelligence, AI Institute<br><a
+					href="https://x-lance.github.io/">X-LANCE Lab</a>, Department of Computer Science and Engineering,
+				Shanghai Jiao Tong University<br>Shanghai, China<br>
+				<!-- <sup>2</sup><a href="https://www.sribd.cn/page/59">Shenzhen Research Institute of Big Data</a>, Shenzhen, China -->
+			</h4>
+			<h4>Submitted to ICASSP 2025</h4>
+			<h4><a href="https://arxiv.org/abs/" target="_blank">[Paper]</a>
+				<!-- <a href="https://github.com" target="_blank">[Code]</a></h4> -->
+		</center>
+		<div style="border: 1px solid black; margin-top: 20px; margin-bottom: 10px;"></div>
+		<p>Although discrete speech tokens exhibit strong potential for language model-based speech generation, the high bandwidths and redundant timbre information restrict the development of such models. In this work, we propose LSCodec, a discrete speech codec that has both low-bandwidth and speaker-decoupling ability. LSCodec adopts a three-stage training framework with a simple speaker perturbation technique. A continuous bottleneck is first established, followed by vector quantization that produces a discrete speaker-decoupled space. A discrete token vocoder finally refines acoustic details in LSCodec. By reconstruction experiments, LSCodec demonstrates superior intelligibility and audio quality with only a single codebook and smaller vocabulary size than baselines. The 25Hz variant of LSCodec also achieves the lowest bitrate of codecs so far. Voice conversion evaluations prove the satisfactory speaker disentanglement of LSCodec, and ablation study verifies the effectiveness of the proposed training framework.
+		</p>
+		<div style="border-top: 1px solid grey;"></div>
+		<div class="row">
+			<center>
+				<h3>Speech Reconstruction</h3>
+			</center>
+			<p>
+				These are the speech reconstruction samples from LibriTTS testset-B. All audio files are 24kHz.
+				<br />
+				Notes:
+			<div>
+				<ul>
+					<li>WavTokenizer refers to the small-40Hz (600 times downsample).</li>
+					<li>wav2vec 2.0 refers to the quantizer outputs.</li>
+					<li>HuBERT refers to the layer 24 + kmeans 2048 centroids.</li>
+					<li>EnCodec (1VQ) samples are hidden for poor quality.</li>
+				</ul>
+				Semantic tokens are reconstructed using CTX-vec2wav<sup>α</sup> vocoder described in Section II.D.
+			</div>
+			</p>
+			<div class="english_vc_examples">
+				<div class="english_vc" data-page="1">
+					<table class="table" style="margin-top: 20px;">
+						<thead>
+							<tr>
+								<th><b>Ground truth</b></th>
+								<th><b>LSCodec-50Hz</b><br />(0.41kbps)</th>
+								<th><b>LSCodec-25Hz</b><br />(0.25kbps)</th>
+								<th><b><a href="https://github.com/y-ren16/TiCodec">TiCodec-1VQ</a></b><br />(0.75kbps)
+								</th>
+								<th><b><a
+											href="https://github.com/jishengpeng/WavTokenizer">WavTokenizer</a></b><br />(0.48kbps)
+								</th>
+								<th><b><a href="https://huggingface.co/facebook/wav2vec2-large">wav2vec
+											2.0</a></b><br />(0.83kbps)</th>
+								<th><b><a href="https://huggingface.co/facebook/hubert-large-ll60k">HuBERT L24
+											km2048</a></b><br />(0.55kbps)</th>
+							</tr>
+						</thead>
+						<tbody id="unseen_speakers">
+							<tr>
+								<td><audio src="./audio_ready/GT/1995_1836_000019_000000.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										"But," Cresswell added significantly, "capacity differs enormously between
+										races."
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/1995_1836_000019_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/1995_1836_000019_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/1995_1836_000019_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/1995_1836_000019_000000.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/1995_1836_000019_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/1995_1836_000019_000000.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/260_123286_000045_000001.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>We
+										stood amazed, thunderstruck, at the presence of such a herd of marine monsters.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/260_123286_000045_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/260_123286_000045_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/260_123286_000045_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/260_123286_000045_000001.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/260_123286_000045_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/260_123286_000045_000001.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/4992_41806_000009_000000.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										"Don't know; 'most everything she says sounds like the Bible or Shakespeare to
+										me."
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/4992_41806_000009_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/4992_41806_000009_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/4992_41806_000009_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/4992_41806_000009_000000.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/4992_41806_000009_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/4992_41806_000009_000000.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										"There cannot be a doubt he received you kindly, for, in fact, you returned
+										without his permission."
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/7127_75947_000034_000000.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/3570_5695_000001_000001.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>It
+										is a fact of common observance that in this lower middle class there is no
+										pretense of leisure on the part of the head of the household.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/3570_5695_000001_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/3570_5695_000001_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/3570_5695_000001_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/3570_5695_000001_000001.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/3570_5695_000001_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/3570_5695_000001_000001.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="english_vc" data-page="2">
+					<table class="table" style="margin-top: 20px;">
+						<thead>
+							<tr>
+								<th><b>Ground truth</b></th>
+								<th><b>LSCodec-50Hz</b><br />(0.41kbps)</th>
+								<th><b>LSCodec-25Hz</b><br />(0.25kbps)</th>
+								<th><b>TiCodec-1VQ</b><br />(0.75kbps)</th>
+								<th><b>WavTokenizer</b><br />(0.48kbps)</th>
+								<th><b>wav2vec 2.0</b><br />(0.83kbps)</th>
+								<th><b>HuBERT L24 km2048</b><br />(0.55kbps)</th>
+							</tr>
+						</thead>
+						<tbody id="unseen_speakers">
+							<tr>
+								<td><audio src="./audio_ready/GT/2300_131720_000020_000008.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										Hence the Edison electrolytic meter is no longer used, despite its excellent
+										qualities.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/2300_131720_000020_000008.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/2300_131720_000020_000008.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/2300_131720_000020_000008.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/2300_131720_000020_000008.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/2300_131720_000020_000008.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/2300_131720_000020_000008.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/7176_88083_000002_000004.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										Moreover, he was not in the situation or the surroundings which one is wont to
+										associate with ducks.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/7176_88083_000002_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/7176_88083_000002_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/7176_88083_000002_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/7176_88083_000002_000004.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/7176_88083_000002_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/7176_88083_000002_000004.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/5683_32866_000016_000002.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>She
+										was so unreserved, it seemed, and yet in this directness there was something
+										almost contemptuous.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/5683_32866_000016_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/5683_32866_000016_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/5683_32866_000016_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/5683_32866_000016_000002.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/5683_32866_000016_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/5683_32866_000016_000002.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/121_127105_000020_000004.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>But
+										if he put the inference by without a smile it was also without irritation.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/121_127105_000020_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/121_127105_000020_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/121_127105_000020_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/121_127105_000020_000004.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/121_127105_000020_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/121_127105_000020_000004.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/GT/7127_75946_000040_000004.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>The
+										music, hautboys, flutes, and viols, was delightfully descriptive of rural
+										delights.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/ours_50Hz_300/7127_75946_000040_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ours_25Hz_1024/7127_75946_000040_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/ticodec_1g1r/7127_75946_000040_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/WavTokenizer_small_600_24k_4096/7127_75946_000040_000004.wav"
+										controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/w2v2/7127_75946_000040_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/hubert_L24_2048/7127_75946_000040_000004.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<center>
+			<div id="english-vc-pagination" style="width:30%; display: flex; justify-content: center; gap: 10px;">
+				<button class="eng_page" data-page="1" style="font-size: 16px">Page 1</button>
+				<button class="eng_page" data-page="2" style="font-size: 16px">Page 2</button>
+			</div>
+		</center>
+
+		<div style="border-top: 1px solid grey;"></div>
+		<div class="row">
+			<center>
+				<h3>Any-to-Any Voice Conversion</h3>
+			</center>
+			<p>
+				These are the any-to-any voice conversion samples.
+				The test set are constructed by shuffling the testset-B prompts so that source and target prompt belong
+				to different speakers.
+				<br />
+				Notes:
+			<ul>
+				<li>In FACodec, detail tokens are discarded for better VC performance.</li>
+				<li>Semantic tokens (wav2vec 2.0 and HuBERT), are vocoded using the same method as previous experiment.
+				</li>
+				<li>All samples are downsampled to 16kHz for fair comparison.</li>
+			</ul>
+
+			</p>
+			<div class="cross_vc_examples">
+				<div class="cross_vc" data-page="1">
+					<table class="table" style="margin-top: 20px;">
+						<thead>
+							<tr>
+								<th>Source Utterance</th>
+								<th>Target Speaker</th>
+								<th><b>LSCodec-50Hz</b></th>
+								<th><b>LSCodec-25Hz</b></th>
+								<th><a href="https://github.com/y-ren16/TiCodec"><b>TiCodec-1VQ</b></a></th>
+								<th><a
+										href="https://github.com/open-mmlab/Amphion/tree/main/models/codec/ns3_codec"><b>FACodec</b></a>
+								</th>
+								<th><b><a href="https://huggingface.co/facebook/wav2vec2-large">wav2vec
+											2.0</a></b></th>
+								<th><b><a href="https://huggingface.co/facebook/hubert-large-ll60k">HuBERT L24
+											km2048</a></b></th>
+							</tr>
+						</thead>
+						<tbody id="unseen_speakers">
+
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										"Why dost thou, tyrant, boast thyself, Thy wicked deeds to praise?"
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/3570_5694_000009_000002.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/8224_274384_000006_000000.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										The air and the earth are curiously mated and intermingled, as if the one were
+										the breath of the other.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/8224_274384_000017_000000.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/237_134493_000004_000003.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										"There cannot be a doubt he received you kindly, for, in fact, you returned
+										without his permission."
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/6829_68771_000046_000000.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/7127_75947_000034_000000.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										Rodolfo was now impatient to get rid of Leocadia, and made up his mind to lay
+										her in the street, insensible as she was.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/121_127105_000037_000000.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/5639_40744_000003_000001.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										I had, however, promised to take tea in a friend's rooms, so I left the proof
+										upon my desk.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/4077_13754_000013_000005.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/1580_141083_000008_000004.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+
+						</tbody>
+
+					</table>
+				</div>
+				<div class="cross_vc" data-page="2">
+					<table class="table" style="margin-top: 20px;">
+						<thead>
+							<tr>
+								<th>Source Utterance</th>
+								<th>Target Speaker</th>
+								<th><b>LSCodec-50Hz</b></th>
+								<th><b>LSCodec-25Hz</b></th>
+								<th><a href="https://github.com/y-ren16/TiCodec"><b>TiCodec-1VQ</b></a></th>
+								<th><a
+										href="https://github.com/open-mmlab/Amphion/tree/main/models/codec/ns3_codec"><b>FACodec</b></a>
+								</th>
+								<th><b><a href="https://huggingface.co/facebook/wav2vec2-large">wav2vec
+											2.0</a></b></th>
+								<th><b><a href="https://huggingface.co/facebook/hubert-large-ll60k">HuBERT L24
+											km2048</a></b></th>
+							</tr>
+						</thead>
+						<tbody id="unseen_speakers">
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										He is said to have baptized as many as ten thousand idolaters in one month.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/8455_210777_000067_000000.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/1089_134686_000032_000006.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										The investors in the enterprise were ready and anxious to meet the extra cost of
+										putting the wires underground.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/1188_133604_000026_000001.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/2300_131720_000032_000005.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										But Miss Branwell persevered; urged economical motives; pressed on his love for
+										his daughters.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/5142_33396_000006_000001.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/3575_170457_000046_000002.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										And God created them according to the patterns or species of them which existed
+										in the divine original.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/4992_23283_000004_000000.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/2961_961_000020_000001.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+							<tr>
+								<td><audio src="./audio_ready/VC/GT_16k/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio>
+									<details>
+										<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+										He was a round faced, respectable appearing fellow, but his mood was distinctly
+										unsociable.
+									</details>
+								</td>
+								<td><audio src="./audio_ready/VC/prompts_16k/5683_32866_000047_000003.wav" controls=""
+										style="width:130px"></audio>
+								</td>
+								<td><audio src="./audio_ready/VC/ours_50Hz_16k/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ours_25Hz_16k/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/ticodec_1vq_16k/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/facodec/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio></td>
+
+								<td><audio src="./audio_ready/VC/w2v2_16k/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/VC/hubert_16k/6829_68769_000012_000001.wav" controls=""
+										style="width:130px"></audio></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<center>
+				<div id="cross-vc-pagination" style="width:30%; display: flex; justify-content: center; gap: 10px;">
+					<button class="cross_page" data-page="1" style="font-size: 16px">Across Gender</button>
+					<button class="cross_page" data-page="2" style="font-size: 16px">Same Gender</button>
+				</div>
+			</center>
+		</div>
+
+		<div style="border-top: 1px solid grey;"></div>
+		<div class="row">
+			<center>
+				<h3>Stage-wise Comparisons</h3>
+			</center>
+			<!-- Perfect VC systems should lie on the top right of the following chart. -->
+			 As the training of LSCodec involves three stages, we put a case study here to see the effect made by this sequential training.
+
+			<center>
+				<!-- <table>
+					<tbody style="width:100%;">
+						<tr>
+							<td><img src="ablation.png" width="700"></td>
+						</tr>
+					</tbody>
+				</table> -->
+				<table class="table" style="margin-top: 20px; width: 100px">
+					<thead>
+						<tr>
+							<th>Source Utterance</th>
+							<th>Target Speaker</th>
+						</tr>
+					</thead>
+					<tbody id="unseen_speakers">
+						<tr>
+							<td><audio src="./audio_ready/GT/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio>
+								<details>
+									<summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>
+									But that wise and placid woman understood the sweet rebel a great deal better than ruth understood herself.
+								</details>
+							</td>
+							<td><audio src="./audio_ready/VC/prompts/8230_279154_000004_000008.wav" controls=""
+									style="width:130px"></audio></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table" style="margin-top: 20px; width: 100px">
+					<thead>
+						<tr>
+							<th><b>Type</b></th>
+							<th><b>Model</b></th>
+							<!-- <th><b>LSCodec-50Hz</b><br />(0.41kbps)</th> -->
+							 <th><b>S1 (VAE)</b></th>
+							<th><b>S2 (VQ-VAE)</b></th>
+							<th><b>S3 (Vocoder)</b></th>
+						</tr>
+					</thead>
+					<tbody id="unseen_speakers">
+						<tr>
+							<td>Reconstruction</td>
+							<td>50Hz (0.41kbps)</td>
+							<td><audio
+									src="./audio_ready/stages/50Hz_S1_recon/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+							<td><audio
+								src="./audio_ready/stages/50Hz_S2_recon/4970_29095_000054_000001.wav"
+								controls="" style="width:130px"></audio></td>
+							<td><audio
+								src="./audio_ready/stages/50Hz_S3_recon/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+						</tr>
+						<tr>
+							<td>Reconstruction</td>
+							<td>25Hz (0.25kbps)</td>
+							<td><audio
+								src="./audio_ready/stages/25Hz_S1_recon/4970_29095_000054_000001.wav"
+								controls="" style="width:130px"></audio></td>
+							<td><audio 
+								src="./audio_ready/stages/25Hz_S2_recon/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+							<td><audio
+								src="./audio_ready/stages/25Hz_S3_recon/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+						</tr>
+						<tr>
+							<td>Voice Conversion</td>
+							<td>50Hz (0.41kbps)</td>
+							<td><audio
+								src="./audio_ready/stages/50Hz_S1_VC/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+							<td><audio 
+								src="./audio_ready/stages/50Hz_S2_VC/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+							<td><audio
+								src="./audio_ready/stages/50Hz_S3_VC/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+						</tr>
+						<tr>
+							<td>Voice Conversion</td>
+							<td>25Hz (0.25kbps)</td>
+							<td><audio
+								src="./audio_ready/stages/25Hz_S1_VC/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+							<td><audio 
+								src="./audio_ready/stages/25Hz_S2_VC/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+							<td><audio
+								src="./audio_ready/stages/25Hz_S3_VC/4970_29095_000054_000001.wav"
+									controls="" style="width:130px"></audio></td>
+						</tr>
+					</tbody>
+				</table>
+			</center>
+
+		</div>
+
+		<div style="border-top: 1px solid grey;"></div>
+		
+
+
+	</div>
+	<hr>
+	<div style="width: 80%; margin-left: 10% ;">
+		<center>
+			<h3>Citing our Work</h3>
+		</center>
+		<pre><code>To be updated
+	
+	</code></pre>
+
+	</div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
