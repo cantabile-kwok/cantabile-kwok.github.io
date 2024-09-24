@@ -4,3 +4,5 @@ EmoDiff-test/*
 EmoDiff-test/log/*
 *ipynb
 EmoDiff-test-demo/*
+_site/
+.sass-cache/

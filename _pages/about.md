@@ -1,13 +1,22 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Personal Website of Yiwei Guo"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+🙋‍♂️Hi! My name is Yiwei Guo, or 郭奕玮 in Chinese.
+
+I am currently a Ph.D. candidate in Shanghai Jiao Tong University (SJTU) and a member in [Cross Media (**X-**) **Lan**guage Intelligen**ce** Lab (X-LANCE)](https://x-lance.sjtu.edu.cn/) of the Department of Computer Science and Engineering, supervised by [Prof. Kai Yu](https://x-lance.github.io/kaiyu/) and working closely with [Prof. Xie Chen](https://chenxie95.github.io/).
+
+I obtained my B.Eng. degree from the Artificial Intelligence (Excellent Talent Pilot Class) major in SJTU on June, 2023 before I started the journey of pursuing the doctorate.
+I am very lucky that as one of the first graduates from this major, I had abundant chances to devote myself into academic research and looking for the field that I ardently love during the undergraduate period.
+And this very field is speech synthesis, including text-to-speech, voice conversion and end-to-end speech dialogue systems.
+I am also interested in diffusion (together with flow matching) generative models and discrete generative models, which appear to the two foundational pillars of speech synthesis these days.
+
+<!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io). -->
 
 A data-driven personal website
 ======
