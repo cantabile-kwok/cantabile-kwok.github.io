@@ -10,6 +10,8 @@ slidesurl:
 paperurl: 'https://arxiv.org/pdf/2204.00768'
 demourl: 'https://cpdu.github.io/vqtts/'
 citation: 'Chenpeng Du, <b>Yiwei Guo</b>, Xie Chen, Kai Yu. (2022). &quot;VQTTS: High-fidelity text-to-speech synthesis with self-supervised VQ acoustic feature.&quot; <i>In Proc. ISCA Interspeech</i>, 2022, pp.1596-1600.'
+# header:
+#   teaser: "vqtts.jpg"
 ---
 
 <img src="/images/vqtts.jpg" alt="drawing" class="center"/>

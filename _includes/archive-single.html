@@ -12,7 +12,7 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+<div class="{{ include.type | default: "list" }}__item" style="width: 130%;">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -52,28 +52,25 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
-    {% if post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">📖Download Paper</a> | <a href="{{ post.slidesurl }}">🪧Download Slides</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">📖Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">🪧Download Slides</a></p>
-    {% elsif post.citation %}
+    {% if post.citation %}
       <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">📖Download Paper</a></p>
-    {% elsif post.slidesurl %}
-      <p>Download <a href="{{ post.slidesurl }}">🪧Download Slides</a></p></p>
+    {% endif %}
+    
+    {% if post.paperurl %}
+    <a href="{{ post.paperurl }}" target="_blank"><button type="button" class="btn btn-primary btn-sm">📖Paper</button></a>
     {% endif %}
 
-    {% if post.demourl and post.codeurl %}
-      <a href="{{ post.demourl }}">🔊Demo Page</a> | <a href="{{ post.codeurl }}">🛠️Source Code</a>
-    {% elsif post.demourl %}
-    <a href="{{ post.demourl }}">🔊Demo Page</a>
-    {% elsif post.codeurl %}
-    <a href="{{ post.codeurl }}">🛠️Source Code</a>
+    {% if post.slidesurl %}
+    <a href="{{ post.slidesurl }}" target="_blank"><button type="button" class="btn btn-primary btn-sm">🪧Slides</button></a>
     {% endif %}
 
+    {% if post.demourl %}
+    <a href="{{ post.demourl }}" target="_blank"><button type="button" class="btn btn-primary btn-sm">📣Demo</button></a>
+    {% endif %}
+
+    {% if post.codeurl %}
+    <a href="{{ post.codeurl }}" target="_blank"><button type="button" class="btn btn-primary btn-sm">🛠️Code</button></a>
+    {% endif %}
 
   </article>
 </div>
