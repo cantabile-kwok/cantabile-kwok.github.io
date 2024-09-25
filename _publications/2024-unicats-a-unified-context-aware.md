@@ -6,7 +6,7 @@ permalink: /publication/2024-unicats-a-unified-context-aware
 excerpt: 'This paper proposes a context-aware TTS system with strong zero-shot TTS and speech editing abilities, by a contextual token vocoder CTX-vec2wav and discrete diffusion-based CTX-txt2vec.'
 date: 2024-03-24
 venue: 'AAAI'
-slidesurl: 
+slidesurl: 'https://cantabile-kwok.github.io/files/UniCATS-slides.pptx'
 paperurl: 'https://ojs.aaai.org/index.php/AAAI/article/view/29747/31286'
 citation: 'Chenpeng Du, Yiwei Guo, Feiyu Shen, Zhijun Liu, Zheng Liang, Xie Chen, Shuai Wang, Hui Zhang, Kai Yu. (2024). &quot;UniCATS: A unified context-aware text-to-speech framework with contextual vq-diffusion and vocoding.&quot; <i>Proc. AAAI</i>, 2024, vol. 38, No. 16, pp. 17924-17932.'
 ---
