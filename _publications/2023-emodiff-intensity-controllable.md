@@ -6,7 +6,7 @@ permalink: /publication/2023-emodiff-intensity-controllable
 excerpt: 'This paper is about designing a emotion intensity-controllable TTS model by a new soft-label guidance algorithm in the diffusion paradigm.'
 date: 2023-06-04
 venue: 'IEEE ICASSP'
-slidesurl: 
+slidesurl: 'https://cantabile-kwok.github.io/files/gyw-EmoDiff-slides.pptx'
 paperurl: 'https://arxiv.org/pdf/2211.09496'
 citation: 'Yiwei Guo, Chenpeng Du, Xie Chen, Kai Yu. (2023). &quot;EmoDiff: Intensity controllable emotional text-to-speech with soft-label guidance.&quot; <i>In Proc. IEEE ICASSP</i>, 2023.'
 ---

@@ -7,7 +7,7 @@ excerpt: 'This paper applies the rectified flow matching algorithm to improve th
 date: 2024-04-14
 venue: 'IEEE ICASSP'
 paperurl: 'https://arxiv.org/pdf/2309.05027'
-slidesurl: 'cantabile-kwok.github.io/files/gyw-VoiceFlow-slides.pptx'
+slidesurl: 'https://cantabile-kwok.github.io/files/gyw-VoiceFlow-slides.pptx'
 citation: 'Yiwei Guo, Chenpeng Du, Ziyang Ma, Xie Chen, Kai Yu. (2024). &quot;VoiceFlow: Efficient text-to-speech with rectified flow matching.&quot; <i>In Proc. IEEE ICASSP</i>, 2024, pp. 11121-11125.'
 ---
 
