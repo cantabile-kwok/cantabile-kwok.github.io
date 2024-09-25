@@ -35,11 +35,9 @@ Education
 Skills
 ======
 * Skill 1
+  * Sub-skill 1.1
+  * Sub-skill 1.2
 * Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
 
 Publications
 ======
@@ -62,4 +60,4 @@ Talks
    
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Reviewers
