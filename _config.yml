@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : yiwei-guo-799a432a3
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -74,13 +74,14 @@ author:
   zhihu            : # URL
 
 # Publication Category - The following the list of publication categories and their headings
+# The order of the categories are consistent with webpage presentation (need rebuild)
 publication_category:
   books:
     title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  manuscripts:
+    title: 'Journal Articles'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"

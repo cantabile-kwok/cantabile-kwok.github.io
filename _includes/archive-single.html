@@ -53,18 +53,27 @@
     {% endif %}
     
     {% if post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">📖Download Paper</a> | <a href="{{ post.slidesurl }}">🪧Download Slides</a></p>
     {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">📖Download Paper</a></p>
     {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">🪧Download Slides</a></p>
     {% elsif post.citation %}
       <p>Recommended citation: {{ post.citation }}</p>
     {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
+      <p><a href=" {{ post.paperurl }} ">📖Download Paper</a></p>
     {% elsif post.slidesurl %}
-      <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p></p>
+      <p>Download <a href="{{ post.slidesurl }}">🪧Download Slides</a></p></p>
     {% endif %}
+
+    {% if post.demourl and post.codeurl %}
+      <a href="{{ post.demourl }}">🔊Demo Page</a> | <a href="{{ post.codeurl }}">🛠️Source Code</a>
+    {% elsif post.demourl %}
+    <a href="{{ post.demourl }}">🔊Demo Page</a>
+    {% elsif post.codeurl %}
+    <a href="{{ post.codeurl }}">🛠️Source Code</a>
+    {% endif %}
+
 
   </article>
 </div>
