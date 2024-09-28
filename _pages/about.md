@@ -16,7 +16,34 @@ I am very lucky that as one of the first graduates from this major, I had abunda
 And this very field is speech synthesis, including text-to-speech, voice conversion and end-to-end speech dialogue systems.
 I am also interested in diffusion (together with flow matching) generative models and discrete generative models, which appear to the two foundational pillars of speech synthesis these days.
 
-⚠️This website is still under construction!
+⚠️This website is still under construction.
+
+## 📣 News
+<div style="height:300px; overflow:auto">
+<ul>
+    <li><span style="font-weight: bold;">[2024.08]</span> I gave a tutorial at NCMMSC 2024 in Urumqi, China. <a href="/talks/2024-08-NCMMSC">Check it out</a> and thanks to all the contributors!</li>
+    <li><span style="font-weight: bold;">[2024.08]</span> 1 paper is accepted at SLT 2024.</li>
+    <li><span style="font-weight: bold;">[2024.06]</span> 2 papers are accepted at Interspeech 2024.</li>
+    <li><span style="font-weight: bold;">[2023.12]</span> <a href="/publication/2024-unicats-a-unified-context-aware">UniCATS</a> is accepted at AAAI 2024. It is open-sourced. See you in Vancouver!</li>
+    <li><span style="font-weight: bold;">[2023.12]</span> 4 papers are accepted at ICASSP 2024. <a href="/publication/2024-voiceflow-efficient-text-to-speech">VoiceFlow</a> is open-sourced. See you in Seoul!</li>
+    <li><span style="font-weight: bold;">[2023.08]</span> 1 article is published at IEEE/ACM TASLP.</li>
+    <li><span style="font-weight: bold;">[2023.05]</span> 1 paper is accepted at Interspeech 2023. See you in Dublin!</li>
+    <li><span style="font-weight: bold;">[2023.02]</span> 3 papers are accepted at ICASSP 2023. See you in Rhodes Island!</li>
+    <li><span style="font-weight: bold;">[2023.02]</span> We won the first place on two tracks in LIMMITS'23 challenge. <a href="https://sites.google.com/view/syspinttschallenge2023/leaderboard/main-leaderboard">Check it out</a>!</li>
+    <li><span style="font-weight: bold;">[2022.06]</span> <a href="/publication/2022-vqtts-high-fidelity-text-to-speech">VQTTS</a> is accepted at Interspeech 2022.</li>
+    <li><span style="font-weight: bold;">[2022.01]</span> My first paper is accepted at ICASSP 2022!</li>
+</ul>
+</div>
+
+## Academic Service
+### Conference Reviewer
+* ACL Rolling Review (ACL ARR) 2024. <!-- February -->
+* IEEE Spoken Language Technology Workshop (SLT) 2024.
+* National Conference on Man-Machine Speech Communication (NCMMSC) 2023, 2024.
+  
+### Journal Reviewer
+* IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP).
+
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io). -->
 
@@ -29,11 +56,11 @@ Many of the features of dynamic content management systems (like Wordpress) can 
 Getting started
 ======
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+2. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
+3. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
+4. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
+5. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
+6. Check status by going to the repository settings, in the "GitHub pages" section
 
 Site-wide configuration
 ------
