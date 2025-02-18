@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-🙋‍♂️Hi! My name is Yiwei Guo, or 郭奕玮 in Chinese.
+🙋‍♂️Hi! My name is Yiwei Guo.
 
 I am currently a Ph.D. candidate in Shanghai Jiao Tong University (SJTU) and a member in [Cross Media (**X-**) **Lan**guage Intelligen**ce** Lab (X-LANCE)](https://x-lance.sjtu.edu.cn/) of the Department of Computer Science and Engineering, supervised by [Prof. Kai Yu](https://x-lance.github.io/kaiyu/) and working closely with [Prof. Xie Chen](https://chenxie95.github.io/).
 

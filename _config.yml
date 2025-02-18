@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "WechatIMG95268.jpg"
-  name             : "Yiwei Guo (郭奕玮)"
+  name             : "Yiwei Guo"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. candidate in SJTU. Focused in speech synthesis."
   location         : "Shanghai, China"
