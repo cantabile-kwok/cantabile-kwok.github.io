@@ -20,16 +20,27 @@
 	<div class="container">
 		<center>
 		<h1>vec2wav 2.0: Advancing Voice Conversion via Discrete Token Vocoders</h1>
-		<h4 style="text-align: center"><a href="https://scholar.google.com/citations?user=BJscnZMAAAAJ&hl=zh-CN">Yiwei Guo<sup>1</sup></a>, Zhihan Li<sup>1</sup>, Junjie Li<sup>1</sup>, <a href="https://scholar.google.com/citations?user=RY7xArYAAAAJ&hl=zh-CN">Chenpeng Du<sup>1</sup></a>,  
-			Hankun Wang<sup>1</sup>,  <a href="https://wsstriving.github.io/">Shuai Wang<sup>2</sup></a>,  <a href="https://chenxie95.github.io/">Xie Chen<sup>1</sup></a>, <a href="https://x-lance.sjtu.edu.cn/~kaiyu/">Kai Yu<sup>1</sup></a>
-			<br><br><sup>1</sup>MoE Key Lab of Artificial Intelligence, AI Institute<br><a href="https://x-lance.github.io/">X-LANCE Lab</a>, Department of Computer Science and Engineering, Shanghai Jiao Tong University<br>Shanghai, China<br><sup>2</sup><a href="https://www.sribd.cn/en/page/59">Shenzhen Research Institute of Big Data</a>, Shenzhen, China</h4>
-		<h4>Submitted to ICASSP 2025</h4>
+		<h4 style="text-align: center"><a
+			href="https://scholar.google.com/citations?user=BJscnZMAAAAJ&hl=zh-CN">Yiwei Guo<sup>1,2</sup></a>,
+		Zhihan Li<sup>1,2</sup>, Junjie Li<sup>1,2</sup>, <a
+			href="https://scholar.google.com/citations?user=RY7xArYAAAAJ&hl=zh-CN">Chenpeng Du<sup>1,2</sup></a>,
+		<a href="https://scholar.google.com/citations?user=mcQFLgoAAAAJ&hl=en">Hankun Wang</a><sup>1,2</sup>
+		<!-- <a href="https://wsstriving.github.io/">Shuai Wang<sup>2</sup></a>,  -->
+		<a href="https://wsstriving.github.io/">Shuai Wang</a><sup>3</sup>, 
+		, <a href="https://chenxie95.github.io/">Xie Chen<sup>1,2</sup></a>, <a
+			href="https://x-lance.sjtu.edu.cn/~kaiyu/">Kai Yu<sup>1,2</sup></a>
+		<br><br><sup>1</sup><a
+		href="https://x-lance.github.io/">X-LANCE Lab</a>, MoE Key Lab of Artificial Intelligence, <br> School of Computer Science,
+		Shanghai Jiao Tong University, China<br>
+		<sup>2</sup>Jiangsu Key Lab of Language Computing, China<br>
+		<sup>3</sup><a href="https://www.sribd.cn/en/page/59">Shenzhen Research Institute of Big Data</a>, Shenzhen, China<br>
 		<h4>📧 Email: <a href="mailto:yiwei.guo@sjtu.edu.cn">yiwei.guo@sjtu.edu.cn</a></h4>
 		<h4><a href="https://arxiv.org/abs/2409.01995" target="_blank">[Paper]</a> <a href="https://github.com/cantabile-kwok/vec2wav2.0" target="_blank">[Code]</a></h4>
-		<h4>Try online Interactive Demo at 🤗<a href="https://huggingface.co/spaces/cantabile-kwok/vec2wav2.0-demo">Huggingface Space</a>!</h4>
+		<!-- <h4>Try online Interactive Demo at 🤗<a href="https://huggingface.co/spaces/cantabile-kwok/vec2wav2.0-demo">Huggingface Space</a>!</h4> -->
+		<h4 style="text-align: center">
         </center>
 		<div style="border: 1px solid black; margin-top: 20px; margin-bottom: 10px;"></div>
-		<p>We propose a new speech discrete token vocoder, vec2wav 2.0, that advances voice conversion (VC). We use discrete tokens from speech self-supervised models as the content features of source speech, and treat VC as a prompted vocoding task. To amend the loss of speaker timbre in the content tokens, vec2wav 2.0 utilizes the WavLM features to provide strong timbre-dependent information. A novel adaptive Snake activation function is proposed to better incorporate timbre into the waveform reconstruction process. In this way, vec2wav 2.0 learns to alter the speaker timbre appropriately given different reference prompts. Also, no supervised data is required for vec2wav 2.0 to be effectively trained. Experimental results demonstrate that vec2wav 2.0 outperforms all other baselines to a considerable margin in terms of audio quality and speaker similarity in any-to-any VC. Ablation studies verify the effects made by the proposed techniques. Moreover, vec2wav 2.0 achieves competitive cross-lingual VC even only trained on monolingual corpus, pushing the frontiers of VC.
+		<p>We propose a new speech discrete token vocoder, vec2wav 2.0, which advances voice conversion (VC). We use discrete tokens from speech self-supervised models as the content features of source speech, and treat VC as a prompted vocoding task. To amend the loss of speaker timbre in the content tokens, vec2wav 2.0 utilizes the WavLM features to provide strong timbre-dependent information. A novel adaptive Snake activation function is proposed to better incorporate timbre into the waveform reconstruction process. In this way, vec2wav 2.0 learns to alter the speaker timbre appropriately given different reference prompts. Also, no supervised data is required for vec2wav 2.0 to be effectively trained. Experimental results demonstrate that vec2wav 2.0 outperforms all other baselines to a considerable margin in terms of audio quality and speaker similarity in English and cross-lingual any-to-any VC. Ablation studies verify the effects made by the proposed techniques.
 		</p>
 		<div style="border-top: 1px solid grey;"></div>
 		<div class="row">
@@ -42,9 +53,11 @@
 				Another 10 speakers are selected as target speakers with one 3-second reference utterance for each.
 				This yields a test set of 200 any-to-any VC cases.
 				<br/>
-				The test set metadata can be found <a href="./audio_ready/En/utt2prompt"><u>here</u></a>. Every line of this file means "{source}_to_{target} {target}".
+				<!-- The test set metadata can be found <a href="./audio_ready/En/utt2prompt"><u>here</u></a>. Every line of this file means "{source}_to_{target} {target}". -->
 				<br/>
 				To enable a fair comparison between models, we downsample all the audio to 16kHz (although vec2wav 2.0 generates 24kHz audio).
+				<br/>
+				Note that CosyVoice is an industry-level baseline, trained on massive amount of data (300 times larger than us).
 			</p>
 			<div class="english_vc_examples">
 				<div class="english_vc" data-page="1">
@@ -59,59 +72,65 @@
 								<th><a href="https://github.com/hayeong0/Diff-HierVC">Diff-HierVC</a></th>
 								<th><a href="https://github.com/b04901014/UUVC">UUVC</a></th>
 								<th><a href="https://github.com/open-mmlab/Amphion/tree/main/egs/codec/FAcodec">FACodec</a></th>
+								<th><a href="https://github.com/FunAudioLLM/CosyVoice">CosyVoice</a></th>
 							</tr>
 						</thead>
 						<tbody id = "unseen_speakers" >
 							<tr>
-								<td><audio src="./audio_ready/En/GT/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>If a layman in giving baptism pour the water before saying the words is the child baptized?</details></td>
-								<td><audio src="./audio_ready/En/prompts/237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>If a layman in giving baptism pour the water before saying the words is the child baptized?</details></td>
+								<td><audio src="./audio_ready/En/prompts/237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/1089_134686_000024_000002_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>All this I could hardly explain to him, as I should thus be giving to him the strongest evidence against my own philosophy.</details></td>
-								<td><audio src="./audio_ready/En/prompts/4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>All this I could hardly explain to him, as I should thus be giving to him the strongest evidence against my own philosophy.</details></td>
+								<td><audio src="./audio_ready/En/prompts/4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/8455_210777_000079_000002_to_4992_23283_000004_000000.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>No class of society, not even the most abjectly poor, forgoes all customary conspicuous consumption.</details></td>
-								<td><audio src="./audio_ready/En/prompts/4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>No class of society, not even the most abjectly poor, forgoes all customary conspicuous consumption.</details></td>
+								<td><audio src="./audio_ready/En/prompts/4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/3570_5695_000004_000010_to_4077_13754_000013_000005.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							
 							<tr>
-								<td><audio src="./audio_ready/En/GT/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>Every scheme known to politicians must be worked, and none knew the intricate game better than Hopkins.</details></td>
-								<td><audio src="./audio_ready/En/prompts/8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>Every scheme known to politicians must be worked, and none knew the intricate game better than Hopkins.</details></td>
+								<td><audio src="./audio_ready/En/prompts/8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/6829_68771_000012_000001_to_8230_279154_000004_000008.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>The music, hautboys, flutes, and viols, was delightfully descriptive of rural delights.</details></td>
-								<td><audio src="./audio_ready/En/prompts/8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>The music, hautboys, flutes, and viols, was delightfully descriptive of rural delights.</details></td>
+								<td><audio src="./audio_ready/En/prompts/8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/7127_75946_000040_000004_to_8555_284449_000044_000000.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 						</tbody>
 					</table>
@@ -128,58 +147,64 @@
 								<th><a href="https://github.com/hayeong0/Diff-HierVC">Diff-HierVC</a></th>
 								<th><a href="https://github.com/b04901014/UUVC">UUVC</a></th>
 								<th><a href="https://github.com/open-mmlab/Amphion/tree/main/egs/codec/FAcodec">FACodec</a></th>
+								<th><a href="https://github.com/FunAudioLLM/CosyVoice">CosyVoice</a></th>
 							</tr>
 						</thead>
 						<tbody id = "unseen_speakers" >
 							<tr>
-								<td><audio src="./audio_ready/En/GT/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>When one kidney ceases to act from disease, the other increases in size, and does double work.</details></td>
-								<td><audio src="./audio_ready/En/prompts/3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>When one kidney ceases to act from disease, the other increases in size, and does double work.</details></td>
+								<td><audio src="./audio_ready/En/prompts/3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/5142_36586_000011_000002_to_3729_6852_000040_000002.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>The music, hautboys, flutes, and viols, was delightfully descriptive of rural delights.</details></td>
-								<td><audio src="./audio_ready/En/prompts/2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>The music, hautboys, flutes, and viols, was delightfully descriptive of rural delights.</details></td>
+								<td><audio src="./audio_ready/En/prompts/2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/7127_75946_000040_000004_to_2300_131720_000016_000004.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>"But it is not with a view to distinction that you should cultivate this talent, if you consult your own happiness.</details></td>
-								<td><audio src="./audio_ready/En/prompts/1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>"But it is not with a view to distinction that you should cultivate this talent, if you consult your own happiness.</details></td>
+								<td><audio src="./audio_ready/En/prompts/1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/3575_170457_000016_000000_to_1580_141083_000019_000001.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>Every minister should make much of his calling and impress upon others the fact that he has been delegated by God to preach the Gospel.</details></td>
-								<td><audio src="./audio_ready/En/prompts/7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>Every minister should make much of his calling and impress upon others the fact that he has been delegated by God to preach the Gospel.</details></td>
+								<td><audio src="./audio_ready/En/prompts/7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/2830_3980_000021_000000_to_7729_102255_000002_000001.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 							<tr>
-								<td><audio src="./audio_ready/En/GT/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>Every scheme known to politicians must be worked, and none knew the intricate game better than Hopkins.</details></td>
-								<td><audio src="./audio_ready/En/prompts/237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/vqw2v-v2w2/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/yourtts/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffvc/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/diffhiervc/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/uuvc/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
-								<td><audio src="./audio_ready/En/facodec/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:130px"></audio></td>
+								<td><audio src="./audio_ready/En/GT/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio><details><summary style="cursor: pointer; color: #76b900;">[Show transcript]</summary>Every scheme known to politicians must be worked, and none knew the intricate game better than Hopkins.</details></td>
+								<td><audio src="./audio_ready/En/prompts/237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/vqw2v-v2w2/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/yourtts/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffvc/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/diffhiervc/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/uuvc/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/facodec/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
+								<td><audio src="./audio_ready/En/cosyvoice/6829_68771_000012_000001_to_237_134493_000015_000004.wav" controls="" style="width:100px"></audio></td>
 							</tr>
 						</tbody>
 					</table>
@@ -338,7 +363,7 @@
 			</center>
 			Apart from vq-wav2vec, we train <a href="https://github.com/X-LANCE/UniCATS-CTX-vec2wav">CTX-vec2wav</a> and vec2wav 2.0 on HuBERT tokens and wav2vec 2.0 tokens.
 			<br/>
-			We additionally train two variants of vec2wav 2.0 on vq-wav2vec inputs: <b>vec2wav 2.0-ab1</b> that replaces the adaptive Snake activations in BigVGAN by the original Snakes; and <b>vec2wav 2.0-ab2</b> that further replaces BigVGAN with HifiGAN.
+			We additionally train two variants of vec2wav 2.0 on vq-wav2vec inputs: <b>vec2wav 2.0-ab1</b> that removes the adaptive Snake activations in BigVGAN generator; and <b>vec2wav 2.0-ab2</b> that removes the adaptive Snakes and replaces BigVGAN with HifiGAN.
 			Thus the comparison between vec2wav2.0 and "ab1" indicates the effect of adaptive Snake activation, while that between CTX-vec2wav and "ab2" shows the difference made by prompt feature and modules.
 			<br/>
 			Perfect VC systems should lie on the top right of the following chart.
@@ -346,7 +371,7 @@
 			<table>
 				<tbody style="width:100%;">
 					<tr>
-						<td><img src="ablation.png" width="700"></td>
+						<td><img src="ablation_new.png" width="700"></td>
 					</tr>
 				</tbody>
 			</table>
