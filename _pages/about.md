@@ -21,7 +21,8 @@ I am also interested in diffusion (together with flow matching) generative model
 ## 📣 News
 <div style="height:300px; overflow:auto">
 <ul>
-    <li><span style="font-weight: bold;">[2025.05]</span> 2 papers are accepted at Interspeech 2025.  </li>
+    <li><span style="font-weight: bold;">[2025.08]</span> 1 paper is accepted at ASRU 2025.</li>
+    <li><span style="font-weight: bold;">[2025.05]</span> 2 papers are accepted at Interspeech 2025. Check out <a href="/publication/2025-lscodec-low-bitrate-speaker-decoupled">LSCodec</a> and TFC. See you in Rotterdam in August!</li>
     <li><span style="font-weight: bold;">[2025.04]</span> I gave a tutorial at <a href="https://2025.ieeeicassp.org/accepted-tutorials/">ICASSP 2025</a>. Please reach out to me if you are interested in the slides. Thanks to all the contributors! </li>
     <li><span style="font-weight: bold;">[2025.02]</span> Check out our <a href="https://arxiv.org/abs/2502.06490">review on discrete speech tokens</a>! </li>
     <li><span style="font-weight: bold;">[2024.12]</span> 2 papers are accepted at ICASSP 2025.</li>
