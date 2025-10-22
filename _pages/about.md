@@ -13,7 +13,7 @@ I am currently a Ph.D. candidate in Shanghai Jiao Tong University (SJTU) and a m
 
 I obtained my B.Eng. degree from the Artificial Intelligence (Excellent Talent Pilot Class) major in SJTU on June, 2023 before I started the journey of pursuing the doctorate.
 I am very lucky that as one of the first graduates from this major, I had abundant chances to devote myself into academic research and looking for the field that I ardently love during the undergraduate period.
-And this very field is speech synthesis, including text-to-speech, voice conversion and end-to-end speech dialogue systems.
+And this very field is speech synthesis, including text-to-speech, discrete speech tokens, voice conversion and end-to-end speech dialogue systems.
 I am also interested in diffusion (together with flow matching) generative models and discrete generative models, which appear to the two foundational pillars of speech synthesis these days.
 
 ⚠️This website is still under construction.
@@ -21,6 +21,7 @@ I am also interested in diffusion (together with flow matching) generative model
 ## 📣 News
 <div style="height:300px; overflow:auto">
 <ul>
+    <li><span style="font-weight: bold;">[2025.10]</span> I gave a talk in the University of Cambridge about the recent progress on codec from our group. <a href="/talks/2025-10-Cam">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.08]</span> 1 paper is accepted at ASRU 2025.</li>
     <li><span style="font-weight: bold;">[2025.05]</span> 2 papers (both on speech codec) are accepted at Interspeech 2025. Check out <a href="/publication/2025-lscodec-low-bitrate-speaker-decoupled">LSCodec</a> and <a href="https://arxiv.org/abs/2505.16845">TFC</a>. See you in Rotterdam in August!</li>
     <li><span style="font-weight: bold;">[2025.04]</span> I gave a tutorial at <a href="https://2025.ieeeicassp.org/accepted-tutorials/">ICASSP 2025</a>. Please reach out to me if you are interested in the slides. Thanks to all the contributors! </li>

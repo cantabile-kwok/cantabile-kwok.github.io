@@ -11,8 +11,7 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Computer Science and Engineering, Shanghai Jiao Tong University, 2028 (expected)
-<!-- * M.S. in Jekyll, GitHub University, 2014 -->
+* Ph.D student in Computer Science and Engineering, Shanghai Jiao Tong University, from 2023.
 * B.Eng. in Artificial Intelligence, Shanghai Jiao Tong University University, 2023
 
 <!-- Work experience
