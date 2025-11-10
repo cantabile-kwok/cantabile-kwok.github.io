@@ -21,6 +21,7 @@ I am also interested in diffusion (together with flow matching) generative model
 ## 📣 News
 <div style="height:300px; overflow:auto">
 <ul>
+    <li><span style="font-weight: bold;">[2025.11]</span> 1 paper, <i>AHAMask</i>, is accepted at AAAI 2026. <a href="/publication/2025-ahamask-reliable-task-specification">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.10]</span> 🎉 I finished my 6-month Applied Scientist internship in Amazon AGI in Cambridge, UK. It was such a memorable time!</li>
     <li><span style="font-weight: bold;">[2025.10]</span> I gave a talk in the University of Cambridge about the recent progress on codec from our group. <a href="/talks/2025-10-Cam">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.08]</span> 1 paper is accepted at ASRU 2025.</li>
