@@ -16,11 +16,12 @@ I am very lucky that as one of the first graduates from this major, I had abunda
 And this very field is speech synthesis, including text-to-speech, discrete speech tokens, voice conversion and end-to-end speech dialogue systems.
 I am also interested in diffusion (together with flow matching) generative models and discrete generative models, which appear to the two foundational pillars of speech synthesis these days.
 
-⚠️This website is still under construction.
+⚠️This website is being actively updated.
 
 ## 📣 News
 <div style="height:300px; overflow:auto">
 <ul>
+    <li><span style="font-weight: bold;">[2025.11]</span> 1 survey paper of speech LLMs for understanding is accpeted to IEEE JSTSP. <a href="https://arxiv.org/abs/2410.18908">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.11]</span> 1 paper, <i>AHAMask</i>, is accepted at AAAI 2026. <a href="/publication/2025-ahamask-reliable-task-specification">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.10]</span> 🎉 I finished my 6-month Applied Scientist internship in Amazon AGI in Cambridge, UK. It was such a memorable time!</li>
     <li><span style="font-weight: bold;">[2025.10]</span> I gave a talk in the University of Cambridge about the recent progress on codec from our group. <a href="/talks/2025-10-Cam">Check it out!</a></li>
@@ -45,12 +46,17 @@ I am also interested in diffusion (together with flow matching) generative model
 
 ## Academic Service
 ### Conference Reviewer
-* ACL Rolling Review (ACL ARR) 2024. <!-- February -->
-* IEEE Spoken Language Technology Workshop (SLT) 2024.
-* National Conference on Man-Machine Speech Communication (NCMMSC) 2023, 2024.
-  
+* ACL Rolling Review (ACL ARR)
+* AAAI
+* NeurIPS
+* IEEE ICASSP, SLT, ASRU
+* ISCA Interspeech
+* National Conference on Man-Machine Speech Communication (NCMMSC)
+
 ### Journal Reviewer
 * IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP).
+* IEEE Signal Processing Letters (SPL)
+* IEEE Open Journal of Computer Society (OJSC)
 
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io). -->

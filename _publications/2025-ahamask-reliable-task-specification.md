@@ -9,9 +9,9 @@ venue: 'AAAI'
 slidesurl: 
 paperurl: 'https://arxiv.org/abs/2509.01787'
 demourl: 
+codeurl: 'https://github.com/X-LANCE/SALMONN-AHAMask'
 citation: '<b>Yiwei Guo</b>,  Bohan Li, Hankun Wang, Zhihan Li, Shuai Wang, Xie Chen, Kai Yu (2026). &quot;AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions.&quot; <i>In Proc. AAAI</i>, 2026.'
-# header:
-#   teaser: "vqtts.jpg"
+
 ---
 
 <img src="/images/ahamask.png" width="100%" alt="drawing" class="center"/>
