@@ -21,9 +21,10 @@ I am also interested in diffusion (together with flow matching) generative model
 ## 📣 News
 <div style="height:300px; overflow:auto">
 <ul>
+    <li><span style="font-weight: bold;">[2026.01]</span> 4 papers are accepted at ICASSP 2026. Check out <a href="https://arxiv.org/abs/2506.21074">CodecSlime</a>, <a href="https://arxiv.org/abs/2506.22023v1">DCAR</a>, <a href="https://arxiv.org/abs/2510.23558">ISA-Bench</a>, and <a href="https://arxiv.org/abs/2412.17048">an analysis on spoken langauge models</a>. </li>
     <li><span style="font-weight: bold;">[2025.12]</span> Our survey, ''Recent Advances in Discrete Speech Tokens: A Review'', is accepted to IEEE TPAMI. <a href="https://arxiv.org/abs/2502.06490">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.11]</span> Our survey, ''A Survey on Speech Large Language Models for Understanding'', is accepted to IEEE JSTSP. <a href="https://arxiv.org/abs/2410.18908">Check it out!</a></li>
-    <li><span style="font-weight: bold;">[2025.11]</span> 1 paper, <i>AHAMask</i>, is accepted at AAAI 2026. <a href="/publication/2025-ahamask-reliable-task-specification">Check it out!</a></li>
+    <li><span style="font-weight: bold;">[2025.11]</span> 1 paper, <i>AHAMask</i>, is accepted at AAAI 2026. <a href="/publication/2025-ahamask-reliable-task-specification">Check it out</a> and see you in Singapore!</li>
     <li><span style="font-weight: bold;">[2025.10]</span> 🎉 I finished my 6-month Applied Scientist internship in Amazon AGI in Cambridge, UK. It was such a memorable time!</li>
     <li><span style="font-weight: bold;">[2025.10]</span> I gave a talk in the University of Cambridge about the recent progress on codec from our group. <a href="/talks/2025-10-Cam">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.08]</span> 1 paper is accepted at ASRU 2025.</li>
