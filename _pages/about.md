@@ -9,7 +9,7 @@ redirect_from:
 
 🙋‍♂️Hi! My name is Yiwei Guo.
 
-I am currently a Ph.D. candidate in Shanghai Jiao Tong University (SJTU) and a member in [Cross Media (**X-**) **Lan**guage Intelligen**ce** Lab (X-LANCE)](https://x-lance.sjtu.edu.cn/) of the Department of Computer Science and Engineering, supervised by [Prof. Kai Yu](https://x-lance.github.io/kaiyu/) and working closely with [Prof. Xie Chen](https://chenxie95.github.io/).
+I am currently a Ph.D. candidate in Shanghai Jiao Tong University (SJTU) and a member in [Cross Media (**X-**) **Lan**guage Intelligen**ce** Lab (X-LANCE)](https://x-lance.sjtu.edu.cn/), School of Computer Science, supervised by [Prof. Kai Yu](https://x-lance.github.io/kaiyu/) and working closely with [Prof. Xie Chen](https://chenxie95.github.io/).
 
 I obtained my B.Eng. degree from the Artificial Intelligence (Excellent Talent Pilot Class) major in SJTU on June, 2023 before I started the journey of pursuing the doctorate.
 I am very lucky that as one of the first graduates from this major, I had abundant chances to devote myself into academic research and looking for the field that I ardently love during the undergraduate period.
