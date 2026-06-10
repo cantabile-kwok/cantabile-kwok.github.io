@@ -21,7 +21,7 @@ I am also interested in diffusion (together with flow matching) generative model
 ## 📣 News
 <div style="height:300px; overflow:auto">
 <ul>
-    <li><span style="font-weight: bold;">[2026.06]</span> 2 papers are accepted at Interspeech 2026. Check out <a href="https://arxiv.org/abs/2604.24278">RAS</a> and <a href="https://arxiv.org/abs/TODO">READ</a> scpre.</li>
+    <li><span style="font-weight: bold;">[2026.06]</span> 2 papers are accepted at Interspeech 2026. Check out <a href="https://arxiv.org/abs/2604.24278">RAS</a> and <a href="https://arxiv.org/abs/2606.04680">READ</a> score.</li>
     <li><span style="font-weight: bold;">[2026.01]</span> 4 papers are accepted at ICASSP 2026. Check out <a href="https://arxiv.org/abs/2506.21074">CodecSlime</a>, <a href="https://arxiv.org/abs/2506.22023v1">DCAR</a>, <a href="https://arxiv.org/abs/2510.23558">ISA-Bench</a>, and <a href="https://arxiv.org/abs/2412.17048">an analysis on spoken langauge models</a>. </li>
     <li><span style="font-weight: bold;">[2025.12]</span> Our survey, ''Recent Advances in Discrete Speech Tokens: A Review'', is accepted to IEEE TPAMI. <a href="https://arxiv.org/abs/2502.06490">Check it out!</a></li>
     <li><span style="font-weight: bold;">[2025.11]</span> Our survey, ''A Survey on Speech Large Language Models for Understanding'', is accepted to IEEE JSTSP. <a href="https://arxiv.org/abs/2410.18908">Check it out!</a></li>
